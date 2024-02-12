@@ -588,5 +588,123 @@
                 "equal_btc": 28.6005947308665
             }
         }
+    },
+    {
+        "savetime": "2024-02-13T06:31:09.083429",
+        "data": {
+            "ORDI": {
+                "staked": 742892.65009314,
+                "totalSupply": 21000000.0,
+                "price_sat": 135000,
+                "equal_btc": 1002.905077625739
+            },
+            "SATS": {
+                "staked": 112186805167272.81,
+                "totalSupply": 2100000000000000.0,
+                "price_sat": 0.001,
+                "equal_btc": 1121.8680516727281
+            },
+            "BTCS": {
+                "staked": 4282443.900346,
+                "totalSupply": 21000000.0,
+                "price_sat": 10000,
+                "equal_btc": 428.2443900346
+            },
+            "RATS": {
+                "staked": 109488194997.57846,
+                "totalSupply": 1000000000000.0,
+                "price_sat": 0.7,
+                "equal_btc": 766.4173649830492
+            },
+            "MMSS": {
+                "staked": 2225589.2280149,
+                "totalSupply": 21000000.0,
+                "price_sat": 2000,
+                "equal_btc": 44.511784560298
+            },
+            "AINN": {
+                "staked": 1606400.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 3900,
+                "equal_btc": 62.6496
+            },
+            "RCSV": {
+                "staked": 11924533.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 3120,
+                "equal_btc": 372.04542960000003
+            },
+            "MICE": {
+                "staked": 181515114.32971168,
+                "totalSupply": 1000000000.0,
+                "price_sat": 50,
+                "equal_btc": 90.75755716485584
+            },
+            "TRAC": {
+                "staked": 265557.982645,
+                "totalSupply": 21000000.0,
+                "price_sat": 10770,
+                "equal_btc": 28.6005947308665
+            }
+        }
+    },
+    {
+        "savetime": "2024-02-13T06:39:40.033296",
+        "data": {
+            "ORDI": {
+                "staked": 755878.47009314,
+                "totalSupply": 21000000.0,
+                "price_sat": 170000,
+                "equal_btc": 1284.993399158338
+            },
+            "SATS": {
+                "staked": 112186805167272.81,
+                "totalSupply": 2100000000000000.0,
+                "price_sat": 0.001,
+                "equal_btc": 1121.8680516727281
+            },
+            "BTCS": {
+                "staked": 4282443.900346,
+                "totalSupply": 21000000.0,
+                "price_sat": 9500,
+                "equal_btc": 406.83217053286995
+            },
+            "RATS": {
+                "staked": 109488194997.57846,
+                "totalSupply": 1000000000000.0,
+                "price_sat": 0.759,
+                "equal_btc": 831.0154000316205
+            },
+            "MMSS": {
+                "staked": 2225589.2280149,
+                "totalSupply": 21000000.0,
+                "price_sat": 1000,
+                "equal_btc": 22.255892280149
+            },
+            "AINN": {
+                "staked": 1606400.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 2888,
+                "equal_btc": 46.392832
+            },
+            "RCSV": {
+                "staked": 11924533.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 1777,
+                "equal_btc": 211.89895141
+            },
+            "MICE": {
+                "staked": 181515114.32971168,
+                "totalSupply": 1000000000.0,
+                "price_sat": 39,
+                "equal_btc": 70.79089458858755
+            },
+            "TRAC": {
+                "staked": 265557.982645,
+                "totalSupply": 21000000.0,
+                "price_sat": 11250,
+                "equal_btc": 29.875273047562498
+            }
+        }
     }
 ]
