@@ -213,7 +213,7 @@ const HomePage = () => {
                 inputPrice={btcdata.data.BTC.price}
                 onPriceChange={handlePriceChange}
                 isBrc20Token={false}
-                isBrc420Token={true}
+                isBrc420Token={false}
               />
               <CurrencyCard 
               currencyName="ETH" 
@@ -222,7 +222,7 @@ const HomePage = () => {
               inputPrice={evmdata.data.ETH.price}
               onPriceChange={handlePriceChange}
               isBrc20Token={false}
-              isBrc420Token={true}
+              isBrc420Token={false}
             />
             <CurrencyCard 
               currencyName="USDT" 
@@ -231,7 +231,7 @@ const HomePage = () => {
               inputPrice={evmdata.data.USDT.price}
               onPriceChange={handlePriceChange}
               isBrc20Token={false}
-              isBrc420Token={true}
+              isBrc420Token={false}
             />
             <CurrencyCard 
               currencyName="USDC" 
@@ -240,7 +240,7 @@ const HomePage = () => {
               inputPrice={evmdata.data.USDC.price}
               onPriceChange={handlePriceChange}
               isBrc20Token={false}
-              isBrc420Token={true}
+              isBrc420Token={false}
             />
 
             {Currency20Cards}
