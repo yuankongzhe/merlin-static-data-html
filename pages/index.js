@@ -4,10 +4,10 @@ import { useState, useEffect } from 'react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
 
-const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPrice }) => {
-  const isBrc20Token = currencyName !== 'BTC' && currencyName !== 'ETH' && currencyName !== 'USDT' && currencyName !== 'USDC';
-  const priceInTotal = isBrc20Token ? staked * inputPrice * btcPrice *0.00000001 : staked * inputPrice;
-  const unit = isBrc20Token ? ' sats/'+currencyName : ' /U';
+const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPrice ,isBrc20Token,isBrc420Token}) => {
+
+  const priceInTotal = isBrc20Token ? staked * inputPrice * btcPrice *0.00000001 : isBrc420Token ? staked * inputPrice * btcPrice : staked * inputPrice;
+  const unit = isBrc20Token ? ' sats/'+currencyName : isBrc420Token ?  'BTC' : ' /U';
 
   return (
     <div className='col-3 g-2'>
@@ -35,7 +35,7 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
 };
 
 const currencyList = ['ORDI', 'SATS', 'BTCS', 'RATS', 'MMSS', 'AINN', 'RCSV', 'MICE', 'TRAC'];
-
+const currency420List = ['Blue Box','Bitmap','This song about NFTs','Mineral']
 const formatNumber = (num) => {
   return new Intl.NumberFormat('en-US').format(num);
 };
@@ -43,11 +43,13 @@ const HomePage = () => {
   const [evmdata, evmsetData] = useState(null);
   const [btcdata, btcsetData] = useState(null);
   const [brc20data, brc20setData] = useState(null);
+  const [brc420data, brc420setData] = useState(null);
   const [sumdata, sumsetData] = useState(null);
-    // 设置状态
-    const [a, setA] = useState(0);
-    const [b, setB] = useState(0);
-    const [c, setC] = useState(0); 
+
+  // 设置状态
+  const [a, setA] = useState(0);
+  const [b, setB] = useState(0);
+  const [c, setC] = useState(0); 
   
 
    
@@ -105,6 +107,16 @@ const HomePage = () => {
       });
   }, []);
   useEffect(() => {
+    const filename = 'brc420_staked_balance_sum'; // 你想要读取的文件名（不包括.json扩展名）
+    // 调用我们的API路由，并传递文件名
+    fetch(`/api/${filename}`)
+      .then(response => response.json())
+      .then(evmdata => {
+        // 将数据设置到状态中
+        brc420setData(evmdata);
+      });
+  }, []);
+  useEffect(() => {
     const filename = 'sum_usd'; // 你想要读取的文件名（不包括.json扩展名）
     // 调用我们的API路由，并传递文件名
     fetch(`/api/${filename}`)
@@ -124,7 +136,8 @@ const HomePage = () => {
   if (!btcdata) return <div>Loading...</div>;
   if (!brc20data) return <div>Loading...</div>;
   if (!sumdata) return <div>Loading...</div>;
-  const CurrencyCards = currencyList.map((currencyName) => {
+
+  const Currency20Cards = currencyList.map((currencyName) => {
     const staked = brc20data.data[currencyName].staked;
     const inputPrice = currencyPrices[currencyName] || brc20data.data[currencyName].price_sat;
     return (
@@ -136,6 +149,26 @@ const HomePage = () => {
         priceInTotal={staked * inputPrice * btcdata.data.BTC.price}
         inputPrice={inputPrice}
         onPriceChange={handlePriceChange}
+        isBrc20Token={true}
+        isBrc420Token={false}
+      />
+    );
+  });
+  const Currency420Cards = currency420List.map((currencyName) => {
+    console.log(brc420data)
+    const staked = brc420data.data[currencyName].staked;
+    const inputPrice = currencyPrices[currencyName] || brc420data.data[currencyName].price_btc;
+    return (
+      <CurrencyCard
+        key={currencyName}
+        currencyName={currencyName}
+        staked={staked}
+        btcPrice={btcdata.data.BTC.price}
+        priceInTotal={staked * inputPrice * btcdata.data.BTC.price}
+        inputPrice={inputPrice}
+        onPriceChange={handlePriceChange}
+        isBrc20Token={false}
+        isBrc420Token={true}
       />
     );
   });
@@ -179,6 +212,8 @@ const HomePage = () => {
                 priceInTotal={btcdata.data.BTC.staked * btcdata.data.BTC.price} 
                 inputPrice={btcdata.data.BTC.price}
                 onPriceChange={handlePriceChange}
+                isBrc20Token={false}
+                isBrc420Token={true}
               />
               <CurrencyCard 
               currencyName="ETH" 
@@ -186,6 +221,8 @@ const HomePage = () => {
               priceInTotal={evmdata.data.ETH.price_in_usd} 
               inputPrice={evmdata.data.ETH.price}
               onPriceChange={handlePriceChange}
+              isBrc20Token={false}
+              isBrc420Token={true}
             />
             <CurrencyCard 
               currencyName="USDT" 
@@ -193,6 +230,8 @@ const HomePage = () => {
               priceInTotal={evmdata.data.USDT.price_in_usd} 
               inputPrice={evmdata.data.USDT.price}
               onPriceChange={handlePriceChange}
+              isBrc20Token={false}
+              isBrc420Token={true}
             />
             <CurrencyCard 
               currencyName="USDC" 
@@ -200,10 +239,13 @@ const HomePage = () => {
               priceInTotal={evmdata.data.USDC.price_in_usd} 
               inputPrice={evmdata.data.USDC.price}
               onPriceChange={handlePriceChange}
+              isBrc20Token={false}
+              isBrc420Token={true}
             />
 
-            {CurrencyCards}
-            <div className='col-3 g-2'>
+            {Currency20Cards}
+            {Currency420Cards}
+            {/* <div className='col-3 g-2'>
             <div className='card mb-3 border-primary h-100 '>
               <div className="card-header text-center">
               BRC420
@@ -232,15 +274,15 @@ const HomePage = () => {
               
 
             </div>
-            </div>
+            </div> */}
             </div>
             <div>
 
     </div>
           </div>
           <div className="card-footer text-muted row">
-            <div className='col-12'>注意：本站只统计了brc20、BTC、ETH、USDT、USDC的merlin seal质押情况，未统计brc420质押情况</div>
-            <div className='col-8'>brc420质押情况请前往
+            <div className='col-12'>注意：本站brc420质押情况更新速度较慢</div>
+            <div className='col-8'>更快brc420质押更新情况请前往
               <a href="https://bitmap.date/merlin/" target="_blank" rel="noopener noreferrer">
               https://bitmap.date/merlin/
             </a>
