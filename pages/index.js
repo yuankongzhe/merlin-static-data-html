@@ -1,6 +1,8 @@
 // pages/index.js
 
 import { useState, useEffect } from 'react';
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from '@vercel/analytics/react';
 
 const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPrice }) => {
   const isBrc20Token = currencyName !== 'BTC' && currencyName !== 'ETH' && currencyName !== 'USDT' && currencyName !== 'USDC';
@@ -179,11 +181,13 @@ const HomePage = () => {
             查看
             </div>
            <div className='col-4'>更新于：{sumdata.savetime}</div>
+           <Analytics />
           </div>
         
 
         </div>
         <div className='col-2'></div>
+        
       </div>
 
     </main>
