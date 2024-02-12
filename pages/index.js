@@ -182,6 +182,7 @@ const HomePage = () => {
             </div>
            <div className='col-4'>更新于：{sumdata.savetime}</div>
            <Analytics />
+           <SpeedInsights/>
           </div>
         
 
