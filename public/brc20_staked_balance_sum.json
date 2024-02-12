@@ -352,5 +352,64 @@
                 "equal_btc": 28.6005947308665
             }
         }
+    },
+    {
+        "savetime": "2024-02-12T19:38:44.814190",
+        "data": {
+            "ORDI": {
+                "staked": 732722.95745548,
+                "totalSupply": 21000000.0,
+                "price_sat": 135000,
+                "equal_btc": 989.1759925648981
+            },
+            "SATS": {
+                "staked": 110340069284776.72,
+                "totalSupply": 2100000000000000.0,
+                "price_sat": 0.001,
+                "equal_btc": 1103.4006928477672
+            },
+            "BTCS": {
+                "staked": 4274443.900346,
+                "totalSupply": 21000000.0,
+                "price_sat": 10000,
+                "equal_btc": 427.4443900346
+            },
+            "RATS": {
+                "staked": 109244574034.78276,
+                "totalSupply": 1000000000000.0,
+                "price_sat": 0.7,
+                "equal_btc": 764.7120182434793
+            },
+            "MMSS": {
+                "staked": 2195590.2280149,
+                "totalSupply": 21000000.0,
+                "price_sat": 2000,
+                "equal_btc": 43.911804560297995
+            },
+            "AINN": {
+                "staked": 1606400.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 3900,
+                "equal_btc": 62.6496
+            },
+            "RCSV": {
+                "staked": 10270324.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 3120,
+                "equal_btc": 320.4341088
+            },
+            "MICE": {
+                "staked": 175542663.1147117,
+                "totalSupply": 1000000000.0,
+                "price_sat": 50,
+                "equal_btc": 87.77133155735585
+            },
+            "TRAC": {
+                "staked": 265557.982645,
+                "totalSupply": 21000000.0,
+                "price_sat": 10770,
+                "equal_btc": 28.6005947308665
+            }
+        }
     }
 ]
