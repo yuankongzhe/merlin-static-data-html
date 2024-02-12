@@ -138,7 +138,7 @@ const HomePage = () => {
             </div>
 
             <p></p>
-            <h4>Merlin TVL: {formatNumber(sumdata.data.sum_usd.toFixed(2))} USD</h4>
+            <h4>Merlin Seal TVL: {formatNumber(sumdata.data.sum_usd.toFixed(2))} USD</h4>
           </div>
           <div className='card-body row' >
               <CurrencyCard 
