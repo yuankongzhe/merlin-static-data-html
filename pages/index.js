@@ -10,7 +10,7 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
   const unit = isBrc20Token ? ' sats/'+currencyName : isBrc420Token ?  'BTC' : ' /U';
 
   return (
-    <div className='col-3 g-2'>
+    <div className='col-md-3 ms-md-auto g-2'>
     <div className='card border-primary mb-3  h-100 '>
         <div className="card-header text-center">
 
@@ -194,10 +194,9 @@ const HomePage = () => {
   return (
     <main className="bd-main order-1">
       
-      <div className='row'>
-        <div className='col-2'></div>
-        <div className='card col-8 '>
-        <div className="card-header text-center container">
+      <div className='row justify-content-md-center'>
+        <div className='card col-12 '>
+        <div className="card-header text-center ">
             <div className=' text-muted'>            
             由 <a href="https://twitter.com/0xfaskety" target="_blank" rel="noopener noreferrer">
             <svg width="24" height="24" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1458"><path d="M928 254.3c-30.6 13.2-63.9 22.7-98.2 26.4 35.4-21.1 62.3-54.4 75-94-32.7 19.5-69.7 33.8-108.2 41.2C765.4 194.6 721.1 174 672 174c-94.5 0-170.5 76.6-170.5 170.6 0 13.2 1.6 26.4 4.2 39.1-141.5-7.4-267.7-75-351.6-178.5-14.8 25.4-23.2 54.4-23.2 86.1 0 59.2 30.1 111.4 76 142.1-28-1.1-54.4-9-77.1-21.7v2.1c0 82.9 58.6 151.6 136.7 167.4-14.3 3.7-29.6 5.8-44.9 5.8-11.1 0-21.6-1.1-32.2-2.6C211 652 273.9 701.1 348.8 702.7c-58.6 45.9-132 72.9-211.7 72.9-14.3 0-27.5-0.5-41.2-2.1C171.5 822 261.2 850 357.8 850 671.4 850 843 590.2 843 364.7c0-7.4 0-14.8-0.5-22.2 33.2-24.3 62.3-54.4 85.5-88.2z" p-id="1459" fill="#000"></path></svg>
@@ -208,83 +207,92 @@ const HomePage = () => {
   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"></path>
 </svg></p>
           </div>
-          <div className='card-body container ' >
-            
-            <div className='row '>
-            <CurrencyCard 
-                currencyName="BTC" 
-                staked={btcdata.data.BTC.staked} 
-                priceInTotal={btcdata.data.BTC.staked * btcdata.data.BTC.price} 
-                inputPrice={btcdata.data.BTC.price}
-                onPriceChange={handlePriceChange}
-                isBrc20Token={false}
-                isBrc420Token={false}
-              />
-              <CurrencyCard 
-              currencyName="ETH" 
-              staked={evmdata.data.ETH.staked} 
-              priceInTotal={evmdata.data.ETH.price_in_usd} 
-              inputPrice={evmdata.data.ETH.price}
-              onPriceChange={handlePriceChange}
-              isBrc20Token={false}
-              isBrc420Token={false}
-            />
-            <CurrencyCard 
-              currencyName="USDT" 
-              staked={evmdata.data.USDT.staked} 
-              priceInTotal={evmdata.data.USDT.price_in_usd} 
-              inputPrice={evmdata.data.USDT.price}
-              onPriceChange={handlePriceChange}
-              isBrc20Token={false}
-              isBrc420Token={false}
-            />
-            <CurrencyCard 
-              currencyName="USDC" 
-              staked={evmdata.data.USDC.staked} 
-              priceInTotal={evmdata.data.USDC.price_in_usd} 
-              inputPrice={evmdata.data.USDC.price}
-              onPriceChange={handlePriceChange}
-              isBrc20Token={false}
-              isBrc420Token={false}
-            />
+          <div className='card-body ' >
+          <div class="d-flex align-items-start row">
+            <div className='col-2 '>
+            <div class="nav flex-column nav-pills me-3 col-10" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <button class="nav-link active" id="stakedDetailsaccordion-tab" data-bs-toggle="pill" data-bs-target="#stakedDetailsaccordion" type="button" role="tab" aria-controls="stakedDetailsaccordion" aria-selected="true">Merlin Seal TVL 详细情况</button>
+              <button class="nav-link" id="personalrewardcal-tab" data-bs-toggle="pill" data-bs-target="#personalrewardcal" type="button" role="tab" aria-controls="personalrewardcal" aria-selected="false">个人收益计算器</button>
+            </div>
+            </div>
 
-            {Currency20Cards}
-            {Currency420Cards}
-            {/* <div className='col-3 g-2'>
-            <div className='card mb-3 border-primary h-100 '>
-              <div className="card-header text-center">
-              BRC420
+            <div class="tab-content col-8" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="stakedDetailsaccordion" role="tabpanel" aria-labelledby="stakedDetailsaccordion-tab" tabindex="0">
+              <div className='row '>
+                        <CurrencyCard 
+                            currencyName="BTC" 
+                            staked={btcdata.data.BTC.staked} 
+                            priceInTotal={btcdata.data.BTC.staked * btcdata.data.BTC.price} 
+                            inputPrice={btcdata.data.BTC.price}
+                            onPriceChange={handlePriceChange}
+                            isBrc20Token={false}
+                            isBrc420Token={false}
+                          />
+                          <CurrencyCard 
+                          currencyName="ETH" 
+                          staked={evmdata.data.ETH.staked} 
+                          priceInTotal={evmdata.data.ETH.price_in_usd} 
+                          inputPrice={evmdata.data.ETH.price}
+                          onPriceChange={handlePriceChange}
+                          isBrc20Token={false}
+                          isBrc420Token={false}
+                        />
+                        <CurrencyCard 
+                          currencyName="USDT" 
+                          staked={evmdata.data.USDT.staked} 
+                          priceInTotal={evmdata.data.USDT.price_in_usd} 
+                          inputPrice={evmdata.data.USDT.price}
+                          onPriceChange={handlePriceChange}
+                          isBrc20Token={false}
+                          isBrc420Token={false}
+                        />
+                        <CurrencyCard 
+                          currencyName="USDC" 
+                          staked={evmdata.data.USDC.staked} 
+                          priceInTotal={evmdata.data.USDC.price_in_usd} 
+                          inputPrice={evmdata.data.USDC.price}
+                          onPriceChange={handlePriceChange}
+                          isBrc20Token={false}
+                          isBrc420Token={false}
+                        />
+
+                        {Currency20Cards}
+                        {Currency420Cards}
+                        {/* <div className='col-3 g-2'>
+                        <div className='card mb-3 border-primary h-100 '>
+                          <div className="card-header text-center">
+                          BRC420
+                          </div>
+                          <div className="card-body">
+                          <p className="card-text">
+                            TVL:       
+                            <input
+                              className = ""
+                              type="number"
+                              value={a}
+                              onChange={handleAChange}
+                            />
+                              BTC
+                          </p>
+                          <p className="card-text">
+                            TVL:       
+                            <input
+                              type="number"
+                              value={b}
+                              onChange={handleBChange}
+                            />
+                              USD
+                          </p>
+                        </div>
+                          
+
+                        </div>
+                        </div> */}
+                        </div>
               </div>
-              <div className="card-body">
-              <p className="card-text">
-                TVL:       
-                <input
-                  className = ""
-                  type="number"
-                  value={a}
-                  onChange={handleAChange}
-                />
-                  BTC
-              </p>
-              <p className="card-text">
-                TVL:       
-                <input
-                  type="number"
-                  value={b}
-                  onChange={handleBChange}
-                />
-                  USD
-              </p>
+              <div class="tab-pane fade" id="personalrewardcal" role="tabpanel" aria-labelledby="personalrewardcal-tab" tabindex="0">...</div>
             </div>
-              
-
-            </div>
-            </div> */}
-            </div>
-            <div>
-
-    </div>
-    
+          </div>
           </div>
           <div className="card-footer text-muted row">
             <div className='col-12'>注意：本站brc420质押情况更新速度较慢</div>
@@ -301,7 +309,7 @@ const HomePage = () => {
         
 
         </div>
-        <div className='col-2'></div>
+
         
       </div>
 
@@ -311,3 +319,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+

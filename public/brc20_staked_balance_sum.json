@@ -1532,5 +1532,64 @@
                 "equal_btc": 30.4028980475625
             }
         }
+    },
+    {
+        "savetime": "2024-02-13T18:00:40.828050",
+        "data": {
+            "ORDI": {
+                "staked": 768222.4407398,
+                "totalSupply": 21000000.0,
+                "price_sat": 170000,
+                "equal_btc": 1305.9781492576599
+            },
+            "SATS": {
+                "staked": 171287322910076.78,
+                "totalSupply": 2100000000000000.0,
+                "price_sat": 0.001,
+                "equal_btc": 1712.873229100768
+            },
+            "BTCS": {
+                "staked": 4292684.900346,
+                "totalSupply": 21000000.0,
+                "price_sat": 9500,
+                "equal_btc": 407.80506553286995
+            },
+            "RATS": {
+                "staked": 111235213117.63692,
+                "totalSupply": 1000000000000.0,
+                "price_sat": 0.759,
+                "equal_btc": 844.2752675628642
+            },
+            "MMSS": {
+                "staked": 2346977.6929649,
+                "totalSupply": 21000000.0,
+                "price_sat": 1000,
+                "equal_btc": 23.469776929649
+            },
+            "AINN": {
+                "staked": 1606400.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 2888,
+                "equal_btc": 46.392832
+            },
+            "RCSV": {
+                "staked": 11933533.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 1777,
+                "equal_btc": 212.05888141
+            },
+            "MICE": {
+                "staked": 184972125.32971168,
+                "totalSupply": 1000000000.0,
+                "price_sat": 39,
+                "equal_btc": 72.13912887858756
+            },
+            "TRAC": {
+                "staked": 270247.982645,
+                "totalSupply": 21000000.0,
+                "price_sat": 11250,
+                "equal_btc": 30.4028980475625
+            }
+        }
     }
 ]
