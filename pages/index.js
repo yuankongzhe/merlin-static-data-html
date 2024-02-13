@@ -131,6 +131,7 @@ const HomePage = () => {
       setC(sumdata.data.sum_usd);
     }
   }, [sumdata]);
+
   // 如果数据还没加载，显示加载状态
   if (!evmdata) return <div>Loading...</div>;
   if (!btcdata) return <div>Loading...</div>;
@@ -155,7 +156,7 @@ const HomePage = () => {
     );
   });
   const Currency420Cards = currency420List.map((currencyName) => {
-    console.log(brc420data)
+
     const staked = brc420data.data[currencyName].staked;
     const inputPrice = currencyPrices[currencyName] || brc420data.data[currencyName].price_btc;
     return (
@@ -203,11 +204,12 @@ const HomePage = () => {
             @0xfaskety</a>  创建
             </div>
             <span className="h3">Merlin Seal TVL: {formatNumber(c.toFixed(0))} USD</span>
-            <p className="h5 text-success">过去24小时新增约: {formatNumber(sumdata.data.changein24.toFixed(0))} USD <svg width="24" height="24" data-slot="icon" fill="none" stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"></path>
+            <p className="h5 text-success">过去24小时新增约: {formatNumber(sumdata.data.changein24.toFixed(0))} USD <svg width="24" height="24" data-slot="icon" fill="none" strokeWidth="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"></path>
 </svg></p>
           </div>
           <div className='card-body container ' >
+            
             <div className='row '>
             <CurrencyCard 
                 currencyName="BTC" 
@@ -282,6 +284,7 @@ const HomePage = () => {
             <div>
 
     </div>
+    
           </div>
           <div className="card-footer text-muted row">
             <div className='col-12'>注意：本站brc420质押情况更新速度较慢</div>
