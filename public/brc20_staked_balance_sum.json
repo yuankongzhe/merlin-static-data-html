@@ -942,5 +942,64 @@
                 "equal_btc": 29.875273047562498
             }
         }
+    },
+    {
+        "savetime": "2024-02-13T08:04:20.223714",
+        "data": {
+            "ORDI": {
+                "staked": 757519.65013887,
+                "totalSupply": 21000000.0,
+                "price_sat": 170000,
+                "equal_btc": 1287.783405236079
+            },
+            "SATS": {
+                "staked": 112279350750812.81,
+                "totalSupply": 2100000000000000.0,
+                "price_sat": 0.001,
+                "equal_btc": 1122.7935075081282
+            },
+            "BTCS": {
+                "staked": 4283344.900346,
+                "totalSupply": 21000000.0,
+                "price_sat": 9500,
+                "equal_btc": 406.91776553286996
+            },
+            "RATS": {
+                "staked": 109540194997.57846,
+                "totalSupply": 1000000000000.0,
+                "price_sat": 0.759,
+                "equal_btc": 831.4100800316205
+            },
+            "MMSS": {
+                "staked": 2225589.2280149,
+                "totalSupply": 21000000.0,
+                "price_sat": 1000,
+                "equal_btc": 22.255892280149
+            },
+            "AINN": {
+                "staked": 1606400.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 2888,
+                "equal_btc": 46.392832
+            },
+            "RCSV": {
+                "staked": 11924533.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 1777,
+                "equal_btc": 211.89895141
+            },
+            "MICE": {
+                "staked": 181515114.32971168,
+                "totalSupply": 1000000000.0,
+                "price_sat": 39,
+                "equal_btc": 70.79089458858755
+            },
+            "TRAC": {
+                "staked": 265557.982645,
+                "totalSupply": 21000000.0,
+                "price_sat": 11250,
+                "equal_btc": 29.875273047562498
+            }
+        }
     }
 ]
