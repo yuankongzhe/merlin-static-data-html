@@ -1060,5 +1060,64 @@
                 "equal_btc": 29.875273047562498
             }
         }
+    },
+    {
+        "savetime": "2024-02-13T10:00:40.566743",
+        "data": {
+            "ORDI": {
+                "staked": 758552.45013887,
+                "totalSupply": 21000000.0,
+                "price_sat": 170000,
+                "equal_btc": 1289.539165236079
+            },
+            "SATS": {
+                "staked": 112911794040932.81,
+                "totalSupply": 2100000000000000.0,
+                "price_sat": 0.001,
+                "equal_btc": 1129.1179404093282
+            },
+            "BTCS": {
+                "staked": 4284744.900346,
+                "totalSupply": 21000000.0,
+                "price_sat": 9500,
+                "equal_btc": 407.05076553286995
+            },
+            "RATS": {
+                "staked": 110561094897.57846,
+                "totalSupply": 1000000000000.0,
+                "price_sat": 0.759,
+                "equal_btc": 839.1587102726205
+            },
+            "MMSS": {
+                "staked": 2226732.6929649,
+                "totalSupply": 21000000.0,
+                "price_sat": 1000,
+                "equal_btc": 22.267326929649002
+            },
+            "AINN": {
+                "staked": 1606400.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 2888,
+                "equal_btc": 46.392832
+            },
+            "RCSV": {
+                "staked": 11928033.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 1777,
+                "equal_btc": 211.96114641
+            },
+            "MICE": {
+                "staked": 181648114.32971168,
+                "totalSupply": 1000000000.0,
+                "price_sat": 39,
+                "equal_btc": 70.84276458858756
+            },
+            "TRAC": {
+                "staked": 268057.982645,
+                "totalSupply": 21000000.0,
+                "price_sat": 11250,
+                "equal_btc": 30.156523047562498
+            }
+        }
     }
 ]
