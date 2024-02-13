@@ -141,7 +141,20 @@ const HomePage = () => {
       });
   }, []);
 
-
+  // 使用 useEffect 监听 differencedate 的变化
+  useEffect(() => {
+    // 确保 differencedate 和 predicted_tvl_usd.data.predicted_tvl_usd 都是有效的值
+    if (differencedate != null && predicted_tvl_usd?.data?.predicted_tvl_usd) {
+      // 使用最新的 differencedate 值进行计算
+      const newC = b * differencedate / predicted_tvl_usd.data.predicted_tvl_usd * 420000000;
+      
+      // 如果 c 需要更新，使用 setC 更新它
+      if (c !== newC) {
+        setC(newC);
+      }
+    }
+  }, [differencedate, predicted_tvl_usd, b, c]
+  );
   // 如果数据还没加载，显示加载状态
   if (!evmdata) return <div>Loading...</div>;
   if (!btcdata) return <div>Loading...</div>;
@@ -201,14 +214,16 @@ const HomePage = () => {
     setC(Number(newB) *differencedate /predicted_tvl_usd.data.predicted_tvl_usd* 420000000);
   };
 
-  const handledateChange = (event) =>  {
+  const handledateChange = (event) => {
     const inputDate = event.target.value;
     setSelectedDate(inputDate);
-    setdifferencedate (differenceInCalendarDays(specifiedDate, inputDate));
-    if(c){
-      setC(b *differencedate /predicted_tvl_usd.data.predicted_tvl_usd* 420000000);
-    }
-  }
+    
+    // Calculate the difference in days and update the state
+    const newDifferenceDate = differenceInCalendarDays(specifiedDate, new Date(inputDate));
+    setdifferencedate(newDifferenceDate);
+  };
+  
+
   return (
     <main className="bd-main order-1">
       
@@ -311,7 +326,7 @@ const HomePage = () => {
               <div class="tab-pane fade" id="personalrewardcal" role="tabpanel" aria-labelledby="personalrewardcal-tab" tabindex="0">
               <div>
                 <div className='row'>
-                  <div className='col-md-6 ms-md-auto'>
+                  <div className='col-md-6'>
 
                     <div className="form-group row">
                       <div className='row'>
@@ -330,10 +345,12 @@ const HomePage = () => {
                           />
                         </div>
                       
-                      
+                        {differencedate !== null && (
+                        <p className='col-auto table-info'>假设质押结算时间为3月24日，你还可以质押 {differencedate} 天。</p>
+                          )}
                         {differencedate !== null && (
                         <div className='row'>                          
-                          <p className='col-auto'>假设质押结算时间为3月24日，你还可以质押 {differencedate} 天。</p>
+                          
                           <p className="card-text">
                             质押金额为:       
                             <input
@@ -362,28 +379,77 @@ const HomePage = () => {
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">假如以……价格卖出……</th>
+                                <th scope="col">MERL总市值</th>
+                                <th scope="col">代币售价</th>
                                 <th scope="col">APY为</th>
                                 <th scope="col">获得的净利润是</th>
+                                <th scope="col">净利率</th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr className="table-danger">
                                 <th scope="row">1</th>
-                                <td>{formatNumber((b*0.02)/c)}</td>
+                                <td>{formatNumber(((b*0.02)/c*21).toFixed(2))}亿</td>
+                                <td>{formatNumber(((b*0.02)/c).toFixed(3))}</td>
                                 <td>{formatNumber((2)/45*365)}%</td>
-                                <td>{formatNumber(0.02*b)}</td>
+                                <td>{formatNumber((0.02*b).toFixed(0))}</td>
+                                <td>2.00%</td>
                               </tr>
-                              <tr>
+                              <tr className="table-warning">
                                 <th scope="row">2</th>
-                                <td>0.1</td>
-                                <td>{formatNumber((2)/45*365)}%</td>
-                                <td>{formatNumber((0.1*c)/(b*100))}%</td>
+                                <td>{formatNumber(((b*0.5*0.1233)/c*21).toFixed(2))}亿</td>
+                                <td>{formatNumber(((b*0.5*0.1233)/c).toFixed(3))}</td>
+                                <td>50.00%</td>
+                                <td>{formatNumber((0.5*b*0.1233).toFixed(0))}</td>
+                                <td>{formatNumber((0.5*12.33).toFixed(2))}%</td>
                               </tr>
-                              <tr>
+                              <tr className="table-warning">
                                 <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
+                                <td>{formatNumber(((b*0.1)/c*21).toFixed(2))}亿</td>
+                                <td>{formatNumber(((b*0.1)/c).toFixed(3))}</td>
+                                <td>{formatNumber((0.1*100/0.12328).toFixed(2))}%</td>
+                                <td>{formatNumber((0.1*b).toFixed(0))}</td>
+                                <td>{formatNumber((0.1*100).toFixed(2))}%</td>
+                              </tr>
+                              <tr className="table-info">
+                                <th scope="row">4</th>
+                                <td>{formatNumber(((b*0.2)/c*21).toFixed(2))}亿</td>
+                                <td>{formatNumber(((b*0.2)/c).toFixed(3))}</td>
+                                <td>{formatNumber((0.2*100/0.1233).toFixed(2))}%</td>
+                                <td>{formatNumber((0.2*b).toFixed(0))}</td>
+                                <td>{formatNumber((0.2*100).toFixed(2))}%</td>
+                              </tr>
+                              <tr className="table-info">
+                                <th scope="row">5</th>
+                                <td>{formatNumber(((b*0.5)/c*21).toFixed(2))}亿</td>
+                                <td>{formatNumber(((b*0.5)/c).toFixed(3))}</td>
+                                <td>{formatNumber((0.5*100/0.1233).toFixed(2))}%</td>
+                                <td>{formatNumber((0.5*b).toFixed(0))}</td>
+                                <td>{formatNumber((0.5*100).toFixed(2))}%</td>
+                              </tr>
+                              <tr className="table-success">
+                                <th scope="row">6</th>
+                                <td>{formatNumber(((b*1)/c*21).toFixed(2))}亿</td>
+                                <td>{formatNumber(((b*1)/c).toFixed(3))}</td>
+                                <td>{formatNumber((1*100/0.1233).toFixed(2))}%</td>
+                                <td>{formatNumber((1*b).toFixed(0))}</td>
+                                <td>{formatNumber((1*100).toFixed(2))}%</td>
+                              </tr>
+                              <tr className="table-success">
+                                <th scope="row">7</th>
+                                <td>{formatNumber(((b*2)/c*21).toFixed(2))}亿</td>
+                                <td>{formatNumber(((b*2)/c).toFixed(3))}</td>
+                                <td>{formatNumber((2*100/0.1233).toFixed(2))}%</td>
+                                <td>{formatNumber((2*b).toFixed(0))}</td>
+                                <td>{formatNumber((2*100).toFixed(2))}%</td>
+                              </tr>
+                              <tr className="table-success">
+                                <th scope="row">8</th>
+                                <td>{formatNumber(((b*5)/c*21).toFixed(2))}亿</td>
+                                <td>{formatNumber(((b*5)/c).toFixed(3))}</td>
+                                <td>{formatNumber((5*100/0.1233).toFixed(2))}%</td>
+                                <td>{formatNumber((5*b).toFixed(0))}</td>
+                                <td>{formatNumber((5*100).toFixed(2))}%</td>
                               </tr>
                             </tbody>
                           </table>
@@ -395,9 +461,9 @@ const HomePage = () => {
                       
                     </div>
                   </div>
-                  <div className='col-auto'>
-                    <img src="/pre.png" className='img-fluid border border-primary rounded' alt="TVL预测曲线" style={{ width: "600px", height: "auto" }}/>
-                  </div>
+                  <div className='col-6 d-flex align-items-center justify-content-center' >
+                      <img src="/pre.png" className='border border-primary rounded' alt="TVL预测曲线" style={{ maxWidth: '100%', height: 'auto' }}/>
+                    </div>
                 </div>
 
                 
