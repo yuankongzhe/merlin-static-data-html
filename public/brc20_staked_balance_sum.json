@@ -1119,5 +1119,64 @@
                 "equal_btc": 30.156523047562498
             }
         }
+    },
+    {
+        "savetime": "2024-02-13T11:00:41.628410",
+        "data": {
+            "ORDI": {
+                "staked": 758802.67977097,
+                "totalSupply": 21000000.0,
+                "price_sat": 170000,
+                "equal_btc": 1289.964555610649
+            },
+            "SATS": {
+                "staked": 112974725270402.62,
+                "totalSupply": 2100000000000000.0,
+                "price_sat": 0.001,
+                "equal_btc": 1129.7472527040263
+            },
+            "BTCS": {
+                "staked": 4286284.900346,
+                "totalSupply": 21000000.0,
+                "price_sat": 9500,
+                "equal_btc": 407.19706553286994
+            },
+            "RATS": {
+                "staked": 110610094897.57846,
+                "totalSupply": 1000000000000.0,
+                "price_sat": 0.759,
+                "equal_btc": 839.5306202726206
+            },
+            "MMSS": {
+                "staked": 2230432.6929649,
+                "totalSupply": 21000000.0,
+                "price_sat": 1000,
+                "equal_btc": 22.304326929649
+            },
+            "AINN": {
+                "staked": 1606400.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 2888,
+                "equal_btc": 46.392832
+            },
+            "RCSV": {
+                "staked": 11928533.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 1777,
+                "equal_btc": 211.97003141000002
+            },
+            "MICE": {
+                "staked": 181648114.32971168,
+                "totalSupply": 1000000000.0,
+                "price_sat": 39,
+                "equal_btc": 70.84276458858756
+            },
+            "TRAC": {
+                "staked": 268247.982645,
+                "totalSupply": 21000000.0,
+                "price_sat": 11250,
+                "equal_btc": 30.1778980475625
+            }
+        }
     }
 ]
