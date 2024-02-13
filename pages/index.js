@@ -46,7 +46,7 @@ const HomePage = () => {
   const [brc20data, brc20setData] = useState(null);
   const [brc420data, brc420setData] = useState(null);
   const [sumdata, sumsetData] = useState(null);
-
+  const [predicted_tvl_usd, setpredicted_tvl_usd] = useState(null);
   // 设置状态
   const [a, setA] = useState(0);
   const [b, setB] = useState(0);
@@ -54,7 +54,7 @@ const HomePage = () => {
   
   const [selectedDate, setSelectedDate] = useState('');
   const specifiedDate = new Date('2024-03-24'); // 指定日期
-  let differencedate = null;
+  const [differencedate, setdifferencedate] = useState(null);
 
    
   // Add state to store input prices
@@ -131,10 +131,16 @@ const HomePage = () => {
       });
   }, []);
   useEffect(() => {
-    if (sumdata && sumdata.data) {
-      setC(sumdata.data.sum_usd);
-    }
-  }, [sumdata]);
+    const filename = 'predicted_tvl'; // 你想要读取的文件名（不包括.json扩展名）
+    // 调用我们的API路由，并传递文件名
+    fetch(`/api/${filename}`)
+      .then(response => response.json())
+      .then(evmdata => {
+        // 将数据设置到状态中
+        setpredicted_tvl_usd(evmdata);
+      });
+  }, []);
+
 
   // 如果数据还没加载，显示加载状态
   if (!evmdata) return <div>Loading...</div>;
@@ -183,7 +189,7 @@ const HomePage = () => {
     setA(newA);
     const calculatedB = newA * btcdata.data.BTC.price;
     setB(calculatedB);
-    setC(calculatedB + sumdata.data.sum_usd);
+    setC(calculatedB *differencedate /predicted_tvl_usd.data.predicted_tvl_usd * 420000000);
   };
 
   // 当b变化时，更新a和c
@@ -192,12 +198,16 @@ const HomePage = () => {
     setB(newB);
     const calculatedA = newB / btcdata.data.BTC.price;
     setA(calculatedA);
-    setC(Number(newB) + sumdata.data.sum_usd);
+    setC(Number(newB) *differencedate /predicted_tvl_usd.data.predicted_tvl_usd* 420000000);
   };
 
-  if (selectedDate) {
-    const inputDate = new Date(selectedDate);
-    differencedate = differenceInCalendarDays(specifiedDate, inputDate);
+  const handledateChange = (event) =>  {
+    const inputDate = event.target.value;
+    setSelectedDate(inputDate);
+    setdifferencedate (differenceInCalendarDays(specifiedDate, inputDate));
+    if(c){
+      setC(b *differencedate /predicted_tvl_usd.data.predicted_tvl_usd* 420000000);
+    }
   }
   return (
     <main className="bd-main order-1">
@@ -316,13 +326,70 @@ const HomePage = () => {
                             value={selectedDate}
                             min={'2024-02-08'}
                             max={'2024-03-24'}
-                            onChange={(e) => setSelectedDate(e.target.value)}
+                            onChange={handledateChange}
                           />
                         </div>
                       
                       
                         {differencedate !== null && (
-                          <p>假设质押结算时间为3月24日，你还可以质押 {Math.abs(differencedate)} 天。</p>
+                        <div className='row'>                          
+                          <p className='col-auto'>假设质押结算时间为3月24日，你还可以质押 {differencedate} 天。</p>
+                          <p className="card-text">
+                            质押金额为:       
+                            <input
+                              className = ""
+                              type="number"
+                              value={a}
+                              onChange={handleAChange}
+                            />
+                              BTC
+                              即
+                            <input
+                              type="number"
+                              value={b}
+                              onChange={handleBChange}
+                            />
+                              USD
+                          </p>
+                          <p className="card-text">     
+   
+                              
+                          </p>
+                          <p>
+                          预计将获得{formatNumber(c.toFixed(4))}个MERL代币
+                          </p>
+                          <table class="table">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">假如以……价格卖出……</th>
+                                <th scope="col">APY为</th>
+                                <th scope="col">获得的净利润是</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr className="table-danger">
+                                <th scope="row">1</th>
+                                <td>{formatNumber((b*0.02)/c)}</td>
+                                <td>{formatNumber((2)/45*365)}%</td>
+                                <td>{formatNumber(0.02*b)}</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">2</th>
+                                <td>0.1</td>
+                                <td>{formatNumber((2)/45*365)}%</td>
+                                <td>{formatNumber((0.1*c)/(b*100))}%</td>
+                              </tr>
+                              <tr>
+                                <th scope="row">3</th>
+                                <td colspan="2">Larry the Bird</td>
+                                <td>@twitter</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                          
+                          
                         )}
                       </div>
                       
