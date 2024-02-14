@@ -4,11 +4,11 @@ import { useState, useEffect } from 'react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
 import { differenceInCalendarDays } from 'date-fns';
-
+import CircularProgressBar from '../components/CircularProgressBar';
 const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPrice ,isBrc20Token,isBrc420Token,totalSupply}) => {
 
   const priceInTotal = isBrc20Token ? staked * inputPrice * btcPrice *0.00000001 : isBrc420Token ? staked * inputPrice * btcPrice : staked * inputPrice;
-  const unit = isBrc20Token ? ' sats/'+currencyName : isBrc420Token ?  'BTC' : ' /U';
+  const unit = isBrc20Token ? ' sats' : isBrc420Token ?  'BTC' : ' /U';
 
   return (
     <div className='col-md-3 ms-md-auto g-2'>
@@ -17,33 +17,27 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
 
         {currencyName}
       </div>
-      <div className="card-body">
-        
-      <p className="card-text">
-        <span>质押数量: {formatNumber(staked.toFixed(2))}</span>
-        
-        {totalSupply && (
-          <div className="progress" style={{ height: '5px' }}>
-          <div
-            className="progress-bar progress-bar-striped"
-            role="progressbar"
-            aria-label="Success striped"
-            style={{ width: `${(staked / totalSupply) * 100}%` }}
-            aria-valuenow="25"
-            aria-valuemin="0"
-            aria-valuemax="100"
-          ></div>
+      <div className="card-body row">
+        <div className='col-8'>
+          <p className="card-text">
+          <span className=''>质押数量: {formatNumber(staked.toFixed(2))}
+            </span>
+          </p>
+
+          <p className="card-text">
+            单价: {formatNumber(inputPrice)}  {unit}
+          </p>
+          <p className="card-text">
+            TVL: {formatNumber(priceInTotal.toFixed(0))} USD
+          </p>
         </div>
-          )}
-
-      </p>
-
-      <p className="card-text">
-        单价: {formatNumber(inputPrice)}  {unit}
-      </p>
-      <p className="card-text">
-        TVL: {formatNumber(priceInTotal.toFixed(0))} USD
-      </p>
+        <div className='col-4'>
+        {totalSupply && (
+        <div style={{ width: '100%', maxWidth: '80px' }}>
+          <CircularProgressBar percent={(staked / totalSupply * 100).toFixed(0)} />
+        </div>
+        )}
+        </div>
 
     </div>
     </div>
@@ -211,6 +205,7 @@ const HomePage = () => {
         onPriceChange={handlePriceChange}
         isBrc20Token={false}
         isBrc420Token={true}
+        totalSupply={brc420data.data[currencyName].totalSupply}
       />
     );
   });
