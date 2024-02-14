@@ -331,43 +331,51 @@ const HomePage = () => {
                         </div>
                       
                         {differencedate !== null && (
-                        <p className='col-auto table-info'>假设质押结算时间为3月24日，你还可以质押 {differencedate} 天。</p>
+                        <p className='col-12 table-info'>假设质押结算时间为3月24日，你还可以质押<span className='h4 strong  text-primary'>{differencedate}</span>  天。</p>
                           )}
                         {differencedate !== null && (
-                        <div className='row'>                          
+                        <div className='col-12'>                          
+                          <div className='row'>
+                            <div className='col-12'>
+                            质押金额为:  
+                              </div>
+                           <div className='col-12'>
+                           <p className="card-text">
+                                
+                                <input
+                                  className = "text-end"
+                                  type="number"
+                                  value={a}
+                                  onChange={handleAChange}
+                                />
+                                  BTC,
+                                  即
+                                <input
+                                className = "text-end"
+                                  type="number"
+                                  value={b}
+                                  onChange={handleBChange}
+                                />
+                                  USD
+                              </p>
+                           </div>
+                          </div>
                           
-                          <p className="card-text">
-                            质押金额为:       
-                            <input
-                              className = ""
-                              type="number"
-                              value={a}
-                              onChange={handleAChange}
-                            />
-                              BTC
-                              即
-                            <input
-                              type="number"
-                              value={b}
-                              onChange={handleBChange}
-                            />
-                              USD
-                          </p>
                           <p className="card-text">     
    
                               
                           </p>
-                          <p>
-                          预计将获得{formatNumber(c.toFixed(4))}个MERL代币
+                          <p className="card-text">
+                          预计将获得<span className='h3 strong  text-primary'>{formatNumber(c.toFixed(4))}</span>个MERL代币
                           </p>
                           <table class="table">
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">MERL总市值</th>
-                                <th scope="col">代币售价</th>
+                                <th scope="col">MERL总市值/U</th>
+                                <th scope="col">代币售价/U</th>
                                 <th scope="col">APY为</th>
-                                <th scope="col">获得的净利润是</th>
+                                <th scope="col">净利润</th>
                                 <th scope="col">净利率</th>
                               </tr>
                             </thead>
@@ -458,12 +466,13 @@ const HomePage = () => {
           </div>
           </div>
           <div className="card-footer text-muted row">
-            <div className='col-12'>注意：本站brc420质押情况更新速度较慢</div>
-            <div className='col-8'>更快brc420质押更新情况请前往
+            <div className='col-12'>如有关于网站的功能、UI或者其他建议或反馈，欢迎在<a href="https://x.com/0xfaskety/status/1757596175874814338?s=20" target="_blank" rel="noopener noreferrer">
+              **推文链接**
+            </a>本推文下留言~~</div>
+            <div className='col-8'>其他Merlin Seal数据网站:
               <a href="https://bitmap.date/merlin/" target="_blank" rel="noopener noreferrer">
               https://bitmap.date/merlin/
             </a>
-            查看
             </div>
            <div className='col-4 '><span className='h6'>更新于：{sumdata.savetime}</span></div>
            <Analytics />
