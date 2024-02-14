@@ -5,7 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
 import { differenceInCalendarDays } from 'date-fns';
 
-const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPrice ,isBrc20Token,isBrc420Token}) => {
+const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPrice ,isBrc20Token,isBrc420Token,totalSupply}) => {
 
   const priceInTotal = isBrc20Token ? staked * inputPrice * btcPrice *0.00000001 : isBrc420Token ? staked * inputPrice * btcPrice : staked * inputPrice;
   const unit = isBrc20Token ? ' sats/'+currencyName : isBrc420Token ?  'BTC' : ' /U';
@@ -18,9 +18,26 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
         {currencyName}
       </div>
       <div className="card-body">
+        
       <p className="card-text">
-        质押数量: {formatNumber(staked.toFixed(2))}
+        <span>质押数量: {formatNumber(staked.toFixed(2))}</span>
+        
+        {totalSupply && (
+          <div className="progress" style={{ height: '5px' }}>
+          <div
+            className="progress-bar progress-bar-striped"
+            role="progressbar"
+            aria-label="Success striped"
+            style={{ width: `${(staked / totalSupply) * 100}%` }}
+            aria-valuenow="25"
+            aria-valuemin="0"
+            aria-valuemax="100"
+          ></div>
+        </div>
+          )}
+
       </p>
+
       <p className="card-text">
         单价: {formatNumber(inputPrice)}  {unit}
       </p>
@@ -175,6 +192,7 @@ const HomePage = () => {
         onPriceChange={handlePriceChange}
         isBrc20Token={true}
         isBrc420Token={false}
+        totalSupply={brc20data.data[currencyName].totalSupply}
       />
     );
   });
@@ -252,6 +270,7 @@ const HomePage = () => {
             <div class="tab-content col-8" id="v-pills-tabContent">
               <div class="tab-pane fade show active" id="stakedDetailsaccordion" role="tabpanel" aria-labelledby="stakedDetailsaccordion-tab" tabindex="0">
               <div className='row '>
+
                         <CurrencyCard 
                             currencyName="BTC" 
                             staked={btcdata.data.BTC.staked} 
@@ -291,36 +310,7 @@ const HomePage = () => {
 
                         {Currency20Cards}
                         {Currency420Cards}
-                        {/* <div className='col-3 g-2'>
-                        <div className='card mb-3 border-primary h-100 '>
-                          <div className="card-header text-center">
-                          BRC420
-                          </div>
-                          <div className="card-body">
-                          <p className="card-text">
-                            TVL:       
-                            <input
-                              className = ""
-                              type="number"
-                              value={a}
-                              onChange={handleAChange}
-                            />
-                              BTC
-                          </p>
-                          <p className="card-text">
-                            TVL:       
-                            <input
-                              type="number"
-                              value={b}
-                              onChange={handleBChange}
-                            />
-                              USD
-                          </p>
-                        </div>
-                          
 
-                        </div>
-                        </div> */}
                         </div>
               </div>
               <div class="tab-pane fade" id="personalrewardcal" role="tabpanel" aria-labelledby="personalrewardcal-tab" tabindex="0">
