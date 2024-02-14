@@ -1945,5 +1945,64 @@
                 "equal_btc": 30.4028980475625
             }
         }
+    },
+    {
+        "savetime": "2024-02-14T08:00:39.935177",
+        "data": {
+            "ORDI": {
+                "staked": 781337.14204978,
+                "totalSupply": 21000000.0,
+                "price_sat": 159900,
+                "equal_btc": 1249.3580901375983
+            },
+            "SATS": {
+                "staked": 240111358554974.25,
+                "totalSupply": 2100000000000000.0,
+                "price_sat": 0.001,
+                "equal_btc": 2401.1135855497423
+            },
+            "BTCS": {
+                "staked": 4364642.900346,
+                "totalSupply": 21000000.0,
+                "price_sat": 4070,
+                "equal_btc": 177.64096604408218
+            },
+            "RATS": {
+                "staked": 112033754674.75832,
+                "totalSupply": 1000000000000.0,
+                "price_sat": 0.52,
+                "equal_btc": 582.5755243087433
+            },
+            "MMSS": {
+                "staked": 2363377.6929649,
+                "totalSupply": 21000000.0,
+                "price_sat": 789,
+                "equal_btc": 18.64704999749306
+            },
+            "AINN": {
+                "staked": 1606400.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 2231,
+                "equal_btc": 35.838784000000004
+            },
+            "RCSV": {
+                "staked": 11933533.0,
+                "totalSupply": 21000000.0,
+                "price_sat": 1658,
+                "equal_btc": 197.85797714
+            },
+            "MICE": {
+                "staked": 200937866.5516327,
+                "totalSupply": 1000000000.0,
+                "price_sat": 24.1,
+                "equal_btc": 48.42602583894348
+            },
+            "TRAC": {
+                "staked": 270247.982645,
+                "totalSupply": 21000000.0,
+                "price_sat": 10319,
+                "equal_btc": 27.88688932913755
+            }
+        }
     }
 ]
