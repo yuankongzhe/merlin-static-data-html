@@ -8,55 +8,65 @@ import CircularProgressBar from '../components/CircularProgressBar';
 const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPrice ,isBrc20Token,isBrc420Token,totalSupply,totaltvl}) => {
 
   const priceInTotal = isBrc20Token ? staked * inputPrice * btcPrice *0.00000001 : isBrc420Token ? staked * inputPrice * btcPrice : staked * inputPrice;
-  const unit = isBrc20Token ? ' sats' : isBrc420Token ?  'BTC' : ' /U';
+  const unit = isBrc20Token ? ' sats/'+currencyName : isBrc420Token ?  'BTC' : ' /U';
 
   return (
     <div className='col-md-3 ms-md-auto g-2'>
-    <div className='card border-primary mb-3  h-100 '>
-        <div className="card-header text-center">
+    <div className='card  mb-3  h-100 '>
+        <div className="card-header text-center" style={{ 'background-color': "white"  }}>
 
         {currencyName}
       </div>
       <div className="card-body row">
+        <div className='row'>
         <div className='col-8'>
-          <p className="card-text">
           <p className="card-text" style={{ color: "#8540F5"  }}>
-            TVL: {formatNumber(priceInTotal.toFixed(0))} USD
+            TVL USD:  
           </p>
-          <span className='' style={{ color: "#3D8BFD"  }}>质押数量: {formatNumber(staked.toFixed(2))}
-            </span>
-          </p>
-
-          <p className="card-text">
-            单价: {formatNumber(inputPrice)}  {unit}
-          </p>
-
+          <p className='h5 strong' style={{ color: "#8540F5"  }}>{formatNumber(priceInTotal.toFixed(0))}</p>
         </div>
         <div className='col-4'>
-        <div style={{ width: '100%', maxWidth: '80px' }}>
+
+          <div className='row' style={{  maxWidth: '180px' }}>
           
           <CircularProgressBar 
-          percent={(priceInTotal / totaltvl * 100).toFixed(0)} 
-          circleClass="#8540F5"
+          percent={(priceInTotal / totaltvl * 100).toFixed(2)} 
+          circleClass="#C29FFA"
           textClass="#8540F5"
           />
 
+          </div>
+
         </div>
+        </div>
+        <div className='row'>
+        <div className='col-8'>
+        <p className='' style={{ color: "#3D8BFD"  }}>质押数量: </p>
+          <p className='h5 strong' style={{ color: "#3D8BFD"  }}>{formatNumber(staked.toFixed(0))}</p>
+        </div>
+        <div className='col-4'>
         {totalSupply && (
-        <div style={{ width: '100%', maxWidth: '80px' }}>
+        <div className='row' style={{  maxWidth: '180px' }}>
           
           <CircularProgressBar 
           percent={(staked / totalSupply * 100).toFixed(0)} 
-          circleClass="#3D8BFD"
+          circleClass="#9EC5FE"
           textClass="#3D8BFD"
           />
           
         </div>
         )}
-
         </div>
 
+        </div>
+        
+
     </div>
+    <div className="card-footer text-muted text-end border border-0" style={{ 'background-color': "white"  }}>
+    <p className="card-text">
+            单价: {formatNumber(inputPrice)}  {unit}
+          </p>
+          </div>
     </div>
     </div>
 
