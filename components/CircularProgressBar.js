@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './CircularProgressBar.module.css'; // If using CSS modules
 
-const CircularProgressBar = ({ percent }) => {
+const CircularProgressBar = ({ percent,circleClass,textClass }) => {
     const radius = 50;
     const circumference = 2 * Math.PI * radius;
     const [offset, setOffset] = useState(circumference);
@@ -22,12 +22,13 @@ const CircularProgressBar = ({ percent }) => {
                     r={radius}
                     strokeDasharray={circumference}
                     strokeDashoffset={offset}
+                    style={{ stroke: circleClass  }}
                 />
                 <text
                     x="80"
                     y="80"
-                    fill="#6b778c"
                     className={styles.text}
+                    style={{ fill: textClass  }}
                 >
                     {percent}%
                 </text>

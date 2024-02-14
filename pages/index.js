@@ -5,7 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
 import { differenceInCalendarDays } from 'date-fns';
 import CircularProgressBar from '../components/CircularProgressBar';
-const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPrice ,isBrc20Token,isBrc420Token,totalSupply}) => {
+const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPrice ,isBrc20Token,isBrc420Token,totalSupply,totaltvl}) => {
 
   const priceInTotal = isBrc20Token ? staked * inputPrice * btcPrice *0.00000001 : isBrc420Token ? staked * inputPrice * btcPrice : staked * inputPrice;
   const unit = isBrc20Token ? ' sats' : isBrc420Token ?  'BTC' : ' /U';
@@ -20,23 +20,40 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
       <div className="card-body row">
         <div className='col-8'>
           <p className="card-text">
-          <span className=''>质押数量: {formatNumber(staked.toFixed(2))}
+          <p className="card-text" style={{ color: "#8540F5"  }}>
+            TVL: {formatNumber(priceInTotal.toFixed(0))} USD
+          </p>
+          <span className='' style={{ color: "#3D8BFD"  }}>质押数量: {formatNumber(staked.toFixed(2))}
             </span>
           </p>
 
           <p className="card-text">
             单价: {formatNumber(inputPrice)}  {unit}
           </p>
-          <p className="card-text">
-            TVL: {formatNumber(priceInTotal.toFixed(0))} USD
-          </p>
+
         </div>
         <div className='col-4'>
+        <div style={{ width: '100%', maxWidth: '80px' }}>
+          
+          <CircularProgressBar 
+          percent={(priceInTotal / totaltvl * 100).toFixed(0)} 
+          circleClass="#8540F5"
+          textClass="#8540F5"
+          />
+
+        </div>
         {totalSupply && (
         <div style={{ width: '100%', maxWidth: '80px' }}>
-          <CircularProgressBar percent={(staked / totalSupply * 100).toFixed(0)} />
+          
+          <CircularProgressBar 
+          percent={(staked / totalSupply * 100).toFixed(0)} 
+          circleClass="#3D8BFD"
+          textClass="#3D8BFD"
+          />
+          
         </div>
         )}
+
         </div>
 
     </div>
@@ -187,6 +204,7 @@ const HomePage = () => {
         isBrc20Token={true}
         isBrc420Token={false}
         totalSupply={brc20data.data[currencyName].totalSupply}
+        totaltvl={sumdata.data.sum_usd.toFixed(0)}
       />
     );
   });
@@ -206,6 +224,7 @@ const HomePage = () => {
         isBrc20Token={false}
         isBrc420Token={true}
         totalSupply={brc420data.data[currencyName].totalSupply}
+        totaltvl={sumdata.data.sum_usd.toFixed(0)}
       />
     );
   });
@@ -241,8 +260,11 @@ const HomePage = () => {
     <main className="bd-main order-1">
       
       <div className='row justify-content-md-center'>
-        <div className='card col-12 '>
-        <div className="card-header text-center ">
+        <div className='card col-12 position'>
+        <div className="card-header  text-center" style={{
+            position: 'sticky',
+            top: 0,
+          }}>
             <div className=' text-muted'>            
             由 <a href="https://twitter.com/0xfaskety" target="_blank" rel="noopener noreferrer">
             <svg width="24" height="24" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1458"><path d="M928 254.3c-30.6 13.2-63.9 22.7-98.2 26.4 35.4-21.1 62.3-54.4 75-94-32.7 19.5-69.7 33.8-108.2 41.2C765.4 194.6 721.1 174 672 174c-94.5 0-170.5 76.6-170.5 170.6 0 13.2 1.6 26.4 4.2 39.1-141.5-7.4-267.7-75-351.6-178.5-14.8 25.4-23.2 54.4-23.2 86.1 0 59.2 30.1 111.4 76 142.1-28-1.1-54.4-9-77.1-21.7v2.1c0 82.9 58.6 151.6 136.7 167.4-14.3 3.7-29.6 5.8-44.9 5.8-11.1 0-21.6-1.1-32.2-2.6C211 652 273.9 701.1 348.8 702.7c-58.6 45.9-132 72.9-211.7 72.9-14.3 0-27.5-0.5-41.2-2.1C171.5 822 261.2 850 357.8 850 671.4 850 843 590.2 843 364.7c0-7.4 0-14.8-0.5-22.2 33.2-24.3 62.3-54.4 85.5-88.2z" p-id="1459" fill="#000"></path></svg>
@@ -274,6 +296,7 @@ const HomePage = () => {
                             onPriceChange={handlePriceChange}
                             isBrc20Token={false}
                             isBrc420Token={false}
+                            totaltvl={sumdata.data.sum_usd.toFixed(0)}
                           />
                           <CurrencyCard 
                           currencyName="ETH" 
@@ -283,6 +306,7 @@ const HomePage = () => {
                           onPriceChange={handlePriceChange}
                           isBrc20Token={false}
                           isBrc420Token={false}
+                          totaltvl={sumdata.data.sum_usd.toFixed(0)}
                         />
                         <CurrencyCard 
                           currencyName="USDT" 
@@ -292,6 +316,7 @@ const HomePage = () => {
                           onPriceChange={handlePriceChange}
                           isBrc20Token={false}
                           isBrc420Token={false}
+                          totaltvl={sumdata.data.sum_usd.toFixed(0)}
                         />
                         <CurrencyCard 
                           currencyName="USDC" 
@@ -301,6 +326,7 @@ const HomePage = () => {
                           onPriceChange={handlePriceChange}
                           isBrc20Token={false}
                           isBrc420Token={false}
+                          totaltvl={sumdata.data.sum_usd.toFixed(0)}
                         />
 
                         {Currency20Cards}
