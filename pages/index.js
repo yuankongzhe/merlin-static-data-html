@@ -11,8 +11,8 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
   const unit = isBrc20Token ? ' sats/'+currencyName : isBrc420Token ?  'BTC' : ' /U';
 
   return (
-    <div className='col-md-3 ms-md-auto g-2'>
-    <div className='card  mb-3  h-100 '>
+    <div className='col-md-3 ms-md-auto g-4'>
+    <div className='card   h-100 shadow p-3 mb-5 bg-body rounded'>
         <div className="card-header text-center" style={{ 'background-color': "white"  }}>
 
         {currencyName}
@@ -27,7 +27,7 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
         </div>
         <div className='col-4'>
 
-          <div className='row' style={{  maxWidth: '180px' }}>
+          <div className='row' style={{  minWidth: '120px' }}>
           
           <CircularProgressBar 
           percent={(priceInTotal / totaltvl * 100).toFixed(2)} 
@@ -46,7 +46,7 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
         </div>
         <div className='col-4'>
         {totalSupply && (
-        <div className='row' style={{  maxWidth: '180px' }}>
+        <div className='row' style={{  minWidth: '100px' }}>
           
           <CircularProgressBar 
           percent={(staked / totalSupply * 100).toFixed(0)} 
@@ -491,7 +491,7 @@ const HomePage = () => {
                     </div>
                   </div>
                   <div className='col-6 d-flex align-items-center justify-content-center' >
-                      <img src="/pre.png" className='border border-primary rounded' alt="TVL预测曲线" style={{ maxWidth: '100%', height: 'auto' }}/>
+                      <img src="/pre.png" className='border border-primary rounded shadow-lg p-3 mb-5 bg-body rounded' alt="TVL预测曲线" style={{ maxWidth: '100%', height: 'auto' }}/>
                     </div>
                 </div>
 
