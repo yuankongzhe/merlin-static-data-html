@@ -1,4 +1,6 @@
-计划每小时更新一次
+1.计划每小时更新一次
+
+2.对于TVL曲线拟合，公式为TVL= a + c*x**b ,拟合系数记录在/public/fit_coefficient.json文件中
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

@@ -91,7 +91,7 @@ const HomePage = () => {
   const [c, setC] = useState(0); 
   
   const [selectedDate, setSelectedDate] = useState('');
-  const specifiedDate = new Date('2024-03-24'); // 指定日期
+  const specifiedDate = new Date('2024-04-21'); // 指定日期
   const [differencedate, setdifferencedate] = useState(null);
 
    
@@ -367,7 +367,7 @@ const HomePage = () => {
                         </div>
                       
                         {differencedate !== null && (
-                        <p className='col-12 table-info'>假设质押结算时间为3月24日，你还可以质押<span className='h4 strong  text-primary'>{differencedate}</span>  天。</p>
+                        <p className='col-12 table-info'>质押结算时间为2024/04/21，你总计可以质押<span className='h4 strong  text-primary'>{differencedate}</span>  天。</p>
                           )}
                         {differencedate !== null && (
                         <div className='col-12'>                          
@@ -505,6 +505,9 @@ const HomePage = () => {
             <div className='col-12'>如有关于网站的功能、UI或者其他建议或反馈，欢迎在<a href="https://x.com/0xfaskety/status/1757596175874814338?s=20" target="_blank" rel="noopener noreferrer">
               **推文链接**
             </a>本推文下留言~~</div>
+            <div className='col-12'>本站开源地址：<a href="https://github.com/yuankongzhe/merlin-static-data-html" target="_blank" rel="noopener noreferrer">
+            https://github.com/yuankongzhe/merlin-static-data-html
+            </a></div>
             <div className='col-8'>其他Merlin Seal数据网站:
               <a href="https://bitmap.date/merlin/" target="_blank" rel="noopener noreferrer">
               https://bitmap.date/merlin/
