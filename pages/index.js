@@ -11,14 +11,14 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
   const unit = isBrc20Token ? ' sats/'+currencyName : isBrc420Token ?  'BTC' : ' /U';
 
   return (
-    <div className='col-md-3 ms-md-auto g-4'>
-    <div className='card   h-100 shadow p-3 mb-5 bg-body rounded'>
+    <div className='col-md-3 ms-md-auto g-2'>
+    <div className='card   h-100 shadow  bg-body rounded'>
         <div className="card-header text-center" style={{ 'background-color': "white"  }}>
 
         {currencyName}
       </div>
-      <div className="card-body row">
-        <div className='row'>
+      <div className="card-body row ms-1  ">
+        <div className='row container'>
         <div className='col-8'>
           <p className="card-text" style={{ color: "#8540F5"  }}>
             TVL USD:  
@@ -57,16 +57,14 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
         </div>
         )}
         </div>
-
+        <p className="card-text container text-muted text-end">
+            单价: {formatNumber(inputPrice)}  {unit}
+          </p>
         </div>
         
 
     </div>
-    <div className="card-footer text-muted text-end border border-0" style={{ 'background-color': "white"  }}>
-    <p className="card-text">
-            单价: {formatNumber(inputPrice)}  {unit}
-          </p>
-          </div>
+
     </div>
     </div>
 
