@@ -268,11 +268,9 @@ const HomePage = () => {
     <main className="bd-main order-1">
       
       <div className='row justify-content-md-center'>
-        <div className='card col-12 position'>
-        <div className="card-header  text-center" style={{
-            position: 'sticky',
-            top: 0,
-          }}>
+
+        <div className='card col-12 position' style={{ minHeight: '100vh'}}>
+        <div className="card-header  text-center">
             <div className=' text-muted'>            
             由 <a href="https://twitter.com/0xfaskety" target="_blank" rel="noopener noreferrer">
             <svg width="24" height="24" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1458"><path d="M928 254.3c-30.6 13.2-63.9 22.7-98.2 26.4 35.4-21.1 62.3-54.4 75-94-32.7 19.5-69.7 33.8-108.2 41.2C765.4 194.6 721.1 174 672 174c-94.5 0-170.5 76.6-170.5 170.6 0 13.2 1.6 26.4 4.2 39.1-141.5-7.4-267.7-75-351.6-178.5-14.8 25.4-23.2 54.4-23.2 86.1 0 59.2 30.1 111.4 76 142.1-28-1.1-54.4-9-77.1-21.7v2.1c0 82.9 58.6 151.6 136.7 167.4-14.3 3.7-29.6 5.8-44.9 5.8-11.1 0-21.6-1.1-32.2-2.6C211 652 273.9 701.1 348.8 702.7c-58.6 45.9-132 72.9-211.7 72.9-14.3 0-27.5-0.5-41.2-2.1C171.5 822 261.2 850 357.8 850 671.4 850 843 590.2 843 364.7c0-7.4 0-14.8-0.5-22.2 33.2-24.3 62.3-54.4 85.5-88.2z" p-id="1459" fill="#000"></path></svg>
@@ -285,14 +283,14 @@ const HomePage = () => {
           </div>
           <div className='card-body ' >
           <div class="d-flex align-items-start row">
-            <div className='col-2 '>
+            <div className='col-md-2 col-ms-12'>
             <div class="nav flex-column nav-pills me-3 col-10 border border-primary p-2 mb-2 border-opacity-50 rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <button class="btn btn-outline-primary active nav-link " id="stakedDetailsaccordion-tab" data-bs-toggle="pill" data-bs-target="#stakedDetailsaccordion" type="button" role="tab" aria-controls="stakedDetailsaccordion" aria-selected="true">Merlin Seal TVL 详细情况</button>
               <button class="nav-link btn btn-outline-primary" id="personalrewardcal-tab" data-bs-toggle="pill" data-bs-target="#personalrewardcal" type="button" role="tab" aria-controls="personalrewardcal" aria-selected="false">个人收益计算器</button>
             </div>
             </div>
 
-            <div class="tab-content col-8" id="v-pills-tabContent">
+            <div class="tab-content col-md-8 col-ms-12" id="v-pills-tabContent">
               <div class="tab-pane fade show active" id="stakedDetailsaccordion" role="tabpanel" aria-labelledby="stakedDetailsaccordion-tab" tabindex="0">
               <div className='row '>
 
@@ -345,11 +343,11 @@ const HomePage = () => {
               <div class="tab-pane fade" id="personalrewardcal" role="tabpanel" aria-labelledby="personalrewardcal-tab" tabindex="0">
               <div>
                 <div className='row'>
-                  <div className='col-md-6'>
+                  <div className='col-md-6 col-ms-12'>
 
                     <div className="form-group row">
                       <div className='row'>
-                        <div className='col-6'>
+                        <div className='col-md-6 col-ms-6'>
                           <label htmlFor="dateInput ">开始质押日期</label>
                         </div>
                         <div className='col-md-4'>
@@ -394,14 +392,13 @@ const HomePage = () => {
                               </p>
                            </div>
                           </div>
-                          
-                          <p className="card-text">     
-   
-                              
-                          </p>
+                          <div className='row'>
                           <p className="card-text">
                           预计将获得<span className='h3 strong  text-primary'>{formatNumber(c.toFixed(4))}</span>个MERL代币
                           </p>
+                          </div>
+
+                          <div className='row'>
                           <table class="table">
                             <thead>
                               <tr>
@@ -480,6 +477,8 @@ const HomePage = () => {
                               </tr>
                             </tbody>
                           </table>
+                          </div>
+                          
                         </div>
                           
                           
@@ -488,7 +487,7 @@ const HomePage = () => {
                       
                     </div>
                   </div>
-                  <div className='col-6 d-flex align-items-center justify-content-center' >
+                  <div className='col-md-6 col-ms-12 d-flex align-items-center justify-content-center' >
                       <img src="/pre.png" className='border border-primary rounded shadow-lg p-3 mb-5 bg-body rounded' alt="TVL预测曲线" style={{ maxWidth: '100%', height: 'auto' }}/>
                     </div>
                 </div>
@@ -506,12 +505,12 @@ const HomePage = () => {
             <div className='col-12'>本站开源地址：<a href="https://github.com/yuankongzhe/merlin-static-data-html" target="_blank" rel="noopener noreferrer">
             https://github.com/yuankongzhe/merlin-static-data-html
             </a></div>
-            <div className='col-8'>其他Merlin Seal数据网站:
+            <div className='col-md-8 col-ms-12'>其他Merlin Seal数据网站:
               <a href="https://bitmap.date/merlin/" target="_blank" rel="noopener noreferrer">
               https://bitmap.date/merlin/
             </a>
             </div>
-           <div className='col-4 '><span className='h6'>更新于：{sumdata.savetime}</span></div>
+           <div className='col-md-4 col-ms-12'><span className='h6'>更新于：{sumdata.savetime}</span></div>
            <Analytics />
            <SpeedInsights/>
           </div>
