@@ -426,17 +426,17 @@ const HomePage = () => {
                               </tr>
                               <tr className="table-warning">
                                 <th scope="row">2</th>
-                                <td>{formatNumber(((b*0.5*0.1233)/c*21).toFixed(2))}亿</td>
-                                <td>{formatNumber(((b*0.5*0.1233)/c).toFixed(3))}</td>
-                                <td>50.00%</td>
-                                <td>{formatNumber((0.5*b*0.1233).toFixed(0))}</td>
-                                <td>{formatNumber((0.5*12.33).toFixed(2))}%</td>
+                                <td>{formatNumber(((b*0.05)/c*21).toFixed(2))}亿</td>
+                                <td>{formatNumber(((b*0.05)/c).toFixed(3))}</td>
+                                <td>{formatNumber((0.05*100/0.2).toFixed(2))}%</td>
+                                <td>{formatNumber((0.05*b).toFixed(0))}</td>
+                                <td>{formatNumber((0.0500*100).toFixed(2))}%</td>
                               </tr>
                               <tr className="table-warning">
                                 <th scope="row">3</th>
                                 <td>{formatNumber(((b*0.1)/c*21).toFixed(2))}亿</td>
                                 <td>{formatNumber(((b*0.1)/c).toFixed(3))}</td>
-                                <td>{formatNumber((0.1*100/0.12328).toFixed(2))}%</td>
+                                <td>{formatNumber((0.1*100/0.2).toFixed(2))}%</td>
                                 <td>{formatNumber((0.1*b).toFixed(0))}</td>
                                 <td>{formatNumber((0.1*100).toFixed(2))}%</td>
                               </tr>
@@ -444,7 +444,7 @@ const HomePage = () => {
                                 <th scope="row">4</th>
                                 <td>{formatNumber(((b*0.2)/c*21).toFixed(2))}亿</td>
                                 <td>{formatNumber(((b*0.2)/c).toFixed(3))}</td>
-                                <td>{formatNumber((0.2*100/0.1233).toFixed(2))}%</td>
+                                <td>{formatNumber((0.2*100/0.2).toFixed(2))}%</td>
                                 <td>{formatNumber((0.2*b).toFixed(0))}</td>
                                 <td>{formatNumber((0.2*100).toFixed(2))}%</td>
                               </tr>
@@ -452,7 +452,7 @@ const HomePage = () => {
                                 <th scope="row">5</th>
                                 <td>{formatNumber(((b*0.5)/c*21).toFixed(2))}亿</td>
                                 <td>{formatNumber(((b*0.5)/c).toFixed(3))}</td>
-                                <td>{formatNumber((0.5*100/0.1233).toFixed(2))}%</td>
+                                <td>{formatNumber((0.5*100/0.2).toFixed(2))}%</td>
                                 <td>{formatNumber((0.5*b).toFixed(0))}</td>
                                 <td>{formatNumber((0.5*100).toFixed(2))}%</td>
                               </tr>
@@ -460,7 +460,7 @@ const HomePage = () => {
                                 <th scope="row">6</th>
                                 <td>{formatNumber(((b*1)/c*21).toFixed(2))}亿</td>
                                 <td>{formatNumber(((b*1)/c).toFixed(3))}</td>
-                                <td>{formatNumber((1*100/0.1233).toFixed(2))}%</td>
+                                <td>{formatNumber((1*100/0.2).toFixed(2))}%</td>
                                 <td>{formatNumber((1*b).toFixed(0))}</td>
                                 <td>{formatNumber((1*100).toFixed(2))}%</td>
                               </tr>
@@ -468,7 +468,7 @@ const HomePage = () => {
                                 <th scope="row">7</th>
                                 <td>{formatNumber(((b*2)/c*21).toFixed(2))}亿</td>
                                 <td>{formatNumber(((b*2)/c).toFixed(3))}</td>
-                                <td>{formatNumber((2*100/0.1233).toFixed(2))}%</td>
+                                <td>{formatNumber((2*100/0.2).toFixed(2))}%</td>
                                 <td>{formatNumber((2*b).toFixed(0))}</td>
                                 <td>{formatNumber((2*100).toFixed(2))}%</td>
                               </tr>
@@ -476,7 +476,7 @@ const HomePage = () => {
                                 <th scope="row">8</th>
                                 <td>{formatNumber(((b*5)/c*21).toFixed(2))}亿</td>
                                 <td>{formatNumber(((b*5)/c).toFixed(3))}</td>
-                                <td>{formatNumber((5*100/0.1233).toFixed(2))}%</td>
+                                <td>{formatNumber((5*100/0.2).toFixed(2))}%</td>
                                 <td>{formatNumber((5*b).toFixed(0))}</td>
                                 <td>{formatNumber((5*100).toFixed(2))}%</td>
                               </tr>
