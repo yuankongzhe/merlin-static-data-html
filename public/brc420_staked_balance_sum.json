@@ -1978,5 +1978,121 @@
                 "price_in_usd": 12467051.999999996
             }
         }
+    },
+    {
+        "savetime": "2024-02-16T13:48:18.615093",
+        "data": {
+            "Blue Box": {
+                "staked": 6288,
+                "totalSupply": 10000,
+                "price_btc": 0.5640200000000001,
+                "price_in_usd": 184421003.52
+            },
+            "Bitmap": {
+                "staked": 177394,
+                "totalSupply": 830326,
+                "price_btc": 0.004379996999999999,
+                "price_in_usd": 40403229.76653599
+            },
+            "This song about NFTs": {
+                "staked": 26650,
+                "totalSupply": 42069,
+                "price_btc": 0.014775,
+                "price_in_usd": 20475195.0
+            },
+            "Mineral": {
+                "staked": 26639,
+                "totalSupply": 40000,
+                "price_btc": 0.008979999999999998,
+                "price_in_usd": 12439347.439999998
+            }
+        }
+    },
+    {
+        "savetime": "2024-02-16T14:01:00.876355",
+        "data": {
+            "Blue Box": {
+                "staked": 6288,
+                "totalSupply": 10000,
+                "price_btc": 0.5640200000000001,
+                "price_in_usd": 184421003.52
+            },
+            "Bitmap": {
+                "staked": 177394,
+                "totalSupply": 830326,
+                "price_btc": 0.004382999999999999,
+                "price_in_usd": 40430930.90399999
+            },
+            "This song about NFTs": {
+                "staked": 26650,
+                "totalSupply": 42069,
+                "price_btc": 0.014775,
+                "price_in_usd": 20475195.0
+            },
+            "Mineral": {
+                "staked": 26639,
+                "totalSupply": 40000,
+                "price_btc": 0.008979999999999998,
+                "price_in_usd": 12439347.439999998
+            }
+        }
+    },
+    {
+        "savetime": "2024-02-16T14:07:57.964155",
+        "data": {
+            "Blue Box": {
+                "staked": 6288,
+                "totalSupply": 10000,
+                "price_btc": 0.5640200000000001,
+                "price_in_usd": 184421003.52
+            },
+            "Bitmap": {
+                "staked": 177394,
+                "totalSupply": 830326,
+                "price_btc": 0.004382999999999999,
+                "price_in_usd": 40430930.90399999
+            },
+            "This song about NFTs": {
+                "staked": 26650,
+                "totalSupply": 42069,
+                "price_btc": 0.014775,
+                "price_in_usd": 20475195.0
+            },
+            "Mineral": {
+                "staked": 26639,
+                "totalSupply": 40000,
+                "price_btc": 0.008979999999999998,
+                "price_in_usd": 12439347.439999998
+            }
+        }
+    },
+    {
+        "savetime": "2024-02-16T14:10:36.428223",
+        "data": {
+            "Blue Box": {
+                "staked": 6288,
+                "totalSupply": 10000,
+                "price_btc": 0.5640200000000001,
+                "price_in_usd": 184421003.52
+            },
+            "Bitmap": {
+                "staked": 177394,
+                "totalSupply": 830326,
+                "price_btc": 0.004386999999999999,
+                "price_in_usd": 40467828.85599999
+            },
+            "This song about NFTs": {
+                "staked": 26650,
+                "totalSupply": 42069,
+                "price_btc": 0.014775,
+                "price_in_usd": 20475195.0
+            },
+            "Mineral": {
+                "staked": 26639,
+                "totalSupply": 40000,
+                "price_btc": 0.008979999999999998,
+                "price_in_usd": 12439347.439999998
+            }
+        }
     }
 ]

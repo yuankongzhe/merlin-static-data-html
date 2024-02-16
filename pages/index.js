@@ -89,7 +89,7 @@ const HomePage = () => {
   const [c, setC] = useState(0); 
   const [d, setD] = useState(0); 
   const [selectedDate, setSelectedDate] = useState('');
-  const specifiedDate = new Date('2024-04-21'); // 指定日期
+  const [specifiedDate1,setspecifiedDate1] = useState('2024-03-24'); // 指定日期
   const [differencedate, setdifferencedate] = useState(null);
 
    
@@ -178,19 +178,7 @@ const HomePage = () => {
   }, []);
 
   // 使用 useEffect 监听 differencedate 的变化
-  useEffect(() => {
-    // 确保 differencedate 和 predicted_tvl_usd.data.predicted_tvl_usd 都是有效的值
-    if (differencedate != null && predicted_tvl_usd?.data?.predicted_tvl_usd) {
-      // 使用最新的 differencedate 值进行计算
-      const newC = b * differencedate / predicted_tvl_usd.data.predicted_tvl_usd * 420000000;
-      
-      // 如果 c 需要更新，使用 setC 更新它
-      if (c !== newC) {
-        setC(newC);
-      }
-    }
-  }, [differencedate, predicted_tvl_usd, b, c]
-  );
+
   // 如果数据还没加载，显示加载状态
   if (!evmdata) return <div>Loading...</div>;
   if (!btcdata) return <div>Loading...</div>;
@@ -269,10 +257,26 @@ const HomePage = () => {
     setSelectedDate(inputDate);
     
     // Calculate the difference in days and update the state
-    const newDifferenceDate = differenceInCalendarDays(specifiedDate, new Date(inputDate));
+    const newDifferenceDate = differenceInCalendarDays(new Date(specifiedDate1), new Date(inputDate));
     setdifferencedate(newDifferenceDate);
   };
-  
+  const handlespecifiedDate1Change= (event) => {
+    const inputDate = event.target.value;
+    setspecifiedDate1(inputDate);
+    
+    // Calculate the difference in days and update the state
+    const newDifferenceDate = differenceInCalendarDays(new Date(inputDate), new Date(selectedDate));
+    let Newsum = 0;
+    for (let index = 0; index < newDifferenceDate; index++) {
+      if (predicted_tvl_usd.data.daily_predicted_tvl.hasOwnProperty(index.toString())) {
+        Newsum += predicted_tvl_usd.data.daily_predicted_tvl[index.toString()];
+      }
+      
+    }
+    setpredicted_tvl_usd({ ...predicted_tvl_usd, data: { ...predicted_tvl_usd.data, predicted_tvl_usd: Newsum } });
+    setdifferencedate(newDifferenceDate);
+    setC(b *newDifferenceDate /Newsum* 420000000);
+  };
 
   return (
     <main className="bd-main order-1">
@@ -367,13 +371,27 @@ const HomePage = () => {
                             id="dateInput"
                             value={selectedDate}
                             min={'2024-02-08'}
-                            max={'2024-04-21'}
+                            max={'2024-03-24'}
                             onChange={handledateChange}
                           />
+
                         </div>
-                      
+                        <div className='col-md-6 col-ms-6'>
+                          <label htmlFor="dateend " className='text-dark'>假设质押结算时间为</label>
+                        </div>
+                        <div className='col-md-4'>
+                          <input
+                        type="date"
+                        className="form-control col-4"
+                        id="dateend"
+                        value={specifiedDate1}
+                        min={'2024-03-01'}
+                        max={'2024-04-01'}
+                        onChange={handlespecifiedDate1Change}
+                        />
+                      </div>
                         {differencedate !== null && (
-                        <p className='col-12 table-info text-dark'>质押结算时间为2024/04/21，你总计可以质押<span className='h4 strong  text-primary'>{differencedate}</span>  天。</p>
+                        <p className='col-12 table-info text-dark'>你总计可以质押<span className='h4 strong  text-primary'>{differencedate}</span>  天。</p>
                           )}
                         {differencedate !== null && (
                         <div className='col-12'>  
