@@ -367,7 +367,7 @@ const HomePage = () => {
                             id="dateInput"
                             value={selectedDate}
                             min={'2024-02-08'}
-                            max={'2024-03-24'}
+                            max={'2024-04-21'}
                             onChange={handledateChange}
                           />
                         </div>
