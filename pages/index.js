@@ -72,7 +72,7 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
 };
 
 const currencyList = ['ORDI', 'SATS', 'BTCS', 'RATS', 'MMSS', 'AINN', 'RCSV', 'MICE', 'TRAC'];
-const currency420List = ['Blue Box','Bitmap','This song about NFTs','Mineral']
+const currency420List = ['Blue Box','Bitmap','This song about NFTs','Mineral','Dragon Ball','Blue Wand']
 const formatNumber = (num) => {
   return new Intl.NumberFormat('en-US').format(num);
 };
