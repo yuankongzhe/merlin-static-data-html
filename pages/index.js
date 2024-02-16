@@ -242,7 +242,7 @@ const HomePage = () => {
     setA(newA);
     const calculatedB = newA * btcdata.data.BTC.price;
     setB(calculatedB);
-    setD(newA/10000);
+    setD(newA*10000);
     setC(calculatedB *differencedate /predicted_tvl_usd.data.predicted_tvl_usd * 420000000);
   };
 
@@ -252,7 +252,7 @@ const HomePage = () => {
     setB(newB);
     const calculatedA = newB / btcdata.data.BTC.price;
     setA(calculatedA);
-    setD(calculatedA/10000);
+    setD(calculatedA*10000);
     setC(Number(newB) *differencedate /predicted_tvl_usd.data.predicted_tvl_usd* 420000000);
   };
   const handleDChange = (event) => {
