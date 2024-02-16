@@ -13,7 +13,7 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
   return (
     <div className='col-md-3 ms-md-auto g-2'>
     <div className='card   h-100 shadow  bg-body rounded'>
-        <div className="card-header text-center" style={{ 'background-color': "white"  }}>
+        <div className="card-header text-center text-dark" style={{ 'background-color': "white"  }}>
 
         {currencyName}
       </div>
@@ -358,7 +358,7 @@ const HomePage = () => {
                     <div className="form-group row">
                       <div className='row'>
                         <div className='col-md-6 col-ms-6'>
-                          <label htmlFor="dateInput ">开始质押日期</label>
+                          <label htmlFor="dateInput " className='text-dark'>开始质押日期</label>
                         </div>
                         <div className='col-md-4'>
                             <input
