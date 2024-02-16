@@ -278,6 +278,96 @@ const HomePage = () => {
     setC(b *newDifferenceDate /Newsum* 420000000);
   };
 
+  // Define a component to format the row data
+  const calcother = ({  stakednum, gettokennum,totalmarketcap,sell_price,apycal,netreward,netprofit_ }) => {
+    
+    if (netprofit_) {
+       totalmarketcap = stakednum * netprofit_ / gettokennum * 21;
+       sell_price = stakednum * netprofit_ / gettokennum;
+       apycal =  netprofit_ * 100 / differencedate * 365;
+       netreward = netprofit_ * stakednum;
+    }
+    else if (totalmarketcap){
+       sell_price = totalmarketcap/21;
+       apycal = totalmarketcap*100000000  / (stakednum * gettokennum / 100) / (differencedate * 365);
+       netreward = totalmarketcap / 21 * gettokennum;
+       netprofit_ = totalmarketcap*100000000 / (stakednum * gettokennum / 100);
+    }
+    else if (sell_price) {
+       totalmarketcap = sell_price * 21; 
+       apycal = sell_price * 100 / (stakednum * gettokennum / 21) / (differencedate * 365);
+       netreward = sell_price * gettokennum;
+       netprofit_ = sell_price * 100 / (stakednum * gettokennum / 21);
+    }
+    else if (apycal) {
+       totalmarketcap = apycal * (differencedate * 365) * (stakednum * gettokennum / 100) / 100;
+       sell_price = totalmarketcap / 21;
+       netreward = sell_price * gettokennum;
+       netprofit_ = sell_price * 100 / (stakednum * gettokennum / 21);
+    }
+    else if (netreward) {
+      sell_price = netreward / gettokennum;
+      totalmarketcap = sell_price * 21;
+      apycal = sell_price * 100 / (stakednum * gettokennum / 21) / (differencedate * 365);
+      netprofit_ = sell_price * 100 / (stakednum * gettokennum / 21);
+    }
+    else if (netprofit_) {
+      sell_price = netprofit_ / 100 * (stakednum * gettokennum / 21);
+       totalmarketcap = sell_price * 21;
+       apycal = sell_price * 100 / (stakednum * gettokennum / 21) / (differencedate * 365);
+       netreward = sell_price * gettokennum;
+    }
+    return {  stakednum, gettokennum, totalmarketcap,sell_price,apycal,netreward,netprofit_ }
+  };
+  const TableRow = ({ index, totalmarketcap, sell_price, apycal, netreward, netprofit_ }) => (
+    <tr className={`table-${netprofit_<=10 ? 'danger' :netprofit_<=50 ? 'warning' : netprofit_<=100  ? 'info' : 'success'}`}>
+      <th scope="row">{index}</th>
+      <td>{formatNumber((totalmarketcap).toFixed(2))}亿</td>
+      <td>{formatNumber((sell_price).toFixed(3))}</td>
+      <td>{formatNumber((apycal).toFixed(2))}%</td>
+      <td>{formatNumber((netreward).toFixed(0))}</td>
+      <td>{formatNumber((netprofit_).toFixed(2))}%</td>
+    </tr>
+  );
+  const caltable = () =>{
+    const dataList  = [
+      // stakednum, gettokennum, totalmarketcap,sell_price,apycal,netreward,netprofit_
+      { 'stakednum': b, 'gettokennum': c, 'netprofit_':0.05},
+      { 'stakednum': b, 'gettokennum': c, 'netprofit_':0.10},
+      { 'stakednum': b, 'gettokennum': c, 'netprofit_':0.20},
+      { 'stakednum': b, 'gettokennum': c, 'netprofit_':0.50},
+      { 'stakednum': b, 'gettokennum': c, 'netprofit_':1.00},
+      { 'stakednum': b, 'gettokennum': c, 'netprofit_':2.00},
+      { 'stakednum': b, 'gettokennum': c, 'netprofit_':5.00},
+      { 'stakednum': b, 'gettokennum': c, 'netprofit_':10.00},
+      { 'stakednum': b, 'gettokennum': c, 'totalmarketcap':10.00},
+      // ...更多条目...
+    ];
+  // 将字典的每个项转换为 `calcother` 函数的参数，并调用函数
+  const results = dataList.map(item => calcother(item));
+
+  // 根据 `totalmarketcap` 从小到大排序这些结果
+  const sortedResults = results.sort((a, b) => a.totalmarketcap - b.totalmarketcap);
+
+  // Return sorted results within a table structure
+  return (
+
+      <tbody>
+        {sortedResults.map((data, index) => (
+          <TableRow
+            key={index} // 推荐为每个子元素添加 key 属性
+            index={index + 1}
+            totalmarketcap={data.totalmarketcap}
+            sell_price={data.sell_price}
+            apycal={data.apycal}
+            netreward={data.netreward}
+            netprofit_={data.netprofit_*100}
+          />
+        ))}
+      </tbody>
+
+  );
+    };
   return (
     <main className="bd-main order-1">
       
@@ -448,73 +538,11 @@ const HomePage = () => {
                                 <th scope="col">净利率</th>
                               </tr>
                             </thead>
-                            <tbody>
-                              <tr className="table-danger">
-                                <th scope="row">1</th>
-                                <td>{formatNumber(((b*0.02)/c*21).toFixed(2))}亿</td>
-                                <td>{formatNumber(((b*0.02)/c).toFixed(3))}</td>
-                                <td>{formatNumber((2)/differencedate*365)}%</td>
-                                <td>{formatNumber((0.02*b).toFixed(0))}</td>
-                                <td>2.00%</td>
-                              </tr>
-                              <tr className="table-warning">
-                                <th scope="row">2</th>
-                                <td>{formatNumber(((b*0.05)/c*21).toFixed(2))}亿</td>
-                                <td>{formatNumber(((b*0.05)/c).toFixed(3))}</td>
-                                <td>{formatNumber((0.05*100/differencedate*365).toFixed(2))}%</td>
-                                <td>{formatNumber((0.05*b).toFixed(0))}</td>
-                                <td>{formatNumber((0.0500*100).toFixed(2))}%</td>
-                              </tr>
-                              <tr className="table-warning">
-                                <th scope="row">3</th>
-                                <td>{formatNumber(((b*0.1)/c*21).toFixed(2))}亿</td>
-                                <td>{formatNumber(((b*0.1)/c).toFixed(3))}</td>
-                                <td>{formatNumber((0.1*100/differencedate*365).toFixed(2))}%</td>
-                                <td>{formatNumber((0.1*b).toFixed(0))}</td>
-                                <td>{formatNumber((0.1*100).toFixed(2))}%</td>
-                              </tr>
-                              <tr className="table-info">
-                                <th scope="row">4</th>
-                                <td>{formatNumber(((b*0.2)/c*21).toFixed(2))}亿</td>
-                                <td>{formatNumber(((b*0.2)/c).toFixed(3))}</td>
-                                <td>{formatNumber((0.2*100/differencedate*365).toFixed(2))}%</td>
-                                <td>{formatNumber((0.2*b).toFixed(0))}</td>
-                                <td>{formatNumber((0.2*100).toFixed(2))}%</td>
-                              </tr>
-                              <tr className="table-info">
-                                <th scope="row">5</th>
-                                <td>{formatNumber(((b*0.5)/c*21).toFixed(2))}亿</td>
-                                <td>{formatNumber(((b*0.5)/c).toFixed(3))}</td>
-                                <td>{formatNumber((0.5*100/differencedate*365).toFixed(2))}%</td>
-                                <td>{formatNumber((0.5*b).toFixed(0))}</td>
-                                <td>{formatNumber((0.5*100).toFixed(2))}%</td>
-                              </tr>
-                              <tr className="table-success">
-                                <th scope="row">6</th>
-                                <td>{formatNumber(((b*1)/c*21).toFixed(2))}亿</td>
-                                <td>{formatNumber(((b*1)/c).toFixed(3))}</td>
-                                <td>{formatNumber((1*100/differencedate*365).toFixed(2))}%</td>
-                                <td>{formatNumber((1*b).toFixed(0))}</td>
-                                <td>{formatNumber((1*100).toFixed(2))}%</td>
-                              </tr>
-                              <tr className="table-success">
-                                <th scope="row">7</th>
-                                <td>{formatNumber(((b*2)/c*21).toFixed(2))}亿</td>
-                                <td>{formatNumber(((b*2)/c).toFixed(3))}</td>
-                                <td>{formatNumber((2*100/differencedate*365).toFixed(2))}%</td>
-                                <td>{formatNumber((2*b).toFixed(0))}</td>
-                                <td>{formatNumber((2*100).toFixed(2))}%</td>
-                              </tr>
-                              <tr className="table-success">
-                                <th scope="row">8</th>
-                                <td>{formatNumber(((b*5)/c*21).toFixed(2))}亿</td>
-                                <td>{formatNumber(((b*5)/c).toFixed(3))}</td>
-                                <td>{formatNumber((5*100/differencedate*365).toFixed(2))}%</td>
-                                <td>{formatNumber((5*b).toFixed(0))}</td>
-                                <td>{formatNumber((5*100).toFixed(2))}%</td>
-                              </tr>
-                            </tbody>
+
+                              {caltable()}
+
                           </table>
+                          
                           </div>
                           
                         </div>
