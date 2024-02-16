@@ -295,32 +295,27 @@ const HomePage = () => {
     }
     else if (sell_price) {
        totalmarketcap = sell_price * 21; 
-       apycal = sell_price * 100 / (stakednum * gettokennum / 21) / differencedate * 365;
        netreward = sell_price * gettokennum;
-       netprofit_ = sell_price * 100 / (stakednum * gettokennum / 21);
+       apycal = netreward/stakednum/ differencedate * 365 *100;
+       netprofit_ = netreward/stakednum;
     }
     else if (apycal) {
-       totalmarketcap = apycal * differencedate * 365 * (stakednum * gettokennum / 100) / 100;
+       netprofit_ = apycal*differencedate/365;
+       netreward = netprofit_ * stakednum;
+       totalmarketcap = stakednum * netprofit_ / gettokennum * 21;
        sell_price = totalmarketcap / 21;
-       netreward = sell_price * gettokennum;
-       netprofit_ = sell_price * 100 / (stakednum * gettokennum / 21);
+       apycal=apycal*100
     }
     else if (netreward) {
       sell_price = netreward / gettokennum;
       totalmarketcap = sell_price * 21;
-      apycal = sell_price * 100 / (stakednum * gettokennum / 21) / differencedate * 365;
-      netprofit_ = sell_price * 100 / (stakednum * gettokennum / 21);
-    }
-    else if (netprofit_) {
-      sell_price = netprofit_ / 100 * (stakednum * gettokennum / 21);
-       totalmarketcap = sell_price * 21;
-       apycal = sell_price * 100 / (stakednum * gettokennum / 21) / differencedate * 365;
-       netreward = sell_price * gettokennum;
+      apycal = netreward/stakednum/ differencedate * 365 *100;
+      netprofit_ = apycal*differencedate/365;
     }
     return {  stakednum, gettokennum, totalmarketcap,sell_price,apycal,netreward,netprofit_ }
   };
   const TableRow = ({ index, totalmarketcap, sell_price, apycal, netreward, netprofit_ }) => (
-    <tr className={`table-${netprofit_<=10 ? 'danger' :netprofit_<=50 ? 'warning' : netprofit_<=100  ? 'info' : 'success'}`}>
+    <tr className={`table-${netprofit_<10 ? 'danger' :netprofit_<50 ? 'warning' : netprofit_<100  ? 'info' : 'success'}`}>
       <th scope="row">{index}</th>
       <td>{formatNumber((totalmarketcap).toFixed(2))}亿</td>
       <td>{formatNumber((sell_price).toFixed(3))}</td>
@@ -341,6 +336,19 @@ const HomePage = () => {
       { 'stakednum': b, 'gettokennum': c, 'netprofit_':5.00},
       { 'stakednum': b, 'gettokennum': c, 'netprofit_':10.00},
       { 'stakednum': b, 'gettokennum': c, 'totalmarketcap':10.00},
+      { 'stakednum': b, 'gettokennum': c, 'totalmarketcap':20.00},
+      { 'stakednum': b, 'gettokennum': c, 'totalmarketcap':50.00},
+      { 'stakednum': b, 'gettokennum': c, 'totalmarketcap':100.00},
+      { 'stakednum': b, 'gettokennum': c, 'sell_price':0.5},
+      { 'stakednum': b, 'gettokennum': c, 'sell_price':1},
+      { 'stakednum': b, 'gettokennum': c, 'sell_price':2},
+      { 'stakednum': b, 'gettokennum': c, 'sell_price':5},
+      { 'stakednum': b, 'gettokennum': c, 'sell_price':10},
+      { 'stakednum': b, 'gettokennum': c, 'apycal':0.5},
+      { 'stakednum': b, 'gettokennum': c, 'apycal':1.0},
+      { 'stakednum': b, 'gettokennum': c, 'apycal':2.0},
+      { 'stakednum': b, 'gettokennum': c, 'apycal':5.0},
+      { 'stakednum': b, 'gettokennum': c, 'apycal':10},
       // ...更多条目...
     ];
   // 将字典的每个项转换为 `calcother` 函数的参数，并调用函数
