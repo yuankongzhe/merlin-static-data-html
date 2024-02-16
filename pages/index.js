@@ -89,9 +89,9 @@ const HomePage = () => {
   const [c, setC] = useState(0); 
   const [d, setD] = useState(0); 
   const [selectedDate, setSelectedDate] = useState('');
-  const [specifiedDate1,setspecifiedDate1] = useState('2024-03-24'); // 指定日期
+  const [specifiedDate1,setspecifiedDate1] = useState(null); // 指定日期
   const [differencedate, setdifferencedate] = useState(null);
-
+  const [control,setcontrol]=useState(null);
    
   // Add state to store input prices
   const [currencyPrices, setCurrencyPrices] = useState(currencyList.reduce((acc, currency) => {
@@ -259,7 +259,7 @@ const HomePage = () => {
     // Calculate the difference in days and update the state
     const newDifferenceDate = differenceInCalendarDays(new Date(specifiedDate1), new Date(inputDate));
     setdifferencedate(newDifferenceDate);
-    if (b) {
+    if (control=='yes') {
       setC(b *newDifferenceDate /predicted_tvl_usd.data.predicted_tvl_usd* 420000000);
     }
   };
@@ -279,6 +279,7 @@ const HomePage = () => {
     setpredicted_tvl_usd({ ...predicted_tvl_usd, data: { ...predicted_tvl_usd.data, predicted_tvl_usd: Newsum } });
     setdifferencedate(newDifferenceDate);
     setC(b *newDifferenceDate /Newsum* 420000000);
+    setcontrol('yes')
   };
 
   // Define a component to format the row data
@@ -490,7 +491,9 @@ const HomePage = () => {
                         max={'2024-04-01'}
                         onChange={handlespecifiedDate1Change}
                         />
+                        
                       </div>
+                      <span className=' col-12 text-muted '>(质押活动于02/08开始，至03/09持续30天，至03/24持续45天)</span>
                         {differencedate !== null && (
                         <p className='col-12 table-info text-dark'>你总计可以质押<span className='h4 strong  text-primary'>{differencedate}</span>  天。</p>
                           )}
