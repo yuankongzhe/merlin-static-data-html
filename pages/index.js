@@ -286,7 +286,7 @@ const HomePage = () => {
             <svg width="24" height="24" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1458"><path d="M928 254.3c-30.6 13.2-63.9 22.7-98.2 26.4 35.4-21.1 62.3-54.4 75-94-32.7 19.5-69.7 33.8-108.2 41.2C765.4 194.6 721.1 174 672 174c-94.5 0-170.5 76.6-170.5 170.6 0 13.2 1.6 26.4 4.2 39.1-141.5-7.4-267.7-75-351.6-178.5-14.8 25.4-23.2 54.4-23.2 86.1 0 59.2 30.1 111.4 76 142.1-28-1.1-54.4-9-77.1-21.7v2.1c0 82.9 58.6 151.6 136.7 167.4-14.3 3.7-29.6 5.8-44.9 5.8-11.1 0-21.6-1.1-32.2-2.6C211 652 273.9 701.1 348.8 702.7c-58.6 45.9-132 72.9-211.7 72.9-14.3 0-27.5-0.5-41.2-2.1C171.5 822 261.2 850 357.8 850 671.4 850 843 590.2 843 364.7c0-7.4 0-14.8-0.5-22.2 33.2-24.3 62.3-54.4 85.5-88.2z" p-id="1459" fill="#000"></path></svg>
             @0xfaskety</a>  创建
             </div>
-            <span className="h3">Merlin Seal TVL: {formatNumber(sumdata.data.sum_usd.toFixed(0))} USD</span>
+            <span className="h3 text-dark">Merlin Seal TVL: {formatNumber(sumdata.data.sum_usd.toFixed(0))} USD</span>
             <p className="h5 text-success">过去24小时新增约: {formatNumber(sumdata.data.changein24.toFixed(0))} USD <svg width="24" height="24" data-slot="icon" fill="none" strokeWidth="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"></path>
 </svg></p>
@@ -379,7 +379,7 @@ const HomePage = () => {
                         <div className='col-12'>  
                           <div className='row'>
                           <div className='col-12'>
-                          每日可得积分                                <input
+                          <span>每日可得积分</span><input
                                     className = "text-end col-4"
                                     type="number"
                                     value={d}
@@ -390,7 +390,7 @@ const HomePage = () => {
                                             
                           <div className='row'>
                             <div className='col-12'>
-                            等价质押金额为:  
+                            <span>等价质押金额为:  </span>
                               </div>
                            <div className='col-12'>
                            <p className="card-text">
@@ -401,21 +401,20 @@ const HomePage = () => {
                                   value={a}
                                   onChange={handleAChange}
                                 />
-                                  BTC,
-                                  即
+                                <span>  BTC,即</span>
                                 <input
                                 className = "text-end"
                                   type="number"
                                   value={b}
                                   onChange={handleBChange}
                                 />
-                                  USD
+                                  <span>USD</span>
                               </p>
                            </div>
                           </div>
                           <div className='row'>
                           <p className="card-text">
-                          预计将获得<span className='h3 strong  text-primary'>{formatNumber(c.toFixed(4))}</span>个MERL代币
+                          <span>预计将获得</span><span className='h3 strong  text-primary'>{formatNumber(c.toFixed(4))}</span><span>个MERL代币</span>
                           </p>
                           </div>
 
@@ -436,7 +435,7 @@ const HomePage = () => {
                                 <th scope="row">1</th>
                                 <td>{formatNumber(((b*0.02)/c*21).toFixed(2))}亿</td>
                                 <td>{formatNumber(((b*0.02)/c).toFixed(3))}</td>
-                                <td>{formatNumber((2)/45*365)}%</td>
+                                <td>{formatNumber((2)/differencedate*365)}%</td>
                                 <td>{formatNumber((0.02*b).toFixed(0))}</td>
                                 <td>2.00%</td>
                               </tr>
@@ -444,7 +443,7 @@ const HomePage = () => {
                                 <th scope="row">2</th>
                                 <td>{formatNumber(((b*0.05)/c*21).toFixed(2))}亿</td>
                                 <td>{formatNumber(((b*0.05)/c).toFixed(3))}</td>
-                                <td>{formatNumber((0.05*100/0.2).toFixed(2))}%</td>
+                                <td>{formatNumber((0.05*100/differencedate*365).toFixed(2))}%</td>
                                 <td>{formatNumber((0.05*b).toFixed(0))}</td>
                                 <td>{formatNumber((0.0500*100).toFixed(2))}%</td>
                               </tr>
@@ -452,7 +451,7 @@ const HomePage = () => {
                                 <th scope="row">3</th>
                                 <td>{formatNumber(((b*0.1)/c*21).toFixed(2))}亿</td>
                                 <td>{formatNumber(((b*0.1)/c).toFixed(3))}</td>
-                                <td>{formatNumber((0.1*100/0.2).toFixed(2))}%</td>
+                                <td>{formatNumber((0.1*100/differencedate*365).toFixed(2))}%</td>
                                 <td>{formatNumber((0.1*b).toFixed(0))}</td>
                                 <td>{formatNumber((0.1*100).toFixed(2))}%</td>
                               </tr>
@@ -460,7 +459,7 @@ const HomePage = () => {
                                 <th scope="row">4</th>
                                 <td>{formatNumber(((b*0.2)/c*21).toFixed(2))}亿</td>
                                 <td>{formatNumber(((b*0.2)/c).toFixed(3))}</td>
-                                <td>{formatNumber((0.2*100/0.2).toFixed(2))}%</td>
+                                <td>{formatNumber((0.2*100/differencedate*365).toFixed(2))}%</td>
                                 <td>{formatNumber((0.2*b).toFixed(0))}</td>
                                 <td>{formatNumber((0.2*100).toFixed(2))}%</td>
                               </tr>
@@ -468,7 +467,7 @@ const HomePage = () => {
                                 <th scope="row">5</th>
                                 <td>{formatNumber(((b*0.5)/c*21).toFixed(2))}亿</td>
                                 <td>{formatNumber(((b*0.5)/c).toFixed(3))}</td>
-                                <td>{formatNumber((0.5*100/0.2).toFixed(2))}%</td>
+                                <td>{formatNumber((0.5*100/differencedate*365).toFixed(2))}%</td>
                                 <td>{formatNumber((0.5*b).toFixed(0))}</td>
                                 <td>{formatNumber((0.5*100).toFixed(2))}%</td>
                               </tr>
@@ -476,7 +475,7 @@ const HomePage = () => {
                                 <th scope="row">6</th>
                                 <td>{formatNumber(((b*1)/c*21).toFixed(2))}亿</td>
                                 <td>{formatNumber(((b*1)/c).toFixed(3))}</td>
-                                <td>{formatNumber((1*100/0.2).toFixed(2))}%</td>
+                                <td>{formatNumber((1*100/differencedate*365).toFixed(2))}%</td>
                                 <td>{formatNumber((1*b).toFixed(0))}</td>
                                 <td>{formatNumber((1*100).toFixed(2))}%</td>
                               </tr>
@@ -484,7 +483,7 @@ const HomePage = () => {
                                 <th scope="row">7</th>
                                 <td>{formatNumber(((b*2)/c*21).toFixed(2))}亿</td>
                                 <td>{formatNumber(((b*2)/c).toFixed(3))}</td>
-                                <td>{formatNumber((2*100/0.2).toFixed(2))}%</td>
+                                <td>{formatNumber((2*100/differencedate*365).toFixed(2))}%</td>
                                 <td>{formatNumber((2*b).toFixed(0))}</td>
                                 <td>{formatNumber((2*100).toFixed(2))}%</td>
                               </tr>
@@ -492,7 +491,7 @@ const HomePage = () => {
                                 <th scope="row">8</th>
                                 <td>{formatNumber(((b*5)/c*21).toFixed(2))}亿</td>
                                 <td>{formatNumber(((b*5)/c).toFixed(3))}</td>
-                                <td>{formatNumber((5*100/0.2).toFixed(2))}%</td>
+                                <td>{formatNumber((5*100/differencedate*365).toFixed(2))}%</td>
                                 <td>{formatNumber((5*b).toFixed(0))}</td>
                                 <td>{formatNumber((5*100).toFixed(2))}%</td>
                               </tr>
