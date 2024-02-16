@@ -2210,5 +2210,46 @@
                 "price_in_usd": 12453199.719999997
             }
         }
+    },
+    {
+        "savetime": "2024-02-16T20:44:26.016221",
+        "data": {
+            "Blue Box": {
+                "staked": 6288,
+                "totalSupply": 10000,
+                "price_btc": 0.5448799999999999,
+                "price_in_usd": 178162682.87999997
+            },
+            "Bitmap": {
+                "staked": 177394,
+                "totalSupply": 830326,
+                "price_btc": 0.004557,
+                "price_in_usd": 42035991.816
+            },
+            "This song about NFTs": {
+                "staked": 26650,
+                "totalSupply": 42069,
+                "price_btc": 0.014650000000000002,
+                "price_in_usd": 20301970.000000004
+            },
+            "Mineral": {
+                "staked": 26639,
+                "totalSupply": 40000,
+                "price_btc": 0.008989999999999998,
+                "price_in_usd": 12453199.719999997
+            },
+            "Dragon Ball": {
+                "staked": 1254,
+                "totalSupply": 100000,
+                "price_btc": 0.0011400000000000002,
+                "price_in_usd": 74337.12000000001
+            },
+            "Blue Wand": {
+                "staked": 1992,
+                "totalSupply": 42000,
+                "price_btc": 0.00234,
+                "price_in_usd": 242386.56
+            }
+        }
     }
 ]
