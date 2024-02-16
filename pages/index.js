@@ -87,7 +87,7 @@ const HomePage = () => {
   const [a, setA] = useState(0);
   const [b, setB] = useState(0);
   const [c, setC] = useState(0); 
-  
+  const [d, setD] = useState(0); 
   const [selectedDate, setSelectedDate] = useState('');
   const specifiedDate = new Date('2024-04-21'); // 指定日期
   const [differencedate, setdifferencedate] = useState(null);
@@ -253,7 +253,14 @@ const HomePage = () => {
     setA(calculatedA);
     setC(Number(newB) *differencedate /predicted_tvl_usd.data.predicted_tvl_usd* 420000000);
   };
-
+  const handleDChange = (event) => {
+    const newD = event.target.value;
+    setD(newD);
+    const calculatedA = newD / 10000;
+    const calculatedB = newD * btcdata.data.BTC.price/10000;
+    setA(calculatedA);
+    setC(Number(newB) *differencedate /predicted_tvl_usd.data.predicted_tvl_usd* 420000000);
+  };
   const handledateChange = (event) => {
     const inputDate = event.target.value;
     setSelectedDate(inputDate);
@@ -369,7 +376,12 @@ const HomePage = () => {
                         <div className='col-12'>                          
                           <div className='row'>
                             <div className='col-12'>
-                            质押金额为:  
+                            质押金额为(每日可得积分                                <input
+                                  className = "text-end"
+                                  type="number"
+                                  value={d}
+                                  onChange={handleDChange}
+                                />):  
                               </div>
                            <div className='col-12'>
                            <p className="card-text">
