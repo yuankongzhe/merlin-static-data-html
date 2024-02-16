@@ -1891,5 +1891,34 @@
                 "price_in_usd": 12286972.36
             }
         }
+    },
+    {
+        "savetime": "2024-02-16T10:00:52.309223",
+        "data": {
+            "Blue Box": {
+                "staked": 6288,
+                "totalSupply": 10000,
+                "price_btc": 0.56812,
+                "price_in_usd": 185761605.11999997
+            },
+            "Bitmap": {
+                "staked": 177394,
+                "totalSupply": 830326,
+                "price_btc": 0.004541996999999999,
+                "price_in_usd": 41897596.82253599
+            },
+            "This song about NFTs": {
+                "staked": 26650,
+                "totalSupply": 42069,
+                "price_btc": 0.015009999999999999,
+                "price_in_usd": 20800858.0
+            },
+            "Mineral": {
+                "staked": 26639,
+                "totalSupply": 40000,
+                "price_btc": 0.008899,
+                "price_in_usd": 12327143.972000001
+            }
+        }
     }
 ]
