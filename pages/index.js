@@ -373,13 +373,13 @@ const HomePage = () => {
                         </div>
                       
                         {differencedate !== null && (
-                        <p className='col-12 table-info'>质押结算时间为2024/04/21，你总计可以质押<span className='h4 strong  text-primary'>{differencedate}</span>  天。</p>
+                        <p className='col-12 table-info text-dark'>质押结算时间为2024/04/21，你总计可以质押<span className='h4 strong  text-primary'>{differencedate}</span>  天。</p>
                           )}
                         {differencedate !== null && (
                         <div className='col-12'>  
                           <div className='row'>
                           <div className='col-12'>
-                          <span>每日可得积分</span><input
+                          <span className='text-dark'>每日可得积分</span><input
                                     className = "text-end col-4"
                                     type="number"
                                     value={d}
@@ -390,7 +390,7 @@ const HomePage = () => {
                                             
                           <div className='row'>
                             <div className='col-12'>
-                            <span>等价质押金额为:  </span>
+                            <span className='text-dark'>等价质押金额为:  </span>
                               </div>
                            <div className='col-12'>
                            <p className="card-text">
@@ -401,20 +401,20 @@ const HomePage = () => {
                                   value={a}
                                   onChange={handleAChange}
                                 />
-                                <span>  BTC,即</span>
+                                <span className='text-dark'>  BTC,即</span>
                                 <input
                                 className = "text-end"
                                   type="number"
                                   value={b}
                                   onChange={handleBChange}
                                 />
-                                  <span>USD</span>
+                                  <span className='text-dark'>USD</span>
                               </p>
                            </div>
                           </div>
                           <div className='row'>
                           <p className="card-text">
-                          <span>预计将获得</span><span className='h3 strong  text-primary'>{formatNumber(c.toFixed(4))}</span><span>个MERL代币</span>
+                          <span className='text-dark' >预计将获得</span><span className='h3 strong  text-primary'>{formatNumber(c.toFixed(4))}</span><span className='text-dark'>个MERL代币</span>
                           </p>
                           </div>
 
