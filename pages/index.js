@@ -259,6 +259,9 @@ const HomePage = () => {
     // Calculate the difference in days and update the state
     const newDifferenceDate = differenceInCalendarDays(new Date(specifiedDate1), new Date(inputDate));
     setdifferencedate(newDifferenceDate);
+    if (b) {
+      setC(b *newDifferenceDate /predicted_tvl_usd.data.predicted_tvl_usd* 420000000);
+    }
   };
   const handlespecifiedDate1Change= (event) => {
     const inputDate = event.target.value;
