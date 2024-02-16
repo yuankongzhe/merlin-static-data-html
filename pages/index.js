@@ -289,18 +289,18 @@ const HomePage = () => {
     }
     else if (totalmarketcap){
        sell_price = totalmarketcap/21;
-       apycal = totalmarketcap*100000000  / (stakednum * gettokennum / 100) / (differencedate * 365);
+       apycal = totalmarketcap / 21 * gettokennum / stakednum *100 / differencedate * 365;
        netreward = totalmarketcap / 21 * gettokennum;
-       netprofit_ = totalmarketcap*100000000 / (stakednum * gettokennum / 100);
+       netprofit_ = totalmarketcap / 21 * gettokennum / stakednum;
     }
     else if (sell_price) {
        totalmarketcap = sell_price * 21; 
-       apycal = sell_price * 100 / (stakednum * gettokennum / 21) / (differencedate * 365);
+       apycal = sell_price * 100 / (stakednum * gettokennum / 21) / differencedate * 365;
        netreward = sell_price * gettokennum;
        netprofit_ = sell_price * 100 / (stakednum * gettokennum / 21);
     }
     else if (apycal) {
-       totalmarketcap = apycal * (differencedate * 365) * (stakednum * gettokennum / 100) / 100;
+       totalmarketcap = apycal * differencedate * 365 * (stakednum * gettokennum / 100) / 100;
        sell_price = totalmarketcap / 21;
        netreward = sell_price * gettokennum;
        netprofit_ = sell_price * 100 / (stakednum * gettokennum / 21);
@@ -308,13 +308,13 @@ const HomePage = () => {
     else if (netreward) {
       sell_price = netreward / gettokennum;
       totalmarketcap = sell_price * 21;
-      apycal = sell_price * 100 / (stakednum * gettokennum / 21) / (differencedate * 365);
+      apycal = sell_price * 100 / (stakednum * gettokennum / 21) / differencedate * 365;
       netprofit_ = sell_price * 100 / (stakednum * gettokennum / 21);
     }
     else if (netprofit_) {
       sell_price = netprofit_ / 100 * (stakednum * gettokennum / 21);
        totalmarketcap = sell_price * 21;
-       apycal = sell_price * 100 / (stakednum * gettokennum / 21) / (differencedate * 365);
+       apycal = sell_price * 100 / (stakednum * gettokennum / 21) / differencedate * 365;
        netreward = sell_price * gettokennum;
     }
     return {  stakednum, gettokennum, totalmarketcap,sell_price,apycal,netreward,netprofit_ }
