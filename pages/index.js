@@ -242,6 +242,7 @@ const HomePage = () => {
     setA(newA);
     const calculatedB = newA * btcdata.data.BTC.price;
     setB(calculatedB);
+    setD(newA/10000);
     setC(calculatedB *differencedate /predicted_tvl_usd.data.predicted_tvl_usd * 420000000);
   };
 
@@ -251,6 +252,7 @@ const HomePage = () => {
     setB(newB);
     const calculatedA = newB / btcdata.data.BTC.price;
     setA(calculatedA);
+    setD(calculatedA/10000);
     setC(Number(newB) *differencedate /predicted_tvl_usd.data.predicted_tvl_usd* 420000000);
   };
   const handleDChange = (event) => {
@@ -259,7 +261,8 @@ const HomePage = () => {
     const calculatedA = newD / 10000;
     const calculatedB = newD * btcdata.data.BTC.price/10000;
     setA(calculatedA);
-    setC(Number(newB) *differencedate /predicted_tvl_usd.data.predicted_tvl_usd* 420000000);
+    setB(calculatedB);
+    setC(Number(calculatedB) *differencedate /predicted_tvl_usd.data.predicted_tvl_usd* 420000000);
   };
   const handledateChange = (event) => {
     const inputDate = event.target.value;
@@ -373,15 +376,21 @@ const HomePage = () => {
                         <p className='col-12 table-info'>质押结算时间为2024/04/21，你总计可以质押<span className='h4 strong  text-primary'>{differencedate}</span>  天。</p>
                           )}
                         {differencedate !== null && (
-                        <div className='col-12'>                          
+                        <div className='col-12'>  
+                          <div className='row'>
+                          <div className='col-12'>
+                          每日可得积分                                <input
+                                    className = "text-end col-4"
+                                    type="number"
+                                    value={d}
+                                    onChange={handleDChange}
+                                  />
+                            </div>      
+                          </div>
+                                            
                           <div className='row'>
                             <div className='col-12'>
-                            质押金额为(每日可得积分                                <input
-                                  className = "text-end"
-                                  type="number"
-                                  value={d}
-                                  onChange={handleDChange}
-                                />):  
+                            等价质押金额为:  
                               </div>
                            <div className='col-12'>
                            <p className="card-text">
