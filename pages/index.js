@@ -182,12 +182,12 @@ const HomePage = () => {
       if (selectedDate && specifiedDate1) {
         const newDifferenceDate = differenceInCalendarDays(new Date(specifiedDate1), new Date(selectedDate));
         setdifferencedate(newDifferenceDate);
-        if (control === 'yes') {
-          console.log(b)
-          console.log(newDifferenceDate)
-          console.log(predicted_tvl_usd.data.predicted_tvl_usd)
-          setC((b * newDifferenceDate) / predicted_tvl_usd.data.predicted_tvl_usd * 420000000);
-        }
+        
+        console.log(b)
+        console.log(newDifferenceDate)
+        console.log(predicted_tvl_usd.data.predicted_tvl_usd)
+        setC((b * newDifferenceDate) / predicted_tvl_usd.data.predicted_tvl_usd * 420000000);
+
       }
     }
 
