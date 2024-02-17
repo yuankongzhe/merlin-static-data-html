@@ -176,7 +176,43 @@ const HomePage = () => {
         setpredicted_tvl_usd(evmdata);
       });
   }, []);
+  useEffect(() => {
+    if (predicted_tvl_usd && predicted_tvl_usd.data) {
+      // 现在可以安全地访问 predicted_tvl_usd.data
+      if (selectedDate && specifiedDate1) {
+        const newDifferenceDate = differenceInCalendarDays(new Date(specifiedDate1), new Date(selectedDate));
+        setdifferencedate(newDifferenceDate);
+        if (control === 'yes') {
+          setC((b * newDifferenceDate) / predicted_tvl_usd.data.predicted_tvl_usd * 420000000);
+        }
+      }
+    }
 
+  }, [selectedDate, control]);
+  
+  // useEffect 来处理 specifiedDate1 的变化
+  useEffect(() => {
+    if (predicted_tvl_usd && predicted_tvl_usd.data) {
+      // 现在可以安全地访问 predicted_tvl_usd.data
+      if (specifiedDate1 && selectedDate) {
+        const newDifferenceDate = differenceInCalendarDays(new Date(specifiedDate1), new Date(selectedDate));
+        let Newsum = 0;
+        for (let index = 0; index < newDifferenceDate; index++) {
+          if (predicted_tvl_usd.data.daily_predicted_tvl.hasOwnProperty(index.toString())) {
+            Newsum += predicted_tvl_usd.data.daily_predicted_tvl[index.toString()];
+          }
+        }
+        setpredicted_tvl_usd({
+          ...predicted_tvl_usd,
+          data: { ...predicted_tvl_usd.data, predicted_tvl_usd: Newsum }
+        });
+        setdifferencedate(newDifferenceDate);
+        setC((b * newDifferenceDate) / Newsum * 420000000);
+        setcontrol('yes');
+      }
+    }
+    
+  }, [specifiedDate1]);
   // 使用 useEffect 监听 differencedate 的变化
 
   // 如果数据还没加载，显示加载状态
@@ -274,33 +310,17 @@ const HomePage = () => {
   const handledateChange = (event) => {
     const inputDate = event.target.value;
     setSelectedDate(inputDate);
-    
-    // Calculate the difference in days and update the state
-    const newDifferenceDate = differenceInCalendarDays(new Date(specifiedDate1), new Date(inputDate));
-    setdifferencedate(newDifferenceDate);
-    if (control=='yes') {
-      setC(b *newDifferenceDate /predicted_tvl_usd.data.predicted_tvl_usd* 420000000);
-    }
+    // 剩下的逻辑将移至 useEffect
   };
-  const handlespecifiedDate1Change= (event) => {
+  
+  const handlespecifiedDate1Change = (event) => {
     const inputDate = event.target.value;
     setspecifiedDate1(inputDate);
-    
-    // Calculate the difference in days and update the state
-    const newDifferenceDate = differenceInCalendarDays(new Date(inputDate), new Date(selectedDate));
-    let Newsum = 0;
-    for (let index = 0; index < newDifferenceDate; index++) {
-      if (predicted_tvl_usd.data.daily_predicted_tvl.hasOwnProperty(index.toString())) {
-        Newsum += predicted_tvl_usd.data.daily_predicted_tvl[index.toString()];
-      }
-      
-    }
-    setpredicted_tvl_usd({ ...predicted_tvl_usd, data: { ...predicted_tvl_usd.data, predicted_tvl_usd: Newsum } });
-    setdifferencedate(newDifferenceDate);
-    setC(b *newDifferenceDate /Newsum* 420000000);
-    setcontrol('yes')
+    // 剩下的逻辑将移至 useEffect
   };
-
+  
+  // useEffect 来处理 selectedDate 的变化
+  
   // Define a component to format the row data
   const calcother = ({  stakednum, gettokennum,totalmarketcap,sell_price,apycal,netreward,netprofit_ }) => {
     
