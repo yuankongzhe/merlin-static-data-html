@@ -183,6 +183,9 @@ const HomePage = () => {
         const newDifferenceDate = differenceInCalendarDays(new Date(specifiedDate1), new Date(selectedDate));
         setdifferencedate(newDifferenceDate);
         if (control === 'yes') {
+          console.log(b)
+          console.log(newDifferenceDate)
+          console.log(predicted_tvl_usd.data.predicted_tvl_usd)
           setC((b * newDifferenceDate) / predicted_tvl_usd.data.predicted_tvl_usd * 420000000);
         }
       }
@@ -202,6 +205,10 @@ const HomePage = () => {
             Newsum += predicted_tvl_usd.data.daily_predicted_tvl[index.toString()];
           }
         }
+        console.log(b)
+        console.log(newDifferenceDate)
+        console.log(Newsum)
+        console.log(Newsum/newDifferenceDate)
         setpredicted_tvl_usd({
           ...predicted_tvl_usd,
           data: { ...predicted_tvl_usd.data, predicted_tvl_usd: Newsum }
@@ -223,7 +230,7 @@ const HomePage = () => {
   
   const CurrencyevmCards = Object.keys(evmdata.data).map(currencyName => {
     const staked = evmdata.data[currencyName].staked;
-    console.log(staked);
+    // console.log(staked);
     const inputPrice = currencyPrices[currencyName] || evmdata.data[currencyName].price;
     return (
       <CurrencyCard
