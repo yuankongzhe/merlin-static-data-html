@@ -72,7 +72,7 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
 };
 
 const currencyList = ['ORDI', 'SATS', 'BTCS', 'RATS', 'MMSS', 'AINN', 'RCSV', 'MICE', 'TRAC'];
-const currency420List = ['Blue Box','Bitmap','This song about NFTs','Mineral','Dragon Ball','Blue Wand']
+const currency420List = ['BLUEBOX','BITMAP','MUSICBOX','MINERAL','DRAGONBALL','BLUEWAND']
 const formatNumber = (num) => {
   return new Intl.NumberFormat('en-US').format(num);
 };
@@ -184,7 +184,26 @@ const HomePage = () => {
   if (!btcdata) return <div>Loading...</div>;
   if (!brc20data) return <div>Loading...</div>;
   if (!sumdata) return <div>Loading...</div>;
-
+  
+  const CurrencyevmCards = Object.keys(evmdata.data).map(currencyName => {
+    const staked = evmdata.data[currencyName].staked;
+    console.log(staked);
+    const inputPrice = currencyPrices[currencyName] || evmdata.data[currencyName].price;
+    return (
+      <CurrencyCard
+        key={currencyName}
+        currencyName={currencyName}
+        staked={staked}
+        btcPrice={btcdata.data.BTC.price}
+        priceInTotal={evmdata.data[currencyName].price_in_usd}
+        inputPrice={inputPrice}
+        onPriceChange={handlePriceChange}
+        isBrc20Token={false}
+        isBrc420Token={false}
+        totaltvl={sumdata.data.sum_usd.toFixed(0)}
+      />
+    );
+  });
   const Currency20Cards = currencyList.map((currencyName) => {
     const staked = brc20data.data[currencyName].staked;
     const inputPrice = currencyPrices[currencyName] || brc20data.data[currencyName].price_sat;
@@ -420,37 +439,8 @@ const HomePage = () => {
                             isBrc420Token={false}
                             totaltvl={sumdata.data.sum_usd.toFixed(0)}
                           />
-                          <CurrencyCard 
-                          currencyName="ETH" 
-                          staked={evmdata.data.ETH.staked} 
-                          priceInTotal={evmdata.data.ETH.price_in_usd} 
-                          inputPrice={evmdata.data.ETH.price}
-                          onPriceChange={handlePriceChange}
-                          isBrc20Token={false}
-                          isBrc420Token={false}
-                          totaltvl={sumdata.data.sum_usd.toFixed(0)}
-                        />
-                        <CurrencyCard 
-                          currencyName="USDT" 
-                          staked={evmdata.data.USDT.staked} 
-                          priceInTotal={evmdata.data.USDT.price_in_usd} 
-                          inputPrice={evmdata.data.USDT.price}
-                          onPriceChange={handlePriceChange}
-                          isBrc20Token={false}
-                          isBrc420Token={false}
-                          totaltvl={sumdata.data.sum_usd.toFixed(0)}
-                        />
-                        <CurrencyCard 
-                          currencyName="USDC" 
-                          staked={evmdata.data.USDC.staked} 
-                          priceInTotal={evmdata.data.USDC.price_in_usd} 
-                          inputPrice={evmdata.data.USDC.price}
-                          onPriceChange={handlePriceChange}
-                          isBrc20Token={false}
-                          isBrc420Token={false}
-                          totaltvl={sumdata.data.sum_usd.toFixed(0)}
-                        />
-
+                          
+                        {CurrencyevmCards}
                         {Currency20Cards}
                         {Currency420Cards}
 
