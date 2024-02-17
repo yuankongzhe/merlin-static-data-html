@@ -89,7 +89,7 @@ const HomePage = () => {
   const [c, setC] = useState(0); 
   const [d, setD] = useState(0); 
   const [selectedDate, setSelectedDate] = useState('');
-  const [specifiedDate1,setspecifiedDate1] = useState(null); // 指定日期
+  const [specifiedDate1,setspecifiedDate1] = useState('2024-04-01'); // 指定日期
   const [differencedate, setdifferencedate] = useState(null);
   const [control,setcontrol]=useState(null);
    
@@ -507,6 +507,7 @@ const HomePage = () => {
                         min={'2024-03-01'}
                         max={'2024-04-01'}
                         onChange={handlespecifiedDate1Change}
+                        disabled
                         />
                         
                       </div>
