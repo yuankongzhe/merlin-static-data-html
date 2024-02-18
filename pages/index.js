@@ -176,22 +176,22 @@ const HomePage = () => {
         setpredicted_tvl_usd(evmdata);
       });
   }, []);
-  useEffect(() => {
-    if (predicted_tvl_usd && predicted_tvl_usd.data) {
-      // 现在可以安全地访问 predicted_tvl_usd.data
-      if (selectedDate && specifiedDate1) {
-        const newDifferenceDate = differenceInCalendarDays(new Date(specifiedDate1), new Date(selectedDate));
-        setdifferencedate(newDifferenceDate);
+  // useEffect(() => {
+  //   if (predicted_tvl_usd && predicted_tvl_usd.data) {
+  //     // 现在可以安全地访问 predicted_tvl_usd.data
+  //     if (selectedDate && specifiedDate1) {
+  //       const newDifferenceDate = differenceInCalendarDays(new Date(specifiedDate1), new Date(selectedDate));
+  //       setdifferencedate(newDifferenceDate);
         
-        console.log(b)
-        console.log(newDifferenceDate)
-        console.log(predicted_tvl_usd.data.predicted_tvl_usd)
-        setC((b * newDifferenceDate) / predicted_tvl_usd.data.predicted_tvl_usd * 420000000);
+  //       console.log(b)
+  //       console.log(newDifferenceDate)
+  //       console.log(predicted_tvl_usd.data.predicted_tvl_usd)
+  //       setC((b * newDifferenceDate) / predicted_tvl_usd.data.predicted_tvl_usd * 420000000);
 
-      }
-    }
+  //     }
+  //   }
 
-  }, [selectedDate, control]);
+  // }, [selectedDate,specifiedDate1, control]);
   
   // useEffect 来处理 specifiedDate1 的变化
   useEffect(() => {
@@ -199,15 +199,16 @@ const HomePage = () => {
       // 现在可以安全地访问 predicted_tvl_usd.data
       if (specifiedDate1 && selectedDate) {
         const newDifferenceDate = differenceInCalendarDays(new Date(specifiedDate1), new Date(selectedDate));
+        const total_date = differenceInCalendarDays(new Date(specifiedDate1), new Date('2024-02-08'));
         let Newsum = 0;
-        for (let index = 0; index < newDifferenceDate; index++) {
+        for (let index = 0; index < total_date; index++) {
           if (predicted_tvl_usd.data.daily_predicted_tvl.hasOwnProperty(index.toString())) {
             Newsum += predicted_tvl_usd.data.daily_predicted_tvl[index.toString()];
           }
         }
-        console.log(b)
-        console.log(newDifferenceDate)
-        console.log(Newsum)
+        console.log(b,'usd----')
+        console.log(newDifferenceDate,'diff_date')
+        console.log(Newsum,'sum')
         console.log(Newsum/newDifferenceDate)
         setpredicted_tvl_usd({
           ...predicted_tvl_usd,
@@ -219,7 +220,7 @@ const HomePage = () => {
       }
     }
     
-  }, [specifiedDate1]);
+  }, [specifiedDate1,selectedDate]);
   // 使用 useEffect 监听 differencedate 的变化
 
   // 如果数据还没加载，显示加载状态
