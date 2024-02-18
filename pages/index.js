@@ -507,7 +507,7 @@ const HomePage = () => {
                         min={'2024-03-01'}
                         max={'2024-04-01'}
                         onChange={handlespecifiedDate1Change}
-                        disabled
+                        
                         />
                         
                       </div>
