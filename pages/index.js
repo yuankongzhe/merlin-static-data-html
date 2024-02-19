@@ -416,7 +416,7 @@ const HomePage = () => {
       // ...更多条目...
     ];
   // 将字典的每个项转换为 `calcother` 函数的参数，并调用函数
-  const results = dataList.map(item => calcother(item));
+  const sortedResults = dataList.map(item => calcother(item));
 
 
   // Return sorted results within a table structure
