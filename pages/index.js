@@ -470,7 +470,7 @@ const HomePage = () => {
                 <div class="accordion" id="accordionPanelsStayOpenExample">
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="staked-evm-headingOne">
-                      <button class="accordion-button" type="button" data-bs-toggle="collapse collapse" data-bs-target="#staked-evm-collapseOne" aria-expanded="false" aria-controls="staked-evm-collapseOne">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#staked-evm-collapseOne" aria-expanded="false" aria-controls="staked-evm-collapseOne">
                         BTC\ETH\USD 等EVM代币质押详情
                       </button>
                     </h2>
