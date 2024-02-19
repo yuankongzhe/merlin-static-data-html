@@ -49,7 +49,7 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
         <div className='row' style={{  minWidth: '100px' }}>
           
           <CircularProgressBar 
-          percent={(staked / totalSupply * 100).toFixed(0)} 
+          percent={(staked / totalSupply * 100).toFixed(2)} 
           circleClass="#9EC5FE"
           textClass="#3D8BFD"
           />
