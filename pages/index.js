@@ -73,6 +73,7 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
 
 const currencyList = ['ORDI', 'SATS', 'BTCS', 'RATS', 'MMSS', 'AINN', 'RCSV', 'MICE', 'TRAC'];
 const currency420List = ['BLUEBOX','BITMAP','MUSICBOX','MINERAL','DRAGONBALL','BLUEWAND']
+const currencyordiList = ['BITCOIN-PUPPETS','BITCOIN-FROGS','NODEMONKES','GOOSINALS']
 const formatNumber = (num) => {
   return new Intl.NumberFormat('en-US').format(num);
 };
@@ -81,6 +82,7 @@ const HomePage = () => {
   const [btcdata, btcsetData] = useState(null);
   const [brc20data, brc20setData] = useState(null);
   const [brc420data, brc420setData] = useState(null);
+  const [ordidata, ordisetData] = useState(null);
   const [sumdata, sumsetData] = useState(null);
   const [predicted_tvl_usd, setpredicted_tvl_usd] = useState(null);
   // 设置状态
@@ -154,6 +156,16 @@ const HomePage = () => {
       .then(evmdata => {
         // 将数据设置到状态中
         brc420setData(evmdata);
+      });
+  }, []);
+  useEffect(() => {
+    const filename = 'ordi_staked_balance_sum'; // 你想要读取的文件名（不包括.json扩展名）
+    // 调用我们的API路由，并传递文件名
+    fetch(`/api/${filename}`)
+      .then(response => response.json())
+      .then(evmdata => {
+        // 将数据设置到状态中
+        ordisetData(evmdata);
       });
   }, []);
   useEffect(() => {
@@ -273,7 +285,32 @@ const HomePage = () => {
       />
     );
   });
-  
+  const CurrencyordiListCards = currencyordiList
+  .sort((a, b) => {
+    const ratioA = ordidata.data[a].staked / ordidata.data[a].totalSupply;
+    const ratioB = ordidata.data[b].staked / ordidata.data[b].totalSupply;
+    return ratioB - ratioA  ;
+  })
+  .map((currencyName) => {
+    const staked = ordidata.data[currencyName].staked;
+    const totalSupply = ordidata.data[currencyName].totalSupply;
+    const inputPrice = currencyPrices[currencyName] || ordidata.data[currencyName].price_btc;
+    return (
+      <CurrencyCard
+        key={currencyName}
+        currencyName={currencyName}
+        staked={staked}
+        btcPrice={btcdata.data.BTC.price}
+        priceInTotal={staked * inputPrice * btcdata.data.BTC.price}
+        inputPrice={inputPrice}
+        onPriceChange={handlePriceChange}
+        isBrc20Token={false}
+        isBrc420Token={true}
+        totalSupply={totalSupply}
+        totaltvl={sumdata.data.sum_usd.toFixed(0)}
+      />
+    );
+  });
   const Currency420Cards = currency420List
   .sort((a, b) => {
     const ratioA = brc420data.data[a].staked / brc420data.data[a].totalSupply;
@@ -499,6 +536,18 @@ const HomePage = () => {
                     <div id="staked-brc20-collapseTwo" class="accordion-collapse collapse" aria-labelledby="staked-brc20-headingTwo">
                       <div class="accordion-body row ">
                       {Currency20Cards}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="staked-brc420-headingThree">
+                      <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#staked-brc420-collapseThree" aria-expanded="true" aria-controls="staked-brc420-collapseThree">
+                      ORDI-NFT质押详情（按质押率排序）
+                      </button>
+                    </h2>
+                    <div id="staked-brc420-collapseThree" class="accordion-collapse collapse show"  aria-labelledby="staked-brc420-headingThree">
+                      <div class="accordion-body row ">
+                      {CurrencyordiListCards}
                       </div>
                     </div>
                   </div>
