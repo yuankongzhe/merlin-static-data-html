@@ -540,12 +540,12 @@ const HomePage = () => {
                     </div>
                   </div>
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="staked-brc420-headingThree">
-                      <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#staked-brc420-collapseThree" aria-expanded="true" aria-controls="staked-brc420-collapseThree">
+                    <h2 class="accordion-header" id="staked-ordinft-headingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#staked-ordinft-collapseThree" aria-expanded="false" aria-controls="staked-ordinft-collapseThree">
                       ORDI-NFT质押详情（按质押率排序）
                       </button>
                     </h2>
-                    <div id="staked-brc420-collapseThree" class="accordion-collapse collapse show"  aria-labelledby="staked-brc420-headingThree">
+                    <div id="staked-ordinft-collapseThree" class="accordion-collapse collapse"  aria-labelledby="staked-ordinft-headingThree">
                       <div class="accordion-body row ">
                       {CurrencyordiListCards}
                       </div>
