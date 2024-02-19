@@ -11,7 +11,7 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
   const unit = isBrc20Token ? ' sats/'+currencyName : isBrc420Token ?  'BTC' : ' /U';
 
   return (
-    <div className='col-md-3 ms-md-auto g-2'>
+    <div className='col-md-3  g-2'>
     <div className='card   h-100 shadow  bg-body rounded'>
         <div className="card-header text-center text-dark" style={{ 'background-color': "white"  }}>
 
@@ -248,7 +248,13 @@ const HomePage = () => {
       />
     );
   });
-  const Currency20Cards = currencyList.map((currencyName) => {
+  const Currency20Cards = currencyList
+  .sort((a, b) => {
+    const ratioA20 = brc20data.data[a].staked / brc20data.data[a].totalSupply;
+    const ratioB20 = brc20data.data[b].staked / brc20data.data[b].totalSupply;
+    return ratioB20 - ratioA20  ;
+  })
+  .map((currencyName) => {
     const staked = brc20data.data[currencyName].staked;
     const inputPrice = currencyPrices[currencyName] || brc20data.data[currencyName].price_sat;
     return (
@@ -267,9 +273,16 @@ const HomePage = () => {
       />
     );
   });
-  const Currency420Cards = currency420List.map((currencyName) => {
-
+  
+  const Currency420Cards = currency420List
+  .sort((a, b) => {
+    const ratioA = brc420data.data[a].staked / brc420data.data[a].totalSupply;
+    const ratioB = brc420data.data[b].staked / brc420data.data[b].totalSupply;
+    return ratioB - ratioA  ;
+  })
+  .map((currencyName) => {
     const staked = brc420data.data[currencyName].staked;
+    const totalSupply = brc420data.data[currencyName].totalSupply;
     const inputPrice = currencyPrices[currencyName] || brc420data.data[currencyName].price_btc;
     return (
       <CurrencyCard
@@ -282,7 +295,7 @@ const HomePage = () => {
         onPriceChange={handlePriceChange}
         isBrc20Token={false}
         isBrc420Token={true}
-        totalSupply={brc420data.data[currencyName].totalSupply}
+        totalSupply={totalSupply}
         totaltvl={sumdata.data.sum_usd.toFixed(0)}
       />
     );
@@ -405,8 +418,6 @@ const HomePage = () => {
   // 将字典的每个项转换为 `calcother` 函数的参数，并调用函数
   const results = dataList.map(item => calcother(item));
 
-  // 根据 `totalmarketcap` 从小到大排序这些结果
-  const sortedResults = results.sort((a, b) => a.totalmarketcap - b.totalmarketcap);
 
   // Return sorted results within a table structure
   return (
@@ -456,8 +467,16 @@ const HomePage = () => {
             <div class="tab-content col-md-8 col-ms-12" id="v-pills-tabContent">
               <div class="tab-pane fade show active" id="stakedDetailsaccordion" role="tabpanel" aria-labelledby="stakedDetailsaccordion-tab" tabindex="0">
               <div className='row '>
-
-                        <CurrencyCard 
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="staked-evm-headingOne">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse collapse" data-bs-target="#staked-evm-collapseOne" aria-expanded="false" aria-controls="staked-evm-collapseOne">
+                        BTC\ETH\USD 等EVM代币质押详情
+                      </button>
+                    </h2>
+                    <div id="staked-evm-collapseOne" class="accordion-collapse collapse" aria-labelledby="staked-evm-headingOne">
+                      <div class="accordion-body row">
+                      <CurrencyCard 
                             currencyName="BTC" 
                             staked={btcdata.data.BTC.staked} 
                             priceInTotal={btcdata.data.BTC.staked * btcdata.data.BTC.price} 
@@ -467,10 +486,40 @@ const HomePage = () => {
                             isBrc420Token={false}
                             totaltvl={sumdata.data.sum_usd.toFixed(0)}
                           />
+                      {CurrencyevmCards}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="staked-brc20-headingTwo">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#staked-brc20-collapseTwo" aria-expanded="false" aria-controls="staked-brc20-collapseTwo">
+                        Brc20质押详情（按质押率排序）
+                      </button>
+                    </h2>
+                    <div id="staked-brc20-collapseTwo" class="accordion-collapse collapse" aria-labelledby="staked-brc20-headingTwo">
+                      <div class="accordion-body row ">
+                      {Currency20Cards}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="staked-brc420-headingThree">
+                      <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#staked-brc420-collapseThree" aria-expanded="true" aria-controls="staked-brc420-collapseThree">
+                      Brc420质押详情（按质押率排序）
+                      </button>
+                    </h2>
+                    <div id="staked-brc420-collapseThree" class="accordion-collapse collapse show"  aria-labelledby="staked-brc420-headingThree">
+                      <div class="accordion-body row ">
+                      {Currency420Cards}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                           
-                        {CurrencyevmCards}
-                        {Currency20Cards}
-                        {Currency420Cards}
+                        
+                        
+                        
 
                         </div>
               </div>
