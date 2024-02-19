@@ -452,10 +452,12 @@ const HomePage = () => {
       { 'stakednum': b, 'gettokennum': c, 'apycal':10},
       // ...更多条目...
     ];
+
   // 将字典的每个项转换为 `calcother` 函数的参数，并调用函数
-  const sortedResults = dataList.map(item => calcother(item));
+  const results = dataList.map(item => calcother(item));
 
-
+  // 根据 `totalmarketcap` 从小到大排序这些结果
+  const sortedResults = results.sort((a, b) => a.totalmarketcap - b.totalmarketcap);
   // Return sorted results within a table structure
   return (
 
