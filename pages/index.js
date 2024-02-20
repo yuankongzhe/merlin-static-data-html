@@ -425,6 +425,42 @@ const HomePage = () => {
       <td>{formatNumber((netprofit_).toFixed(2))}%</td>
     </tr>
   );
+  const other_addressList  = [
+    // stakednum, gettokennum, totalmarketcap,sell_price,apycal,netreward,netprofit_
+    { 'address_info': '本站站长推特', 'address_link': 'https://twitter.com/0xfaskety','color': '', },
+    { 'address_info': '本站开源地址', 'address_link': 'https://github.com/yuankongzhe/merlin-static-data-html','color': '', },
+    { 'address_info': '其他Merlin看板网站', 'address_link': 'https://bitmap.date/merlin/','color': '',},
+    { 'address_info': 'Merlin 跨链桥（Meson）', 'address_link': 'https://meson.fi/','color': '', },
+    // ...更多条目...
+  ];
+  const official_addressList  = [
+    // stakednum, gettokennum, totalmarketcap,sell_price,apycal,netreward,netprofit_
+    { 'address_info': 'Melin 官网', 'address_link': 'https://merlinchain.io/','color': '', },
+    { 'address_info': 'Merlin Seal 质押官网', 'address_link': 'https://merlinchain.io/bridge/staking','color': '', },
+    
+    { 'address_info': 'Merlin 官方推特', 'address_link': 'https://twitter.com/MerlinLayer2','color': '',},
+    { 'address_info': 'Merlin 主要创始人推特', 'address_link': 'https://twitter.com/BitmapTech','color': '', },
+    { 'address_info': 'Merlin Seal 官方活动细则', 'address_link': 'https://medium.com/@merlinchaincrypto/merlins-seal-the-biggest-fair-launch-of-layer2-5614001b2582','color': '', },
+    // ...更多条目...
+  ];
+  const addressTable = (addressList) =>{
+  // Return sorted results within a table structure
+  return (
+
+      <tbody>
+        {addressList.map((data, index) => (
+          <tr className={`table-${data.color}`}>
+            {/* <th scope="row">{index}</th> */}
+            <td className='col-4'><span className='text-black'>{data.address_info}</span></td>
+            <td className='col-8'><a href={data.address_link} target="_blank" rel="noopener noreferrer">
+            {data.address_link}
+            </a></td>
+          </tr>
+        ))}
+      </tbody>
+
+  );
+    };
   const caltable = () =>{
     const dataList  = [
       // stakednum, gettokennum, totalmarketcap,sell_price,apycal,netreward,netprofit_
@@ -500,6 +536,7 @@ const HomePage = () => {
             <div class="nav flex-column nav-pills me-3 col-10 border border-primary p-2 mb-2 border-opacity-50 rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
               <button class="btn btn-outline-primary active nav-link " id="stakedDetailsaccordion-tab" data-bs-toggle="pill" data-bs-target="#stakedDetailsaccordion" type="button" role="tab" aria-controls="stakedDetailsaccordion" aria-selected="true">Merlin Seal TVL 详细情况</button>
               <button class="nav-link btn btn-outline-primary" id="personalrewardcal-tab" data-bs-toggle="pill" data-bs-target="#personalrewardcal" type="button" role="tab" aria-controls="personalrewardcal" aria-selected="false">个人收益计算器</button>
+              <button class="nav-link btn btn-outline-primary" id="merlinAddress-tab" data-bs-toggle="pill" data-bs-target="#merlinAddress" type="button" role="tab" aria-controls="merlinAddress" aria-selected="false">Merlin相关链接</button>
             </div>
             </div>
 
@@ -692,6 +729,42 @@ const HomePage = () => {
                 </div>
 
                 
+              </div>
+              </div>
+              <div class="tab-pane fade" id="merlinAddress" role="tabpanel" aria-labelledby="merlinAddress-tab" tabindex="0">
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="address-official-headingOne">
+                        <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#address-official-collapseOne" aria-expanded="true" aria-controls="address-official-collapseOne">
+                          Merlin 官方链接
+                        </button>
+                      </h2>
+                      <div id="address-official-collapseOne" class="accordion-collapse collapse show" aria-labelledby="address-official-headingOne">
+                        <div class="accordion-body row">
+                          <table class="table table-sm table-hover text-center">
+                              {addressTable(official_addressList)}
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="address-other-headingThree">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#address-other-collapseThree" aria-expanded="true" aria-controls="address-other-collapseThree">
+                        其他链接
+                        </button>
+                      </h2>
+                      <div id="address-other-collapseThree" class="accordion-collapse collapse show"  aria-labelledby="address-other-headingThree">
+                        <div class="accordion-body row ">
+                        <table class="table table-sm table-hover text-center">
+                              {addressTable(other_addressList)}
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              <div>
+
               </div>
               </div>
             </div>
