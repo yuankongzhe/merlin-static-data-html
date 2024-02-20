@@ -404,5 +404,34 @@
                 "price_in_usd": 163454.430777
             }
         }
+    },
+    {
+        "savetime": "2024-02-20T09:00:06.604095",
+        "data": {
+            "GOOSINALS": {
+                "staked": 1520.0,
+                "totalSupply": 9999,
+                "price_btc": 0.015736978797500002,
+                "price_in_usd": 1196010.38861
+            },
+            "NODEMONKES": {
+                "staked": 358.0,
+                "totalSupply": 9984,
+                "price_btc": 0.18982182678022347,
+                "price_in_usd": 3397810.699366
+            },
+            "BITCOIN-FROGS": {
+                "staked": 386.0,
+                "totalSupply": 10000,
+                "price_btc": 0.15994858205492227,
+                "price_in_usd": 3087007.63366
+            },
+            "BITCOIN-PUPPETS": {
+                "staked": 44.0,
+                "totalSupply": 10001,
+                "price_btc": 0.074297468535,
+                "price_in_usd": 163454.430777
+            }
+        }
     }
 ]
