@@ -13,7 +13,7 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
   return (
     <div className='col-md-3  g-2'>
     <div className='card   h-100 shadow  bg-body rounded'>
-        <div className="card-header text-center text-dark" style={{ 'background-color': "white"  }}>
+        <div className="card-header text-center text-dark" style={{ 'backgroundColor': "white"  }}>
 
         {currencyName}
       </div>
@@ -449,8 +449,7 @@ const HomePage = () => {
 
       <tbody>
         {addressList.map((data, index) => (
-          <tr className={`table-${data.color}`}>
-            {/* <th scope="row">{index}</th> */}
+          <tr className={`table-${data.color}`} key={`table-address-${index}`}>
             <td className='col-4'><span className='text-black'>{data.address_info}</span></td>
             <td className='col-8'><a href={data.address_link} target="_blank" rel="noopener noreferrer">
             {data.address_link}
@@ -531,27 +530,27 @@ const HomePage = () => {
 </svg></p>
           </div>
           <div className='card-body ' >
-          <div class="d-flex align-items-start row">
+          <div className="d-flex align-items-start row">
             <div className='col-md-2 col-ms-12'>
-            <div class="nav flex-column nav-pills me-3 col-10 border border-primary p-2 mb-2 border-opacity-50 rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-              <button class="btn btn-outline-primary active nav-link " id="stakedDetailsaccordion-tab" data-bs-toggle="pill" data-bs-target="#stakedDetailsaccordion" type="button" role="tab" aria-controls="stakedDetailsaccordion" aria-selected="true">Merlin Seal TVL 详细情况</button>
-              <button class="nav-link btn btn-outline-primary" id="personalrewardcal-tab" data-bs-toggle="pill" data-bs-target="#personalrewardcal" type="button" role="tab" aria-controls="personalrewardcal" aria-selected="false">个人收益计算器</button>
-              <button class="nav-link btn btn-outline-primary" id="merlinAddress-tab" data-bs-toggle="pill" data-bs-target="#merlinAddress" type="button" role="tab" aria-controls="merlinAddress" aria-selected="false">Merlin相关链接</button>
+            <div className="nav flex-column nav-pills me-3 col-10 border border-primary p-2 mb-2 border-opacity-50 rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+              <button className="btn btn-outline-primary active nav-link " id="stakedDetailsaccordion-tab" data-bs-toggle="pill" data-bs-target="#stakedDetailsaccordion" type="button" role="tab" aria-controls="stakedDetailsaccordion" aria-selected="true">Merlin Seal TVL 详细情况</button>
+              <button className="nav-link btn btn-outline-primary" id="personalrewardcal-tab" data-bs-toggle="pill" data-bs-target="#personalrewardcal" type="button" role="tab" aria-controls="personalrewardcal" aria-selected="false">个人收益计算器</button>
+              <button className="nav-link btn btn-outline-primary" id="merlinAddress-tab" data-bs-toggle="pill" data-bs-target="#merlinAddress" type="button" role="tab" aria-controls="merlinAddress" aria-selected="false">Merlin相关链接</button>
             </div>
             </div>
 
-            <div class="tab-content col-md-8 col-ms-12" id="v-pills-tabContent">
-              <div class="tab-pane fade show active" id="stakedDetailsaccordion" role="tabpanel" aria-labelledby="stakedDetailsaccordion-tab" tabindex="0">
+            <div className="tab-content col-md-8 col-ms-12" id="v-pills-tabContent">
+              <div className="tab-pane fade show active" id="stakedDetailsaccordion" role="tabpanel" aria-labelledby="stakedDetailsaccordion-tab" tabIndex="0">
               <div className='row '>
-                <div class="accordion" id="accordionPanelsStayOpenExample">
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="staked-evm-headingOne">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#staked-evm-collapseOne" aria-expanded="false" aria-controls="staked-evm-collapseOne">
+                <div className="accordion" id="accordionPanelsStayOpenExample">
+                  <div className="accordion-item">
+                    <h2 className="accordion-header" id="staked-evm-headingOne">
+                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#staked-evm-collapseOne" aria-expanded="false" aria-controls="staked-evm-collapseOne">
                         BTC\ETH\USD 等EVM代币质押详情
                       </button>
                     </h2>
-                    <div id="staked-evm-collapseOne" class="accordion-collapse collapse" aria-labelledby="staked-evm-headingOne">
-                      <div class="accordion-body row">
+                    <div id="staked-evm-collapseOne" className="accordion-collapse collapse" aria-labelledby="staked-evm-headingOne">
+                      <div className="accordion-body row">
                       <CurrencyCard 
                             currencyName="BTC" 
                             staked={btcdata.data.BTC.staked} 
@@ -566,38 +565,38 @@ const HomePage = () => {
                       </div>
                     </div>
                   </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="staked-brc20-headingTwo">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#staked-brc20-collapseTwo" aria-expanded="false" aria-controls="staked-brc20-collapseTwo">
+                  <div className="accordion-item">
+                    <h2 className="accordion-header" id="staked-brc20-headingTwo">
+                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#staked-brc20-collapseTwo" aria-expanded="false" aria-controls="staked-brc20-collapseTwo">
                         Brc20质押详情（按质押率排序）
                       </button>
                     </h2>
-                    <div id="staked-brc20-collapseTwo" class="accordion-collapse collapse" aria-labelledby="staked-brc20-headingTwo">
-                      <div class="accordion-body row ">
+                    <div id="staked-brc20-collapseTwo" className="accordion-collapse collapse" aria-labelledby="staked-brc20-headingTwo">
+                      <div className="accordion-body row ">
                       {Currency20Cards}
                       </div>
                     </div>
                   </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="staked-ordinft-headingThree">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#staked-ordinft-collapseThree" aria-expanded="false" aria-controls="staked-ordinft-collapseThree">
+                  <div className="accordion-item">
+                    <h2 className="accordion-header" id="staked-ordinft-headingThree">
+                      <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#staked-ordinft-collapseThree" aria-expanded="false" aria-controls="staked-ordinft-collapseThree">
                       ORDI-NFT质押详情（按质押率排序）
                       </button>
                     </h2>
-                    <div id="staked-ordinft-collapseThree" class="accordion-collapse collapse"  aria-labelledby="staked-ordinft-headingThree">
-                      <div class="accordion-body row ">
+                    <div id="staked-ordinft-collapseThree" className="accordion-collapse collapse"  aria-labelledby="staked-ordinft-headingThree">
+                      <div className="accordion-body row ">
                       {CurrencyordiListCards}
                       </div>
                     </div>
                   </div>
-                  <div class="accordion-item">
-                    <h2 class="accordion-header" id="staked-brc420-headingThree">
-                      <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#staked-brc420-collapseThree" aria-expanded="true" aria-controls="staked-brc420-collapseThree">
+                  <div className="accordion-item">
+                    <h2 className="accordion-header" id="staked-brc420-headingThree">
+                      <button className="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#staked-brc420-collapseThree" aria-expanded="true" aria-controls="staked-brc420-collapseThree">
                       Brc420质押详情（按质押率排序）
                       </button>
                     </h2>
-                    <div id="staked-brc420-collapseThree" class="accordion-collapse collapse show"  aria-labelledby="staked-brc420-headingThree">
-                      <div class="accordion-body row ">
+                    <div id="staked-brc420-collapseThree" className="accordion-collapse collapse show"  aria-labelledby="staked-brc420-headingThree">
+                      <div className="accordion-body row ">
                       {Currency420Cards}
                       </div>
                     </div>
@@ -611,7 +610,7 @@ const HomePage = () => {
 
                         </div>
               </div>
-              <div class="tab-pane fade" id="personalrewardcal" role="tabpanel" aria-labelledby="personalrewardcal-tab" tabindex="0">
+              <div className="tab-pane fade" id="personalrewardcal" role="tabpanel" aria-labelledby="personalrewardcal-tab" tabIndex="0">
               <div>
                 <div className='row'>
                   <div className='col-md-6 col-ms-12'>
@@ -697,7 +696,7 @@ const HomePage = () => {
                           </div>
 
                           <div className='row'>
-                          <table class="table table-sm">
+                          <table className="table table-sm">
                             <thead>
                               <tr>
                                 <th scope="col">#</th>
@@ -731,32 +730,32 @@ const HomePage = () => {
                 
               </div>
               </div>
-              <div class="tab-pane fade" id="merlinAddress" role="tabpanel" aria-labelledby="merlinAddress-tab" tabindex="0">
-                <div class="accordion" id="accordionPanelsStayOpenExample">
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="address-official-headingOne">
-                        <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#address-official-collapseOne" aria-expanded="true" aria-controls="address-official-collapseOne">
+              <div className="tab-pane fade" id="merlinAddress" role="tabpanel" aria-labelledby="merlinAddress-tab" tabIndex="0">
+                <div className="accordion" id="accordionPanelsStayOpenExample">
+                    <div className="accordion-item">
+                      <h2 className="accordion-header" id="address-official-headingOne">
+                        <button className="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#address-official-collapseOne" aria-expanded="true" aria-controls="address-official-collapseOne">
                           Merlin 官方链接
                         </button>
                       </h2>
-                      <div id="address-official-collapseOne" class="accordion-collapse collapse show" aria-labelledby="address-official-headingOne">
-                        <div class="accordion-body row">
-                          <table class="table table-sm table-hover text-center">
+                      <div id="address-official-collapseOne" className="accordion-collapse collapse show" aria-labelledby="address-official-headingOne">
+                        <div className="accordion-body row">
+                          <table className="table table-sm table-hover text-center">
                               {addressTable(official_addressList)}
                           </table>
                         </div>
                       </div>
                     </div>
 
-                    <div class="accordion-item">
-                      <h2 class="accordion-header" id="address-other-headingThree">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#address-other-collapseThree" aria-expanded="true" aria-controls="address-other-collapseThree">
+                    <div className="accordion-item">
+                      <h2 className="accordion-header" id="address-other-headingThree">
+                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#address-other-collapseThree" aria-expanded="true" aria-controls="address-other-collapseThree">
                         其他链接
                         </button>
                       </h2>
-                      <div id="address-other-collapseThree" class="accordion-collapse collapse show"  aria-labelledby="address-other-headingThree">
-                        <div class="accordion-body row ">
-                        <table class="table table-sm table-hover text-center">
+                      <div id="address-other-collapseThree" className="accordion-collapse collapse show"  aria-labelledby="address-other-headingThree">
+                        <div className="accordion-body row ">
+                        <table className="table table-sm table-hover text-center">
                               {addressTable(other_addressList)}
                           </table>
                         </div>
