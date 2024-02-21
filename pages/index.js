@@ -5,7 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
 import { differenceInCalendarDays } from 'date-fns';
 import CircularProgressBar from '../components/CircularProgressBar';
-const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPrice ,isBrc20Token,isBrc420Token,totalSupply,totaltvl}) => {
+const CurrencyCard = ({ currencyName, staked, btcPrice, inputPrice ,isBrc20Token,isBrc420Token,totalSupply,totaltvl}) => {
 
   const priceInTotal = isBrc20Token ? staked * inputPrice * btcPrice *0.00000001 : isBrc420Token ? staked * inputPrice * btcPrice : staked * inputPrice;
   const unit = isBrc20Token ? ' sats/'+currencyName : isBrc420Token ?  'BTC' : ' /U';
@@ -71,13 +71,14 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, onPriceChange, inputPric
   );
 };
 
-const currencyList = ['ORDI', 'SATS', 'BTCS', 'RATS', 'MMSS', 'AINN', 'RCSV', 'MICE', 'TRAC'];
-const currency420List = ['BLUEBOX','BITMAP','MUSICBOX','MINERAL','DRAGONBALL','BLUEWAND']
-const currencyordiList = ['BITCOIN-PUPPETS','BITCOIN-FROGS','NODEMONKES','GOOSINALS']
+
 const formatNumber = (num) => {
   return new Intl.NumberFormat('en-US').format(num);
 };
 const HomePage = () => {
+  const [currencyList,setcurrencyList] = useState(null);
+  const [currency420List,setcurrency420List] = useState(null);
+  const [currencyordiList,setcurrencyordiList] = useState(null);
   const [evmdata, evmsetData] = useState(null);
   const [btcdata, btcsetData] = useState(null);
   const [brc20data, brc20setData] = useState(null);
@@ -95,29 +96,9 @@ const HomePage = () => {
   const [differencedate, setdifferencedate] = useState(null);
   const [control,setcontrol]=useState(null);
    
-  // Add state to store input prices
-  const [currencyPrices, setCurrencyPrices] = useState(currencyList.reduce((acc, currency) => {
-    acc[currency] = 0;
-    return acc;
-  }, {}));
 
   // Function to update the currency price and recalculate TVL
-  const handlePriceChange = (currencyName, newPrice, staked) => {
-    const price = parseFloat(newPrice) || 0;
-    setCurrencyPrices({ ...currencyPrices, [currencyName]: price });
 
-    // 需要重新计算其他币种的TVL
-    const newSumUSD = currencyList.reduce((sum, cur) => {
-      const stakedAmount = cur === 'BTC' ? btcdata.data.BTC.staked : brc20data.data[cur].staked;
-      const curPrice = cur === currencyName ? price : currencyPrices[cur];
-      const total = cur === 'BTC' ? stakedAmount * curPrice : stakedAmount * curPrice * btcdata.data.BTC.price*0.00000001;
-      return sum + total;
-    }, evmdata.data.ETH.staked * currencyPrices['ETH'] +
-       evmdata.data.USDT.staked * currencyPrices['USDT'] +
-       evmdata.data.USDC.staked * currencyPrices['USDC']);
-
-    sumsetData({ ...sumdata, data: { ...sumdata.data, sum_usd: newSumUSD } });
-  };
   useEffect(() => {
     const filename = 'evm_stakedsum'; // 你想要读取的文件名（不包括.json扩展名）
     // 调用我们的API路由，并传递文件名
@@ -146,6 +127,7 @@ const HomePage = () => {
       .then(evmdata => {
         // 将数据设置到状态中
         brc20setData(evmdata);
+        setcurrencyList(Object.keys(evmdata.data));
       });
   }, []);
   useEffect(() => {
@@ -156,6 +138,7 @@ const HomePage = () => {
       .then(evmdata => {
         // 将数据设置到状态中
         brc420setData(evmdata);
+        setcurrency420List(Object.keys(evmdata.data));
       });
   }, []);
   useEffect(() => {
@@ -166,6 +149,7 @@ const HomePage = () => {
       .then(evmdata => {
         // 将数据设置到状态中
         ordisetData(evmdata);
+        setcurrencyordiList(Object.keys(evmdata.data));
       });
   }, []);
   useEffect(() => {
@@ -188,24 +172,7 @@ const HomePage = () => {
         setpredicted_tvl_usd(evmdata);
       });
   }, []);
-  // useEffect(() => {
-  //   if (predicted_tvl_usd && predicted_tvl_usd.data) {
-  //     // 现在可以安全地访问 predicted_tvl_usd.data
-  //     if (selectedDate && specifiedDate1) {
-  //       const newDifferenceDate = differenceInCalendarDays(new Date(specifiedDate1), new Date(selectedDate));
-  //       setdifferencedate(newDifferenceDate);
-        
-  //       console.log(b)
-  //       console.log(newDifferenceDate)
-  //       console.log(predicted_tvl_usd.data.predicted_tvl_usd)
-  //       setC((b * newDifferenceDate) / predicted_tvl_usd.data.predicted_tvl_usd * 420000000);
-
-  //     }
-  //   }
-
-  // }, [selectedDate,specifiedDate1, control]);
   
-  // useEffect 来处理 specifiedDate1 的变化
   useEffect(() => {
     if (predicted_tvl_usd && predicted_tvl_usd.data) {
       // 现在可以安全地访问 predicted_tvl_usd.data
@@ -244,7 +211,7 @@ const HomePage = () => {
   const CurrencyevmCards = Object.keys(evmdata.data).map(currencyName => {
     const staked = evmdata.data[currencyName].staked;
     // console.log(staked);
-    const inputPrice = currencyPrices[currencyName] || evmdata.data[currencyName].price;
+    const inputPrice =  evmdata.data[currencyName].price;
     return (
       <CurrencyCard
         key={currencyName}
@@ -253,22 +220,26 @@ const HomePage = () => {
         btcPrice={btcdata.data.BTC.price}
         priceInTotal={evmdata.data[currencyName].price_in_usd}
         inputPrice={inputPrice}
-        onPriceChange={handlePriceChange}
+
         isBrc20Token={false}
         isBrc420Token={false}
         totaltvl={sumdata.data.sum_usd.toFixed(0)}
       />
     );
   });
+  if (!currencyordiList  ) return <div>Loading...</div>;
+  if (!currencyList  ) return <div>Loading...</div>;
+  if (!currency420List  ) return <div>Loading...</div>;
   const Currency20Cards = currencyList
   .sort((a, b) => {
+    console.log(currencyList)
     const ratioA20 = brc20data.data[a].staked / brc20data.data[a].totalSupply;
     const ratioB20 = brc20data.data[b].staked / brc20data.data[b].totalSupply;
     return ratioB20 - ratioA20  ;
   })
   .map((currencyName) => {
     const staked = brc20data.data[currencyName].staked;
-    const inputPrice = currencyPrices[currencyName] || brc20data.data[currencyName].price_sat;
+    const inputPrice =  brc20data.data[currencyName].price_sat;
     return (
       <CurrencyCard
         key={currencyName}
@@ -277,7 +248,7 @@ const HomePage = () => {
         btcPrice={btcdata.data.BTC.price}
         priceInTotal={staked * inputPrice * btcdata.data.BTC.price}
         inputPrice={inputPrice}
-        onPriceChange={handlePriceChange}
+
         isBrc20Token={true}
         isBrc420Token={false}
         totalSupply={brc20data.data[currencyName].totalSupply}
@@ -294,7 +265,7 @@ const HomePage = () => {
   .map((currencyName) => {
     const staked = ordidata.data[currencyName].staked;
     const totalSupply = ordidata.data[currencyName].totalSupply;
-    const inputPrice = currencyPrices[currencyName] || ordidata.data[currencyName].price_btc;
+    const inputPrice =  ordidata.data[currencyName].price_btc;
     return (
       <CurrencyCard
         key={currencyName}
@@ -303,7 +274,7 @@ const HomePage = () => {
         btcPrice={btcdata.data.BTC.price}
         priceInTotal={staked * inputPrice * btcdata.data.BTC.price}
         inputPrice={inputPrice}
-        onPriceChange={handlePriceChange}
+
         isBrc20Token={false}
         isBrc420Token={true}
         totalSupply={totalSupply}
@@ -320,7 +291,7 @@ const HomePage = () => {
   .map((currencyName) => {
     const staked = brc420data.data[currencyName].staked;
     const totalSupply = brc420data.data[currencyName].totalSupply;
-    const inputPrice = currencyPrices[currencyName] || brc420data.data[currencyName].price_btc;
+    const inputPrice =  brc420data.data[currencyName].price_btc;
     return (
       <CurrencyCard
         key={currencyName}
@@ -329,7 +300,7 @@ const HomePage = () => {
         btcPrice={btcdata.data.BTC.price}
         priceInTotal={staked * inputPrice * btcdata.data.BTC.price}
         inputPrice={inputPrice}
-        onPriceChange={handlePriceChange}
+
         isBrc20Token={false}
         isBrc420Token={true}
         totalSupply={totalSupply}
@@ -556,7 +527,7 @@ const HomePage = () => {
                             staked={btcdata.data.BTC.staked} 
                             priceInTotal={btcdata.data.BTC.staked * btcdata.data.BTC.price} 
                             inputPrice={btcdata.data.BTC.price}
-                            onPriceChange={handlePriceChange}
+
                             isBrc20Token={false}
                             isBrc420Token={false}
                             totaltvl={sumdata.data.sum_usd.toFixed(0)}
