@@ -11,8 +11,8 @@ const CurrencyCard = ({ currencyName, staked, btcPrice, inputPrice ,isBrc20Token
   const unit = isBrc20Token ? ' sats/'+currencyName : isBrc420Token ?  'BTC' : ' /U';
 
   return (
-    <div className='col-md-3  g-2'>
-    <div className='card   h-100 shadow  bg-body rounded'>
+    <div className='col-md-3  g-2' style={{ 'minWidth': "260px"  }}>
+    <div className='card   h-100 shadow  bg-body rounded' >
         <div className="card-header text-center text-dark" style={{ 'backgroundColor': "white"  }}>
 
         {currencyName}
@@ -400,7 +400,8 @@ const HomePage = () => {
     // stakednum, gettokennum, totalmarketcap,sell_price,apycal,netreward,netprofit_
     { 'address_info': '本站站长推特', 'address_link': 'https://twitter.com/0xfaskety','color': '', },
     { 'address_info': '本站开源地址', 'address_link': 'https://github.com/yuankongzhe/merlin-static-data-html','color': '', },
-    { 'address_info': '其他Merlin看板网站', 'address_link': 'https://bitmap.date/merlin/','color': '',},
+    { 'address_info': '其他Merlin看板网站1', 'address_link': 'https://bitmap.date/merlin/','color': '',},
+    { 'address_info': '其他Merlin看板网站2', 'address_link': 'https://geniidata.com/ordinals/index/merlin','color': '',},
     { 'address_info': 'Merlin 跨链桥（Meson）', 'address_link': 'https://meson.fi/','color': '', },
     // ...更多条目...
   ];
@@ -502,8 +503,8 @@ const HomePage = () => {
           </div>
           <div className='card-body ' >
           <div className="d-flex align-items-start row">
-            <div className='col-md-2 col-ms-12'>
-            <div className="nav flex-column nav-pills me-3 col-10 border border-primary p-2 mb-2 border-opacity-50 rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <div className='col-md-2 col-ms-12' style={{ 'minWidth': "200px"  }}>
+            <div className="nav flex-column nav-pills me-3 border border-primary p-2 mb-2 border-opacity-50 rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical" style={{ 'minWidth': "200px"  }}>
               <button className="btn btn-outline-primary active nav-link " id="stakedDetailsaccordion-tab" data-bs-toggle="pill" data-bs-target="#stakedDetailsaccordion" type="button" role="tab" aria-controls="stakedDetailsaccordion" aria-selected="true">Merlin Seal TVL 详细情况</button>
               <button className="nav-link btn btn-outline-primary" id="personalrewardcal-tab" data-bs-toggle="pill" data-bs-target="#personalrewardcal" type="button" role="tab" aria-controls="personalrewardcal" aria-selected="false">个人收益计算器</button>
               <button className="nav-link btn btn-outline-primary" id="merlinAddress-tab" data-bs-toggle="pill" data-bs-target="#merlinAddress" type="button" role="tab" aria-controls="merlinAddress" aria-selected="false">Merlin相关链接</button>
@@ -584,7 +585,7 @@ const HomePage = () => {
               <div className="tab-pane fade" id="personalrewardcal" role="tabpanel" aria-labelledby="personalrewardcal-tab" tabIndex="0">
               <div>
                 <div className='row'>
-                  <div className='col-md-6 col-ms-12'>
+                  <div className='col-md-6 col-ms-12' style={{ 'minWidth': "500px"  }}>
 
                     <div className="form-group row">
                       <div className='row'>
@@ -693,7 +694,7 @@ const HomePage = () => {
                       
                     </div>
                   </div>
-                  <div className='col-md-6 col-ms-12 d-flex align-items-center justify-content-center' >
+                  <div className='col-md-6 col-ms-12 d-flex align-items-center justify-content-center' style={{ 'minWidth': "300px"  }}>
                       <img src="/pre.png" className='border border-primary rounded shadow-lg p-3 mb-5 bg-body rounded' alt="TVL预测曲线" style={{ maxWidth: '100%', height: 'auto' }}/>
                     </div>
                 </div>
