@@ -2512,5 +2512,52 @@
                 "price_in_usd": 577141.982927
             }
         }
+    },
+    {
+        "savetime": "2024-02-22T16:00:05.787436",
+        "data": {
+            "GOOSINALS": {
+                "staked": 2814.0,
+                "totalSupply": 9999,
+                "price_btc": 0.014472231994747689,
+                "price_in_usd": 2036243.041661
+            },
+            "NODEMONKES": {
+                "staked": 646.0,
+                "totalSupply": 9984,
+                "price_btc": 0.19860100041071208,
+                "price_in_usd": 6414812.313266
+            },
+            "BITCOIN-FROGS": {
+                "staked": 808.0,
+                "totalSupply": 10000,
+                "price_btc": 0.15215496213611387,
+                "price_in_usd": 6147060.470299
+            },
+            "BITCOIN-PUPPETS": {
+                "staked": 134.0,
+                "totalSupply": 10001,
+                "price_btc": 0.07776481651910448,
+                "price_in_usd": 521024.270678
+            },
+            "BITDISC-BLACK": {
+                "staked": 2893.0,
+                "totalSupply": 10000,
+                "price_btc": 0.02083694306322848,
+                "price_in_usd": 3014063.814096
+            },
+            "GENIIDATA-GENESIS-PASS": {
+                "staked": 57.0,
+                "totalSupply": 400,
+                "price_btc": 0.046252067904912285,
+                "price_in_usd": 131818.393529
+            },
+            "DOODINALS": {
+                "staked": 289.0,
+                "totalSupply": 744,
+                "price_btc": 0.039940621655847754,
+                "price_in_usd": 577141.982927
+            }
+        }
     }
 ]
