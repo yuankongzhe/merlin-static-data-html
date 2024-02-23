@@ -403,6 +403,7 @@ const HomePage = () => {
     { 'address_info': '其他Merlin看板网站1', 'address_link': 'https://bitmap.date/merlin/','color': '',},
     { 'address_info': '其他Merlin看板网站2', 'address_link': 'https://geniidata.com/ordinals/index/merlin','color': '',},
     { 'address_info': 'Merlin 跨链桥（Meson）', 'address_link': 'https://meson.fi/','color': '', },
+    { 'address_info': 'Merlin Swap', 'address_link': 'https://merlinswap.org/home','color': '', },
     // ...更多条目...
   ];
   const official_addressList  = [
