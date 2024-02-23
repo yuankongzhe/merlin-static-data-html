@@ -185,10 +185,10 @@ const HomePage = () => {
             Newsum += predicted_tvl_usd.data.daily_predicted_tvl[index.toString()];
           }
         }
-        console.log(b,'usd----')
-        console.log(newDifferenceDate,'diff_date')
-        console.log(Newsum,'sum')
-        console.log(Newsum/newDifferenceDate)
+        // console.log(b,'usd----')
+        // console.log(newDifferenceDate,'diff_date')
+        // console.log(Newsum,'sum')
+        // console.log(Newsum/newDifferenceDate)
         setpredicted_tvl_usd({
           ...predicted_tvl_usd,
           data: { ...predicted_tvl_usd.data, predicted_tvl_usd: Newsum }
@@ -200,7 +200,6 @@ const HomePage = () => {
     }
     
   }, [specifiedDate1,selectedDate]);
-  // 使用 useEffect 监听 differencedate 的变化
 
   // 如果数据还没加载，显示加载状态
   if (!evmdata) return <div>Loading...</div>;
@@ -232,7 +231,7 @@ const HomePage = () => {
   if (!currency420List  ) return <div>Loading...</div>;
   const Currency20Cards = currencyList
   .sort((a, b) => {
-    console.log(currencyList)
+    // console.log(currencyList)
     const ratioA20 = brc20data.data[a].staked / brc20data.data[a].totalSupply;
     const ratioB20 = brc20data.data[b].staked / brc20data.data[b].totalSupply;
     return ratioB20 - ratioA20  ;
@@ -764,6 +763,9 @@ const HomePage = () => {
 
         
       </div>
+      
+      
+
 
     </main>
     
