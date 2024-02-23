@@ -590,7 +590,7 @@ const HomePage = () => {
                     <div className="form-group row">
                       <div className='row'>
                         <div className='col-md-6 col-ms-6'>
-                          <label htmlFor="dateInput " className='text-dark'>开始质押日期</label>
+                          <label htmlFor="dateInput " className='text-dark'>个人质押参与日期</label>
                         </div>
                         <div className='col-md-4'>
                             <input
