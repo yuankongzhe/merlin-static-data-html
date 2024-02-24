@@ -200,7 +200,20 @@ const HomePage = () => {
     }
     
   }, [specifiedDate1,selectedDate]);
+  useEffect(() => {
+    // 使用 setTimeout 来等待 DOM 元素确实可用
+    const timer = setTimeout(() => {
+      const toastElList = [].slice.call(document.querySelectorAll('.toast'));
+      const toastList = toastElList.map(function (toastEl) {
+        return new bootstrap.Toast(toastEl);
+      });
+      toastList.forEach(function(toast) {
+        toast.show();
+      });
+    }, 500); // 延迟 500 毫秒后初始化 Toasts
 
+    return () => clearTimeout(timer);  // 清除定时器以避免内存泄漏
+  }, []);
   // 如果数据还没加载，显示加载状态
   if (!evmdata) return <div>Loading...</div>;
   if (!btcdata) return <div>Loading...</div>;
@@ -484,6 +497,7 @@ const HomePage = () => {
 
   );
     };
+    
   return (
     <main className="bd-main order-1">
       
@@ -760,8 +774,22 @@ const HomePage = () => {
         
 
         </div>
+        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+          <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+              <strong class="me-auto">Merlin launchpad 存款现已可以提现</strong>
+              {/* <small>11 mins ago</small> */}
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+            <a href="https://meson.fi/" target="_blank" rel="noopener noreferrer">
+            <p>点击前往meson跨链桥提现</p>
+            <p>每日跨链桥额度50B，每笔上限0.05B</p>
+            </a>
+            </div>
+          </div>
+        </div>
 
-        
       </div>
       
       
