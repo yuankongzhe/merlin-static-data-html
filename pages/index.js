@@ -521,6 +521,7 @@ const HomePage = () => {
             <div className="nav flex-column nav-pills me-3 border border-primary p-2 mb-2 border-opacity-50 rounded" id="v-pills-tab" role="tablist" aria-orientation="vertical" style={{ 'minWidth': "200px"  }}>
               <button className="btn btn-outline-primary active nav-link " id="stakedDetailsaccordion-tab" data-bs-toggle="pill" data-bs-target="#stakedDetailsaccordion" type="button" role="tab" aria-controls="stakedDetailsaccordion" aria-selected="true">Merlin Seal TVL 详细情况</button>
               <button className="nav-link btn btn-outline-primary" id="personalrewardcal-tab" data-bs-toggle="pill" data-bs-target="#personalrewardcal" type="button" role="tab" aria-controls="personalrewardcal" aria-selected="false">个人收益计算器</button>
+              <button className="nav-link btn btn-outline-primary" id="merlinActivity-tab" data-bs-toggle="pill" data-bs-target="#merlinActivity" type="button" role="tab" aria-controls="merlinActivity" aria-selected="false">Merlin当前进行活动</button>
               <button className="nav-link btn btn-outline-primary" id="merlinAddress-tab" data-bs-toggle="pill" data-bs-target="#merlinAddress" type="button" role="tab" aria-controls="merlinAddress" aria-selected="false">Merlin相关链接</button>
             </div>
             </div>
@@ -744,6 +745,158 @@ const HomePage = () => {
                         <table className="table table-sm table-hover text-center">
                               {addressTable(other_addressList)}
                           </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              <div>
+
+              </div>
+              </div>
+              <div className="tab-pane fade" id="merlinActivity" role="tabpanel" aria-labelledby="merlinActivity-tab" tabIndex="0">
+                <div className="accordion" id="accordionPanelsStayOpenExample">
+                    <div className="accordion-item">
+                      <h2 className="accordion-header" id="Activity-headingOne">
+                        <button className="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#Activity1-collapseOne" aria-expanded="true" aria-controls="Activity1-collapseOne">
+                          1. Merlin Seal 
+                        </button>
+                      </h2>
+                      <div id="Activity1-collapseOne" className="accordion-collapse collapse show" aria-labelledby="Activity1-headingOne">
+                        <div className="accordion-body row ">
+
+                          <div className='col-md-6 col-ms-12'>
+                          <h4 id="-">活动简介</h4>
+                          <ul>
+                          <li>质押BTC、ETH、brc20、brc420等资产，瓜分<span className='h5 strong  text-primary'>4.2亿MERL</span></li>
+                          <li>占 Merlin Chain 治理代币 $MERL 的 20%。这是所有 Layer2 中最大的质押奖励。</li>
+                          <li>为 Native Dex 提供流动性的额外好处——Merlin Swap。</li>
+                          <li>通过参与 DeFi 协议获得的利润。</li>
+                          <li>$ETH Native Yield，通过 StakeStone 存入 $ETH 的权益奖励。</li>
+                          
+                          </ul>
+                          <h4 id="-">活动教程</h4>
+                          <li>敬请期待...</li>
+                        </div>
+                        <div className='col-md-6 col-ms-12'>
+                            <h4 id="-">活动时间表</h4>
+                            <ul>
+                            <li><strong><em>资产质押持续时间：</em></strong>02-08 至 04-21</li>
+                            <li><strong><em>资产在Merlin链解锁时间：</em></strong>2024年2月</li>
+                            <li><strong><em>MERL代币获得时间：</em></strong>2024年3月</li>
+                            </ul>
+                            <h4 id="-">活动相关链接</h4>
+                            <ul>
+                            <li><strong><em>Merlin Seal 活动官网：</em></strong><a href="https://merlinchain.io/bridge/staking"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                            <li><strong><em>Merlin Seal 官方活动细则：</em></strong><a href="https://medium.com/@merlinchaincrypto/merlins-seal-the-biggest-fair-launch-of-layer2-5614001b2582"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                            </ul>
+                        </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="accordion-item">
+                      <h2 className="accordion-header" id="Activity2-headingThree">
+                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#Activity2-collapseThree" aria-expanded="true" aria-controls="Activity2-collapseThree">
+                        2. ZKFair launchpad
+                        </button>
+                      </h2>
+                      <div id="Activity2-collapseThree" className="accordion-collapse collapse show"  aria-labelledby="Activity2-headingThree">
+                      <div className="accordion-body row ">
+
+                        <div className='col-md-6 col-ms-12'>
+                        <h4 id="-">活动简介</h4>
+                        <ul>
+                        <li>在ZKF链上消耗gas（USDC）、质押ZKF代币等方式，瓜分<span className='h5 strong  text-primary'>420万MERL</span></li>
+                        <li>占 Merlin Chain 治理代币 $MERL 的 0.2%的launchpad</li>
+
+                        </ul>
+                        <h4 id="-">活动教程</h4>
+                        <li>敬请期待...</li>
+                        </div>
+                        <div className='col-md-6 col-ms-12'>
+                          <h4 id="-">活动时间表</h4>
+                          <ul>
+                          <li><strong><em>launchpad持续时间：</em></strong>02-18 至 03-31</li>
+                          </ul>
+                          <h4 id="-">活动相关链接</h4>
+                          <ul>
+                          <li><strong><em>ZKFair launchpad参与官网：</em></strong><a href="https://zkfair.io/fairlaunch"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                          <li><strong><em>ZKFair launchpad 官方活动细则：</em></strong><a href="https://mirror.xyz/zkfair.eth/Uc0Ymz9S8MaSpQNSlv-049lhF9LoYscL1fOm2v8wUSU"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                          </ul>
+                        </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="accordion-item">
+                      <h2 className="accordion-header" id="Activity3-headingThree">
+                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#Activity3-collapseThree" aria-expanded="true" aria-controls="Activity3-collapseThree">
+                        3. 推特改名瓜分空投  
+                        </button>
+                      </h2>
+                      <div id="Activity3-collapseThree" className="accordion-collapse collapse show"  aria-labelledby="Activity3-headingThree">
+                      <div className="accordion-body row ">
+
+                        <div className='col-md-6 col-ms-12'>
+                        <h4 id="-">活动简介</h4>
+                        <ul>
+                        <li>简单操作平分<span className='h5 strong  text-primary'>100,000个Bitmap代币（WMAP）+ 2,000个蓝盒子代币（W420）</span></li>
+                        <li>推特账户昵称后添加特殊标识</li>
+                        <li>关注指定推特，然后填表</li>
+                        <li>等待空投到账</li>
+
+                        </ul>
+                        <h4 id="-">活动教程</h4>
+                        <li>敬请期待...</li>
+                        </div>
+                        <div className='col-md-6 col-ms-12'>
+                          <h4 id="-">活动时间表</h4>
+                          <ul>
+                          <li><strong><em>改名活动 持续时间：</em></strong>2024年2月</li>
+                          </ul>
+                          <h4 id="-">活动相关链接</h4>
+                          <ul>
+                          <li><strong><em>改名活动 官方活动链接：</em></strong><a href="https://twitter.com/BitmapTech/status/1753396016597152172"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                      
+                          </ul>
+                        </div>
+
+                        </div>
+                      </div>
+                    </div>
+                    <div className="accordion-item">
+                      <h2 className="accordion-header" id="Activity4-headingThree">
+                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#Activity4-collapseThree" aria-expanded="true" aria-controls="Activity4-collapseThree">
+                        4. MerlinSwap  
+                        </button>
+                      </h2>
+                      <div id="Activity4-collapseThree" className="accordion-collapse collapse show"  aria-labelledby="Activity4-headingThree">
+                      <div className="accordion-body row ">
+
+                        <div className='col-md-6 col-ms-12'>
+                        <h4 id="-">活动简介</h4>
+                        <ul>
+                        <li>在MerlinSwap上进行转账、交易、提供流动性等活动，瓜分<span className='h5 strong  text-primary'>1680万MERL</span></li>
+                        <li>占 Merlin Chain 治理代币 $MERL 的 0.8%的活动</li>
+                        <li>所有活动发布前，在MerlinSwap上进行的转账、交易、提供流动性等活动都会被记录</li>
+                        </ul>
+                        <h4 id="-">活动教程</h4>
+                        <li>敬请期待...</li>
+                        </div>
+                        <div className='col-md-6 col-ms-12'>
+                          <h4 id="-">活动时间表</h4>
+                          <ul>
+                          <li><strong><em>活动持续时间：</em></strong>敬请期待</li>
+                          </ul>
+                          <h4 id="-">活动相关链接</h4>
+                          <ul>
+                          <li><strong><em>活动简易公告：</em></strong><a href="https://twitter.com/BitmapTech/status/1760955139505160565"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                          <li><strong><em>MerlinSwap 官方活动细则：</em></strong><a href="#"  target="_blank" rel="noopener noreferrer">敬请期待</a></li>
+                          </ul>
+                        </div>
+
                         </div>
                       </div>
                     </div>
