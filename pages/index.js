@@ -680,6 +680,8 @@ const HomePage = () => {
                           <div className='row'>
                           <p className="card-text">
                           <span className='text-dark' >预计将获得</span><span className='h3 strong  text-primary'>{formatNumber(c.toFixed(4))}</span><span className='text-dark'>个MERL代币</span>
+                          <br></br>
+                          <span className='text-muted'>（截至02-25，目前场外MERL最高成交价为 2 USDT）</span>
                           </p>
                           </div>
 
