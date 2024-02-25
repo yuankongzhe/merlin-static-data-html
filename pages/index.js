@@ -428,6 +428,7 @@ const HomePage = () => {
     { 'address_info': 'Merlin Seal 官方活动细则', 'address_link': 'https://medium.com/@merlinchaincrypto/merlins-seal-the-biggest-fair-launch-of-layer2-5614001b2582','color': '', },
     // ...更多条目...
   ];
+
   const addressTable = (addressList) =>{
   // Return sorted results within a table structure
   return (
@@ -745,6 +746,35 @@ const HomePage = () => {
                         <table className="table table-sm table-hover text-center">
                               {addressTable(other_addressList)}
                           </table>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="accordion-item">
+                      <h2 className="accordion-header" id="otc-other-headingThree">
+                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#otc-other-collapseThree" aria-expanded="true" aria-controls="otc-other-collapseThree">
+                        MERL 非官方 场外交易相关
+                        </button>
+                      </h2>
+                      <div id="otc-other-collapseThree" className="accordion-collapse collapse show"  aria-labelledby="otc-other-headingThree">
+                        <div className="accordion-body row ">
+                        <table className="table table-sm table-hover text-center">
+                        <tbody>
+                          <tr className='table' key={`table-1`}>
+                                <td className='col-4'><span className='text-black'>whales </span></td>
+                                <td className='col-2'><span className='text-black'>链上场外交易平台</span></td>
+                                <td className='col-6'><a href='https://app.whales.market/' target="_blank" rel="noopener noreferrer">
+                                https://app.whales.market/
+                                </a></td>
+                              </tr>
+                              <tr className='table' key={`table-2`}>
+                                <td className='col-4'><span className='text-black'>微博：脱口秀小企鹅    推特:@Goupenguin 场外交易群</span></td>
+                                <td className='col-2'><span className='text-black'>场外交易QQ群</span></td>
+                                <td className='col-6'><span>QQ群号： 383301198 </span></td>
+                              </tr>
+                        </tbody>
+                            
+                        </table>
                         </div>
                       </div>
                     </div>
