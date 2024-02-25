@@ -805,7 +805,11 @@ const HomePage = () => {
                           
                           </ul>
                           <h4 id="-">活动教程</h4>
-                          <li>敬请期待...</li>
+                          {/* <li><strong><em>推特 比特里里 图文教程：</em></strong><a href="https://x.com/lilyanna_btc/status/1755581246871327038?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                          <li><strong><em>推特 大狮兄 图文教程：</em></strong><a href="https://docs.google.com/document/d/1e3g4IaWO78GBq1gIre7fppUb0xHsmBLRGigYX0bwLBc/edit#heading=h.11fdsk1q9efx"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                          <li><strong><em>推特 0xEfraim 视频教程（unisat钱包）：</em></strong><a href="https://x.com/0xEfraim/status/1755641701589545423?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                          <li><strong><em>微博 空投小企鹅 图文教程：</em></strong><a href="https://weibo.com/ttarticle/p/show?id=2309405000941257490564"  target="_blank" rel="noopener noreferrer">点击跳转</a></li> */}
+                          <li>更多教程敬请期待...</li>
                         </div>
                         <div className='col-md-6 col-ms-12'>
                             <h4 id="-">活动时间表</h4>
@@ -842,7 +846,11 @@ const HomePage = () => {
 
                         </ul>
                         <h4 id="-">活动教程</h4>
-                        <li>敬请期待...</li>
+                          {/* <li><strong><em>推特 比特里里 图文教程：</em></strong><a href="https://x.com/lilyanna_btc/status/1755581246871327038?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                          <li><strong><em>推特 大狮兄 图文教程：</em></strong><a href="https://docs.google.com/document/d/1e3g4IaWO78GBq1gIre7fppUb0xHsmBLRGigYX0bwLBc/edit#heading=h.11fdsk1q9efx"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                          <li><strong><em>推特 0xEfraim 视频教程（unisat钱包）：</em></strong><a href="https://x.com/0xEfraim/status/1755641701589545423?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                          <li><strong><em>微博 空投小企鹅 图文教程：</em></strong><a href="https://weibo.com/ttarticle/p/show?id=2309405000941257490564"  target="_blank" rel="noopener noreferrer">点击跳转</a></li> */}
+                          <li>更多教程敬请期待...</li>
                         </div>
                         <div className='col-md-6 col-ms-12'>
                           <h4 id="-">活动时间表</h4>
@@ -879,7 +887,8 @@ const HomePage = () => {
 
                         </ul>
                         <h4 id="-">活动教程</h4>
-                        <li>敬请期待...</li>
+                        <li><strong><em>微博 空投小企鹅 图文教程：</em></strong><a href="https://weibo.com/ttarticle/p/show?id=2309404997083047526503"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                        <li>更多教程敬请期待...</li>
                         </div>
                         <div className='col-md-6 col-ms-12'>
                           <h4 id="-">活动时间表</h4>
