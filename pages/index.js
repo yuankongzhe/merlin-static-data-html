@@ -807,6 +807,7 @@ const HomePage = () => {
                           
                           </ul>
                           <h4 id="-">活动教程</h4>
+                          <li><strong><em>油管 超超web3 视频教程：</em></strong><a href="https://www.youtube.com/watch?v=skE3w22B8-w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                           <li><strong><em>油管 十一地主 视频教程：</em></strong><a href="https://www.youtube.com/watch?v=QsuOx0ais2w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                           <li><strong><em>推特 0xEfraim 视频教程（unisat钱包）：</em></strong><a href="https://x.com/0xEfraim/status/1755641701589545423?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                           <li><strong><em>推特 比特里里 图文教程：</em></strong><a href="https://x.com/lilyanna_btc/status/1755581246871327038?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
