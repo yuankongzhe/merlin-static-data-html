@@ -801,9 +801,6 @@ const HomePage = () => {
                           <ul>
                           <li>质押BTC、ETH、brc20、brc420等资产，瓜分<span className='h5 strong  text-primary'>4.2亿MERL</span></li>
                           <li>占 Merlin Chain 治理代币 $MERL 的 20%。这是所有 Layer2 中最大的质押奖励。</li>
-                          <li>为 Native Dex 提供流动性的额外好处——Merlin Swap。</li>
-                          <li>通过参与 DeFi 协议获得的利润。</li>
-                          <li>$ETH Native Yield，通过 StakeStone 存入 $ETH 的权益奖励。</li>
                           
                           </ul>
                           <h4 id="-">活动教程</h4>
@@ -817,7 +814,7 @@ const HomePage = () => {
                               <div id="Activitycourse1-collapseOne" class="accordion-collapse collapse" aria-labelledby="Activitycourse1-headingOne" data-bs-parent="#Activitycourse1">
                                 <div class="accordion-body">
 
-                                <li><strong><em>油管 超超web3 视频教程：</em></strong><a href="https://www.youtube.com/watch?v=skE3w22B8-w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                                <li><strong><em>油管 超超web3 视频教程 (11:35处开始）：</em></strong><a href="https://www.youtube.com/watch?v=skE3w22B8-w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                                 <li><strong><em>油管 十一地主 视频教程：</em></strong><a href="https://www.youtube.com/watch?v=QsuOx0ais2w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                                 <li><strong><em>推特 0xEfraim 视频教程（unisat钱包）：</em></strong><a href="https://x.com/0xEfraim/status/1755641701589545423?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                                 <li>更多教程敬请期待...</li>
@@ -879,7 +876,35 @@ const HomePage = () => {
                         </ul>
                         <h4 id="-">活动教程</h4>
                           
-                          <li>更多教程敬请期待...</li>
+                          <div class="accordion accordion-flush" id="Activitycourse3">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="Activitycourse3-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse3-collapseOne" aria-expanded="false" aria-controls="Activitycourse3-collapseOne">
+                                  视频教程
+                                </button>
+                              </h2>
+                              <div id="Activitycourse3-collapseOne" class="accordion-collapse collapse" aria-labelledby="Activitycourse3-headingOne" data-bs-parent="#Activitycourse3">
+                                <div class="accordion-body">
+                                
+                                  <li>更多教程敬请期待...</li>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="Activitycourse3-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse3-collapseTwo" aria-expanded="false" aria-controls="Activitycourse3-collapseTwo">
+                                  图文教程
+                                </button>
+                              </h2>
+                              <div id="Activitycourse3-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Activitycourse3-headingTwo" data-bs-parent="#Activitycourse3">   
+                                <div class="accordion-body">
+                                  
+                                  <li>更多教程敬请期待...</li>
+                                </div>
+                              </div>
+                            </div>
+                            
+                          </div>
                         </div>
                         <div className='col-md-6 col-ms-12'>
                           <h4 id="-">活动时间表</h4>
@@ -925,6 +950,7 @@ const HomePage = () => {
                             </h2>
                             <div id="Activitycourse2-collapseOne" class="accordion-collapse collapse" aria-labelledby="Activitycourse2-headingOne" data-bs-parent="#Activitycourse2">
                               <div class="accordion-body">
+                              <li><strong><em>油管 超超web3 视频教程 (28:00处开始）：</em></strong><a href="https://www.youtube.com/watch?v=skE3w22B8-w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                                 <li>更多教程敬请期待...</li>
                               </div>
                             </div>
@@ -980,7 +1006,35 @@ const HomePage = () => {
                         <li>所有活动发布前，在MerlinSwap上进行的转账、交易、提供流动性等活动都会被记录</li>
                         </ul>
                         <h4 id="-">活动教程</h4>
-                        <li>敬请期待...</li>
+                        <div class="accordion accordion-flush" id="Activitycourse4">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="Activitycourse4-headingOne">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse4-collapseOne" aria-expanded="false" aria-controls="Activitycourse4-collapseOne">
+                                视频教程
+                              </button>
+                            </h2>
+                            <div id="Activitycourse4-collapseOne" class="accordion-collapse collapse" aria-labelledby="Activitycourse4-headingOne" data-bs-parent="#Activitycourse4">
+                              <div class="accordion-body">
+                              <li><strong><em>油管 超超web3 视频教程 (30:00处开始）：</em></strong><a href="https://www.youtube.com/watch?v=skE3w22B8-w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                                <li>更多教程敬请期待...</li>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="Activitycourse4-headingTwo">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse4-collapseTwo" aria-expanded="false" aria-controls="Activitycourse4-collapseTwo">
+                                图文教程
+                              </button>
+                            </h2>
+                            <div id="Activitycourse4-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Activitycourse4-headingTwo" data-bs-parent="#Activitycourse4">   
+                              <div class="accordion-body">
+                                
+                                <li>更多教程敬请期待...</li>
+                              </div>
+                            </div>
+                          </div>
+                          
+                        </div>
                         </div>
                         <div className='col-md-6 col-ms-12'>
                           <h4 id="-">活动时间表</h4>
@@ -1024,11 +1078,10 @@ const HomePage = () => {
         
 
         </div>
-        <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        {/* <div class="toast-container position-fixed bottom-0 end-0 p-3">
           <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
             <div class="toast-header">
               <strong class="me-auto">Merlin launchpad 存款现已可以提现</strong>
-              {/* <small>11 mins ago</small> */}
               <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
             </div>
             <div class="toast-body">
@@ -1038,7 +1091,7 @@ const HomePage = () => {
             </a>
             </div>
           </div>
-        </div>
+        </div> */}
 
       </div>
       
