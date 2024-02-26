@@ -807,13 +807,40 @@ const HomePage = () => {
                           
                           </ul>
                           <h4 id="-">活动教程</h4>
-                          <li><strong><em>油管 超超web3 视频教程：</em></strong><a href="https://www.youtube.com/watch?v=skE3w22B8-w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                          <li><strong><em>油管 十一地主 视频教程：</em></strong><a href="https://www.youtube.com/watch?v=QsuOx0ais2w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                          <li><strong><em>推特 0xEfraim 视频教程（unisat钱包）：</em></strong><a href="https://x.com/0xEfraim/status/1755641701589545423?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                          <li><strong><em>推特 比特里里 图文教程：</em></strong><a href="https://x.com/lilyanna_btc/status/1755581246871327038?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                          <li><strong><em>推特 大狮兄 图文教程：</em></strong><a href="https://docs.google.com/document/d/1e3g4IaWO78GBq1gIre7fppUb0xHsmBLRGigYX0bwLBc/edit#heading=h.11fdsk1q9efx"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                          <li><strong><em>微博 空投小企鹅 图文教程：</em></strong><a href="https://weibo.com/ttarticle/p/show?id=2309405000941257490564"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                          <li>更多教程敬请期待...</li>
+                          <div class="accordion accordion-flush" id="Activitycourse1">
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="Activitycourse1-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse1-collapseOne" aria-expanded="false" aria-controls="Activitycourse1-collapseOne">
+                                  视频教程
+                                </button>
+                              </h2>
+                              <div id="Activitycourse1-collapseOne" class="accordion-collapse collapse" aria-labelledby="Activitycourse1-headingOne" data-bs-parent="#Activitycourse1">
+                                <div class="accordion-body">
+
+                                <li><strong><em>油管 超超web3 视频教程：</em></strong><a href="https://www.youtube.com/watch?v=skE3w22B8-w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                                <li><strong><em>油管 十一地主 视频教程：</em></strong><a href="https://www.youtube.com/watch?v=QsuOx0ais2w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                                <li><strong><em>推特 0xEfraim 视频教程（unisat钱包）：</em></strong><a href="https://x.com/0xEfraim/status/1755641701589545423?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                                <li>更多教程敬请期待...</li>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="accordion-item">
+                              <h2 class="accordion-header" id="Activitycourse1-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse1-collapseTwo" aria-expanded="false" aria-controls="Activitycourse1-collapseTwo">
+                                  图文教程
+                                </button>
+                              </h2>
+                              <div id="Activitycourse1-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Activitycourse1-headingTwo" data-bs-parent="#Activitycourse1">
+                                <div class="accordion-body">
+                                  <li><strong><em>推特 比特里里 图文教程：</em></strong><a href="https://x.com/lilyanna_btc/status/1755581246871327038?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                                  <li><strong><em>推特 大狮兄 图文教程：</em></strong><a href="https://docs.google.com/document/d/1e3g4IaWO78GBq1gIre7fppUb0xHsmBLRGigYX0bwLBc/edit#heading=h.11fdsk1q9efx"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                                  <li><strong><em>微博 空投小企鹅 图文教程：</em></strong><a href="https://weibo.com/ttarticle/p/show?id=2309405000941257490564"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                                  <li>更多教程敬请期待...</li>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          
                         </div>
                         <div className='col-md-6 col-ms-12'>
                             <h4 id="-">活动时间表</h4>
@@ -821,6 +848,7 @@ const HomePage = () => {
                             <li><strong><em>资产质押持续时间：</em></strong>02-08 至 04-21</li>
                             <li><strong><em>资产在Merlin链解锁时间：</em></strong>2024年2月</li>
                             <li><strong><em>MERL代币获得时间：</em></strong>2024年3月</li>
+                            <li><strong><em>资产解除质押时间：</em></strong>2024年4月21日</li>
                             </ul>
                             <h4 id="-">活动相关链接</h4>
                             <ul>
@@ -888,9 +916,38 @@ const HomePage = () => {
 
                         </ul>
                         <h4 id="-">活动教程</h4>
-                        <li><strong><em>微博 空投小企鹅 图文教程：</em></strong><a href="https://weibo.com/ttarticle/p/show?id=2309404997083047526503"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                        <li>更多教程敬请期待...</li>
+                        <div class="accordion accordion-flush" id="Activitycourse2">
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="Activitycourse2-headingOne">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse2-collapseOne" aria-expanded="false" aria-controls="Activitycourse2-collapseOne">
+                                视频教程
+                              </button>
+                            </h2>
+                            <div id="Activitycourse2-collapseOne" class="accordion-collapse collapse" aria-labelledby="Activitycourse2-headingOne" data-bs-parent="#Activitycourse2">
+                              <div class="accordion-body">
+                                <li>更多教程敬请期待...</li>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="accordion-item">
+                            <h2 class="accordion-header" id="Activitycourse2-headingTwo">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse2-collapseTwo" aria-expanded="false" aria-controls="Activitycourse2-collapseTwo">
+                                图文教程
+                              </button>
+                            </h2>
+                            <div id="Activitycourse2-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Activitycourse2-headingTwo" data-bs-parent="#Activitycourse2">   
+                              <div class="accordion-body">
+                                <li><strong><em>微博 空投小企鹅 图文教程：</em></strong><a href="https://weibo.com/ttarticle/p/show?id=2309404997083047526503"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                                <li>更多教程敬请期待...</li>
+                              </div>
+                            </div>
+                          </div>
+                          
                         </div>
+
+                          </div>
+                        
+                        
                         <div className='col-md-6 col-ms-12'>
                           <h4 id="-">活动时间表</h4>
                           <ul>
