@@ -814,7 +814,7 @@ const HomePage = () => {
                               <div id="Activitycourse1-collapseOne" class="accordion-collapse collapse" aria-labelledby="Activitycourse1-headingOne" data-bs-parent="#Activitycourse1">
                                 <div class="accordion-body">
 
-                                <li><strong><em>油管 超超web3 视频教程 (11:35处开始）：</em></strong><a href="https://www.youtube.com/watch?v=skE3w22B8-w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                                <li><strong><em>油管 超超web3 视频教程 (11:35处开始）：</em></strong><a href="https://youtu.be/skE3w22B8-w?si=CM8aJ9iQVV-SF8DD&t=695"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                                 <li><strong><em>油管 十一地主 视频教程：</em></strong><a href="https://www.youtube.com/watch?v=QsuOx0ais2w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                                 <li><strong><em>推特 0xEfraim 视频教程（unisat钱包）：</em></strong><a href="https://x.com/0xEfraim/status/1755641701589545423?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                                 <li>更多教程敬请期待...</li>
@@ -950,7 +950,7 @@ const HomePage = () => {
                             </h2>
                             <div id="Activitycourse2-collapseOne" class="accordion-collapse collapse" aria-labelledby="Activitycourse2-headingOne" data-bs-parent="#Activitycourse2">
                               <div class="accordion-body">
-                              <li><strong><em>油管 超超web3 视频教程 (28:00处开始）：</em></strong><a href="https://www.youtube.com/watch?v=skE3w22B8-w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                              <li><strong><em>油管 超超web3 视频教程 (28:00处开始）：</em></strong><a href="https://youtu.be/skE3w22B8-w?si=CM8aJ9iQVV-SF8DD&t=1680"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                                 <li>更多教程敬请期待...</li>
                               </div>
                             </div>
@@ -1015,7 +1015,7 @@ const HomePage = () => {
                             </h2>
                             <div id="Activitycourse4-collapseOne" class="accordion-collapse collapse" aria-labelledby="Activitycourse4-headingOne" data-bs-parent="#Activitycourse4">
                               <div class="accordion-body">
-                              <li><strong><em>油管 超超web3 视频教程 (30:00处开始）：</em></strong><a href="https://www.youtube.com/watch?v=skE3w22B8-w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                              <li><strong><em>油管 超超web3 视频教程 (30:00处开始）：</em></strong><a href="https://youtu.be/skE3w22B8-w?si=CM8aJ9iQVV-SF8DD&t=1800"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                                 <li>更多教程敬请期待...</li>
                               </div>
                             </div>
