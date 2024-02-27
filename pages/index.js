@@ -681,7 +681,10 @@ const HomePage = () => {
                           <p className="card-text">
                           <span className='text-dark' >预计将获得</span><span className='h3 strong  text-primary'>{formatNumber(c.toFixed(4))}</span><span className='text-dark'>个MERL代币</span>
                           <br></br>
-                          <span className='text-muted'>截至02-25，目前场外MERL平均成交价为 1.77 USDT（来自whales平台），1.25 USDT（来自企鹅OTC群）</span>
+                          <span className='text-muted'>截至02-25，目前场外MERL平均成交价为<br></br>
+                           1.77 USDT（来自<a href="https://app.whales.market/" target="_blank" rel="noopener noreferrer">whales</a>平台），<br></br>
+                           1.25 USDT（来自企鹅OTC群）
+                           </span>
                           </p>
                           </div>
 
