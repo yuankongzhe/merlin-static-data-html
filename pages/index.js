@@ -91,6 +91,7 @@ const HomePage = () => {
   const [b, setB] = useState(0);
   const [c, setC] = useState(0); 
   const [d, setD] = useState(0); 
+  const [e, setE] = useState(0); 
   const [selectedDate, setSelectedDate] = useState('');
   const [specifiedDate1,setspecifiedDate1] = useState('2024-04-01'); // 指定日期
   const [differencedate, setdifferencedate] = useState(null);
@@ -172,7 +173,28 @@ const HomePage = () => {
         setpredicted_tvl_usd(evmdata);
       });
   }, []);
+  function getDateXDaysAgo(x) {
+    const today = new Date();
+    today.setDate(today.getDate() - x);
   
+    // 格式化日期为 YYYY-MM-DD
+    const year = today.getFullYear();
+    const month = (today.getMonth() + 1).toString().padStart(2, '0');
+    const day = today.getDate().toString().padStart(2, '0');
+  
+    return `${year}-${month}-${day}`;
+  }
+  useEffect(() => {
+    if (predicted_tvl_usd && predicted_tvl_usd.data) {
+      // 现在可以安全地访问 predicted_tvl_usd.data
+
+        const newDifferenceDate = e/d;
+        setSelectedDate(getDateXDaysAgo(newDifferenceDate));
+        
+
+    }
+    
+  }, [e,d]);
   useEffect(() => {
     if (predicted_tvl_usd && predicted_tvl_usd.data) {
       // 现在可以安全地访问 predicted_tvl_usd.data
@@ -347,6 +369,10 @@ const HomePage = () => {
     setA(calculatedA);
     setB(calculatedB);
     setC(Number(calculatedB) *differencedate /predicted_tvl_usd.data.predicted_tvl_usd* 420000000);
+  };
+  const handleEChange = (event) => {
+    const newE = event.target.value;
+    setE(newE);
   };
   const handledateChange = (event) => {
     const inputDate = event.target.value;
@@ -604,22 +630,30 @@ const HomePage = () => {
                   <div className='col-md-6 col-ms-12' style={{ 'minWidth': "500px"  }}>
 
                     <div className="form-group row">
+                          <div className='row'>
+                            <div className='col-12'>
+                              <span className='text-dark'>当前积分</span>
+                              <input
+                                      className = "text-end col-4"
+                                      type="number"
+                                      value={e}
+                                      onChange={handleEChange}
+                                    />
+                            </div>      
+                          </div>
+                          <div className='row'>
+                            <div className='col-12'>
+                              <span className='text-dark'>每日可得积分</span>
+                              <input
+                                      className = "text-end col-4"
+                                      type="number"
+                                      value={d}
+                                      onChange={handleDChange}
+                                    />
+                            </div>      
+                          </div>
                       <div className='row'>
-                        <div className='col-md-6 col-ms-6'>
-                          <label htmlFor="dateInput " className='text-dark'>个人质押参与日期</label>
-                        </div>
-                        <div className='col-md-4'>
-                            <input
-                            type="date"
-                            className="form-control col-4"
-                            id="dateInput"
-                            value={selectedDate}
-                            min={'2024-02-08'}
-                            max={'2024-03-24'}
-                            onChange={handledateChange}
-                          />
 
-                        </div>
                         <div className='col-md-6 col-ms-6'>
                           <label htmlFor="dateend " className='text-dark'>假设质押结算时间为</label>
                         </div>
@@ -642,40 +676,40 @@ const HomePage = () => {
                           )}
                         {differencedate !== null && (
                         <div className='col-12'>  
-                          <div className='row'>
-                          <div className='col-12'>
-                          <span className='text-dark'>每日可得积分</span><input
-                                    className = "text-end col-4"
-                                    type="number"
-                                    value={d}
-                                    onChange={handleDChange}
-                                  />
-                            </div>      
-                          </div>
+
                                             
                           <div className='row'>
                             <div className='col-12'>
-                            <span className='text-dark'>等价质押金额为:  </span>
-                              </div>
-                           <div className='col-12'>
-                           <p className="card-text">
-                                
-                                <input
+                            <span className='text-dark'>等价于: 从 
+                              <input
+                              type="date"
+                              className="text-end"
+                              id="dateInput"
+                              value={selectedDate}
+                              min={'2024-02-08'}
+                              max={'2024-03-24'}
+                              onChange={handledateChange}
+                              disabled
+                            />
+                              开始，质押了
+                              <input
                                   className = "text-end"
                                   type="number"
                                   value={a}
                                   onChange={handleAChange}
                                 />
-                                <span className='text-dark'>  BTC,即</span>
+                                BTC
+                            </span>
+                              </div>
+
                                 <input
                                 className = "text-end"
                                   type="number"
                                   value={b}
                                   onChange={handleBChange}
+                                  hidden
                                 />
-                                  <span className='text-dark'>USD</span>
-                              </p>
-                           </div>
+
                           </div>
                           <div className='row'>
                           <p className="card-text">
