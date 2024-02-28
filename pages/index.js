@@ -631,26 +631,29 @@ const HomePage = () => {
 
                     <div className="form-group row">
                           <div className='row'>
-                            <div className='col-12'>
-                              <span className='text-dark'>当前积分</span>
-                              <input
-                                      className = "text-end col-4"
+                          <div className='col-md-6 col-ms-6'>
+                            <span className='text-dark'>当前积分</span>
+                          </div>
+                          <div className='col-md-4'>
+                          <input
+                                      className = "form-control text-end col-4"
                                       type="number"
                                       value={e}
                                       onChange={handleEChange}
                                     />
-                            </div>      
+                          </div>
+  
                           </div>
                           <div className='row'>
-                            <div className='col-12'>
-                              <span className='text-dark'>每日可得积分</span>
+                          <div className='col-md-6 col-ms-6'><span className='text-dark'>每日可得积分</span></div>
+                            <div className='col-md-4'>
                               <input
-                                      className = "text-end col-4"
+                                      className = "form-control text-end col-4"
                                       type="number"
                                       value={d}
                                       onChange={handleDChange}
                                     />
-                            </div>      
+                            </div>   
                           </div>
                       <div className='row'>
 
@@ -748,9 +751,9 @@ const HomePage = () => {
                   <div className='col-md-6 col-ms-12 d-flex align-items-center justify-content-center' style={{ 'minWidth': "300px"  }}>
                       <div className='row text-end'>
                         <img src="/pre.png" className='border border-primary rounded shadow-lg p-3 mb-5 bg-body rounded' alt="TVL预测曲线" style={{ maxWidth: '100%', height: 'auto' }}/>
-                        <span className='text-muted'>截至02-27，目前场外MERL平均成交价为<br></br>
+                        <span className='text-muted'>截至02-28，目前场外MERL平均成交价为<br></br>
                         1.77 USDT（来自<a href="https://app.whales.market/" target="_blank" rel="noopener noreferrer">whales</a>平台）<br></br>
-                        1.25 USDT（来自企鹅OTC群）
+                        1.4 USDT（来自企鹅OTC群）
                         </span>
                       </div>
                       <div className='row'>                     
