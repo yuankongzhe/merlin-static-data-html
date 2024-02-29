@@ -1073,7 +1073,7 @@ const HomePage = () => {
                             </h2>
                             <div id="Activitycourse4-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Activitycourse4-headingTwo" data-bs-parent="#Activitycourse4">   
                               <div class="accordion-body">
-                                
+                              <li><strong><em>微博 空投小企鹅 图文教程：</em></strong><a href="https://weibo.com/ttarticle/p/show?id=2309405005000404500510"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                                 <li>更多教程敬请期待...</li>
                               </div>
                             </div>
