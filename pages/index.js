@@ -472,6 +472,268 @@ const HomePage = () => {
 
   );
     };
+
+    const MerlinActivity = () =>{
+      const activity_data  = [
+        // stakednum, gettokennum, totalmarketcap,sell_price,apycal,netreward,netprofit_
+        {
+          'activity_name': 'Merlin Seal',
+          'activity_info': [
+            '质押BTC、ETH、brc20、brc420等资产，瓜分4.2亿MERL。占 Merlin Chain 治理代币 $MERL 的 20%。',
+            '这是所有 Layer2 中最大的质押奖励。'
+          ],
+          'activity_reward': '4.2亿MERL',
+          'activity_course': {
+            'videos': [
+              {
+                'description': '油管 超超web3 视频教程 (11:35处开始）',
+                'link': 'https://youtu.be/skE3w22B8-w?si=CM8aJ9iQVV-SF8DD&t=695'
+              },
+              {
+                'description': '油管 十一地主 视频教程',
+                'link': 'https://www.youtube.com/watch?v=QsuOx0ais2w'
+              },
+              {
+                'description': '推特 0xEfraim 视频教程（unisat钱包）',
+                'link': 'https://x.com/0xEfraim/status/1755641701589545423?s=20'
+              }
+            ],
+            'image_text': [
+              {
+                'description': '推特 比特里里 图文教程',
+                'link': 'https://x.com/lilyanna_btc/status/1755581246871327038?s=20'
+              },
+              {
+                'description': '推特 大狮兄 图文教程',
+                'link': 'https://docs.google.com/document/d/1e3g4IaWO78GBq1gIre7fppUb0xHsmBLRGigYX0bwLBc/edit#heading=h.11fdsk1q9efx'
+              },
+              {
+                'description': '微博 空投小企鹅 图文教程',
+                'link': 'https://weibo.com/ttarticle/p/show?id=2309405000941257490564'
+              },
+            ],
+          },
+          'activity_date': [
+            {
+              'description': '资产质押持续时间：',
+              'date': '02-08 至 04-21'
+            },
+            {
+              'description': '资产在Merlin链解锁时间：',
+              'date': '2024年2月'
+            },
+            {
+              'description': 'MERL代币获得时间：',
+              'date': '2024年3月'
+            },
+            {
+              'description': '资产解除质押时间：',
+              'date': '2024年4月21日'
+            },
+          ],
+          'activity_link': [
+            {
+              'description': 'Merlin Seal 活动官网：',
+              'link': 'https://merlinchain.io/bridge/staking',
+            },
+            {
+              'description': 'Merlin Seal 官方活动细则：',
+              'link': 'https://medium.com/@merlinchaincrypto/merlins-seal-the-biggest-fair-launch-of-layer2-5614001b2582',
+            },
+          ]
+        },
+        {
+          'activity_name': 'ZKFair launchpad',
+          'activity_info': [
+            '在ZKF链上消耗gas（USDC）、质押ZKF代币等方式，瓜分420万MERL。',
+          '占 Merlin Chain 治理代币 $MERL 的 0.2%的launchpad。'
+            ],
+          'activity_reward': '420万MERL',
+          'activity_course': {
+            'videos': [
+            ],
+            'image_text': [
+            ],
+          },
+          'activity_date': [
+            {
+              'description': 'launchpad持续时间：',
+              'date': '02-18 至 03-31'
+            },
+          ],
+          'activity_link': [
+            {
+              'description': '活动官网：',
+              'link': 'https://zkfair.io/fairlaunch',
+            },
+            {
+              'description': '官方活动细则：',
+              'link': 'https://mirror.xyz/zkfair.eth/Uc0Ymz9S8MaSpQNSlv-049lhF9LoYscL1fOm2v8wUSU',
+            },
+          ],
+        },
+        {
+          'activity_name': 'MerlinSwap',
+          'activity_info': [
+            '在MerlinSwap上进行转账、交易、提供流动性等活动，瓜分1680万MERL',
+            '占 Merlin Chain 治理代币 $MERL 的 0.8%的活动',
+            '所有活动发布前，在MerlinSwap上进行的转账、交易、提供流动性等活动都会被记录',
+          ],
+          'activity_reward': '1680万MERL',
+          'activity_course': {
+            'videos': [
+              {
+                'description': '油管 超超web3 视频教程 (30:00处开始）',
+                'link': 'https://youtu.be/skE3w22B8-w?si=CM8aJ9iQVV-SF8DD&t=1800'
+              },
+
+            ],
+            'image_text': [
+              {
+                'description': '微博 空投小企鹅 图文教程',
+                'link': 'https://weibo.com/ttarticle/p/show?id=2309405005000404500510'
+              },
+            ],
+          },
+          'activity_date': [
+            {
+              'description': '活动持续时间：',
+              'date': '敬请期待'
+            },
+            
+          ],
+          'activity_link': [
+            {
+              'description': 'MerlinSwap官网：',
+              'link': 'https://merlinswap.org/trade/swap',
+            },
+            {
+              'description': '活动简易公告：',
+              'link': 'https://twitter.com/BitmapTech/status/1760955139505160565',
+            },
+          ]
+        },
+        {
+          'activity_name': 'MerlinStarter',
+          'activity_info': [
+            '连接钱包，绑定账号获得积分',
+            '给Merlin Staker直接进行空投',
+          ],
+          'activity_reward': '平台代币STAR',
+          'activity_course': {
+            'videos': [
+            ],
+            'image_text': [
+              {
+                'description': '推特 0xfaskety 图文教程',
+                'link': 'https://x.com/0xfaskety/status/1763405816605102147?s=20'
+              },
+            ],
+          },
+          'activity_date': [
+            {
+              'description': '活动持续时间：',
+              'date': '敬请期待'
+            },
+            
+          ],
+          'activity_link': [
+            {
+              'description': '活动官网：',
+              'link': 'https://airdrop.merlinstarter.com/?code=lt83foygeuizgjtve38',
+            },
+            {
+              'description': '活动简易细则：',
+              'link': 'https://docs.merlinstarter.com/protocol/airdrop',
+            },
+          ]
+        },
+        
+        // ...更多条目...
+      ];
+  
+    // Return sorted results within a table structure
+    return (
+  
+      <div className="accordion" id="accordionPanelsStayOpenExample">
+        {activity_data.map((activity, index) => (
+        <div className="accordion-item" key={index}>
+          <h2 className="accordion-header" id={`heading${index}`}>
+            <button className="accordion-button collapsed"  type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${index}`} aria-expanded="false" aria-controls={`collapse${index}`}>
+
+              <span className=''>{index + 1}. {activity.activity_name}   ————</span> 
+              <span className=' strong  text-primary text-end'>{activity.activity_reward}</span>
+
+            </button>
+          </h2>
+          <div id={`collapse${index}`} className="accordion-collapse collapse" aria-labelledby={`heading${index}`}>
+            <div className="accordion-body row">
+              {/* Activity Info */}
+              <div className='col-md-6 col-ms-12'>
+                <h4>活动简介</h4>
+                <ul>
+                {activity.activity_info.map((info) => (
+                    <li>{info}</li> // 假设info是一个对象，有key和text属性
+                ))}
+                </ul>
+                <h4>活动教程</h4>
+                <div class="accordion accordion-flush" id={`Activitycourse${index}`}>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id={`Activitycourse${index}-headingOne`}>
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#Activitycourse${index}-collapseOne`} aria-expanded="false" aria-controls={`Activitycourse${index}-collapseOne`}>
+                        视频教程
+                      </button>
+                    </h2>
+                    <div id={`Activitycourse${index}-collapseOne`} class="accordion-collapse collapse" aria-labelledby={`Activitycourse${index}-headingOne`} data-bs-parent={`#Activitycourse${index}`}>
+                      <div class="accordion-body">
+                      {activity.activity_course && activity.activity_course.videos && activity.activity_course.videos.length > 0 && activity.activity_course.videos.map((data) => (
+                          <li><strong><em>{data.description} : </em></strong><a href={data.link}  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                      ))}                
+                      <li>更多教程敬请期待...</li>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id={`Activitycourse${index}-headingTwo`}>
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={`#Activitycourse${index}-collapseTwo`} aria-expanded="false" aria-controls={`Activitycourse${index}-collapseTwo`}>
+                        图文教程
+                      </button>
+                    </h2>
+                    <div id={`Activitycourse${index}-collapseTwo`} class="accordion-collapse collapse" aria-labelledby={`Activitycourse${index}-headingTwo`} data-bs-parent={`#Activitycourse${index}`}>
+                      <div class="accordion-body">
+                      {activity.activity_course && activity.activity_course.image_text && activity.activity_course.image_text.length > 0 && activity.activity_course.image_text.map((data) => (
+                          <li><strong><em>{data.description} : </em></strong><a href={data.link}  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                      ))}                           
+                      <li>更多教程敬请期待...</li>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className='col-md-6 col-ms-12'>
+                <h4 id={`activity-time-${index}`}>活动时间表</h4>
+                <ul>
+                  {activity.activity_date.map((info) => (
+                    <li><strong><em>{info.description}</em></strong>{info.date}</li>
+                  ))}
+                </ul>
+                {/* Activity Dates and Links */}
+                <h4 id={`activity-link-${index}`}>活动相关链接</h4>
+                {activity.activity_link.map((info) => (
+                    <li><strong><em>{info.description}</em></strong><a href={info.link}  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                  ))}
+                {/* Map through dates and links here */}
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+      
+    </div>
+  
+    );
+      };
+
   const caltable = () =>{
     const dataList  = [
       // stakednum, gettokennum, totalmarketcap,sell_price,apycal,netreward,netprofit_
@@ -752,7 +1014,7 @@ const HomePage = () => {
                       <div className='row text-end'>
                         <img src="/pre.png" className='border border-primary rounded shadow-lg p-3 mb-5 bg-body rounded' alt="TVL预测曲线" style={{ maxWidth: '100%', height: 'auto' }}/>
                         <span className='text-muted'>截至02-28，目前场外MERL平均成交价为<br></br>
-                        1.77 USDT（来自<a href="https://app.whales.market/" target="_blank" rel="noopener noreferrer">whales</a>平台）<br></br>
+                        2.22 USDT（来自<a href="https://app.whales.market/" target="_blank" rel="noopener noreferrer">whales</a>平台）<br></br>
                         1.4 USDT（来自企鹅OTC群）
                         </span>
                       </div>
@@ -831,272 +1093,7 @@ const HomePage = () => {
               </div>
               </div>
               <div className="tab-pane fade" id="merlinActivity" role="tabpanel" aria-labelledby="merlinActivity-tab" tabIndex="0">
-                <div className="accordion" id="accordionPanelsStayOpenExample">
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="Activity-headingOne">
-                        <button className="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#Activity1-collapseOne" aria-expanded="true" aria-controls="Activity1-collapseOne">
-                          1. Merlin Seal 
-                        </button>
-                      </h2>
-                      <div id="Activity1-collapseOne" className="accordion-collapse collapse show" aria-labelledby="Activity1-headingOne">
-                        <div className="accordion-body row ">
-
-                          <div className='col-md-6 col-ms-12'>
-                          <h4 id="-">活动简介</h4>
-                          <ul>
-                          <li>质押BTC、ETH、brc20、brc420等资产，瓜分<span className='h5 strong  text-primary'>4.2亿MERL</span></li>
-                          <li>占 Merlin Chain 治理代币 $MERL 的 20%。这是所有 Layer2 中最大的质押奖励。</li>
-                          
-                          </ul>
-                          <h4 id="-">活动教程</h4>
-                          <div class="accordion accordion-flush" id="Activitycourse1">
-                            <div class="accordion-item">
-                              <h2 class="accordion-header" id="Activitycourse1-headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse1-collapseOne" aria-expanded="false" aria-controls="Activitycourse1-collapseOne">
-                                  视频教程
-                                </button>
-                              </h2>
-                              <div id="Activitycourse1-collapseOne" class="accordion-collapse collapse" aria-labelledby="Activitycourse1-headingOne" data-bs-parent="#Activitycourse1">
-                                <div class="accordion-body">
-
-                                <li><strong><em>油管 超超web3 视频教程 (11:35处开始）：</em></strong><a href="https://youtu.be/skE3w22B8-w?si=CM8aJ9iQVV-SF8DD&t=695"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                                <li><strong><em>油管 十一地主 视频教程：</em></strong><a href="https://www.youtube.com/watch?v=QsuOx0ais2w"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                                <li><strong><em>推特 0xEfraim 视频教程（unisat钱包）：</em></strong><a href="https://x.com/0xEfraim/status/1755641701589545423?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                                <li>更多教程敬请期待...</li>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                              <h2 class="accordion-header" id="Activitycourse1-headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse1-collapseTwo" aria-expanded="false" aria-controls="Activitycourse1-collapseTwo">
-                                  图文教程
-                                </button>
-                              </h2>
-                              <div id="Activitycourse1-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Activitycourse1-headingTwo" data-bs-parent="#Activitycourse1">
-                                <div class="accordion-body">
-                                  <li><strong><em>推特 比特里里 图文教程：</em></strong><a href="https://x.com/lilyanna_btc/status/1755581246871327038?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                                  <li><strong><em>推特 大狮兄 图文教程：</em></strong><a href="https://docs.google.com/document/d/1e3g4IaWO78GBq1gIre7fppUb0xHsmBLRGigYX0bwLBc/edit#heading=h.11fdsk1q9efx"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                                  <li><strong><em>微博 空投小企鹅 图文教程：</em></strong><a href="https://weibo.com/ttarticle/p/show?id=2309405000941257490564"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                                  <li>更多教程敬请期待...</li>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          
-                        </div>
-                        <div className='col-md-6 col-ms-12'>
-                            <h4 id="-">活动时间表</h4>
-                            <ul>
-                            <li><strong><em>资产质押持续时间：</em></strong>02-08 至 04-21</li>
-                            <li><strong><em>资产在Merlin链解锁时间：</em></strong>2024年2月</li>
-                            <li><strong><em>MERL代币获得时间：</em></strong>2024年3月</li>
-                            <li><strong><em>资产解除质押时间：</em></strong>2024年4月21日</li>
-                            </ul>
-                            <h4 id="-">活动相关链接</h4>
-                            <ul>
-                            <li><strong><em>Merlin Seal 活动官网：</em></strong><a href="https://merlinchain.io/bridge/staking"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                            <li><strong><em>Merlin Seal 官方活动细则：</em></strong><a href="https://medium.com/@merlinchaincrypto/merlins-seal-the-biggest-fair-launch-of-layer2-5614001b2582"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                            </ul>
-                        </div>
-                          
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="Activity2-headingThree">
-                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#Activity2-collapseThree" aria-expanded="true" aria-controls="Activity2-collapseThree">
-                        2. ZKFair launchpad
-                        </button>
-                      </h2>
-                      <div id="Activity2-collapseThree" className="accordion-collapse collapse show"  aria-labelledby="Activity2-headingThree">
-                      <div className="accordion-body row ">
-
-                        <div className='col-md-6 col-ms-12'>
-                        <h4 id="-">活动简介</h4>
-                        <ul>
-                        <li>在ZKF链上消耗gas（USDC）、质押ZKF代币等方式，瓜分<span className='h5 strong  text-primary'>420万MERL</span></li>
-                        <li>占 Merlin Chain 治理代币 $MERL 的 0.2%的launchpad</li>
-
-                        </ul>
-                        <h4 id="-">活动教程</h4>
-                          
-                          <div class="accordion accordion-flush" id="Activitycourse3">
-                            <div class="accordion-item">
-                              <h2 class="accordion-header" id="Activitycourse3-headingOne">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse3-collapseOne" aria-expanded="false" aria-controls="Activitycourse3-collapseOne">
-                                  视频教程
-                                </button>
-                              </h2>
-                              <div id="Activitycourse3-collapseOne" class="accordion-collapse collapse" aria-labelledby="Activitycourse3-headingOne" data-bs-parent="#Activitycourse3">
-                                <div class="accordion-body">
-                                
-                                  <li>更多教程敬请期待...</li>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="accordion-item">
-                              <h2 class="accordion-header" id="Activitycourse3-headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse3-collapseTwo" aria-expanded="false" aria-controls="Activitycourse3-collapseTwo">
-                                  图文教程
-                                </button>
-                              </h2>
-                              <div id="Activitycourse3-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Activitycourse3-headingTwo" data-bs-parent="#Activitycourse3">   
-                                <div class="accordion-body">
-                                  
-                                  <li>更多教程敬请期待...</li>
-                                </div>
-                              </div>
-                            </div>
-                            
-                          </div>
-                        </div>
-                        <div className='col-md-6 col-ms-12'>
-                          <h4 id="-">活动时间表</h4>
-                          <ul>
-                          <li><strong><em>launchpad持续时间：</em></strong>02-18 至 03-31</li>
-                          </ul>
-                          <h4 id="-">活动相关链接</h4>
-                          <ul>
-                          <li><strong><em>ZKFair launchpad参与官网：</em></strong><a href="https://zkfair.io/fairlaunch"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                          <li><strong><em>ZKFair launchpad 官方活动细则：</em></strong><a href="https://mirror.xyz/zkfair.eth/Uc0Ymz9S8MaSpQNSlv-049lhF9LoYscL1fOm2v8wUSU"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                          </ul>
-                        </div>
-
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="Activity3-headingThree">
-                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#Activity3-collapseThree" aria-expanded="true" aria-controls="Activity3-collapseThree">
-                        3. 推特改名瓜分空投  
-                        </button>
-                      </h2>
-                      <div id="Activity3-collapseThree" className="accordion-collapse collapse show"  aria-labelledby="Activity3-headingThree">
-                      <div className="accordion-body row ">
-
-                        <div className='col-md-6 col-ms-12'>
-                        <h4 id="-">活动简介</h4>
-                        <ul>
-                        <li>简单操作平分<span className='h5 strong  text-primary'>100,000个Bitmap代币（WMAP）+ 2,000个蓝盒子代币（W420）</span></li>
-                        <li>推特账户昵称后添加特殊标识</li>
-                        <li>关注指定推特，然后填表</li>
-                        <li>等待空投到账</li>
-
-                        </ul>
-                        <h4 id="-">活动教程</h4>
-                        <div class="accordion accordion-flush" id="Activitycourse2">
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="Activitycourse2-headingOne">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse2-collapseOne" aria-expanded="false" aria-controls="Activitycourse2-collapseOne">
-                                视频教程
-                              </button>
-                            </h2>
-                            <div id="Activitycourse2-collapseOne" class="accordion-collapse collapse" aria-labelledby="Activitycourse2-headingOne" data-bs-parent="#Activitycourse2">
-                              <div class="accordion-body">
-                              <li><strong><em>油管 超超web3 视频教程 (28:00处开始）：</em></strong><a href="https://youtu.be/skE3w22B8-w?si=CM8aJ9iQVV-SF8DD&t=1680"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                                <li>更多教程敬请期待...</li>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="Activitycourse2-headingTwo">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse2-collapseTwo" aria-expanded="false" aria-controls="Activitycourse2-collapseTwo">
-                                图文教程
-                              </button>
-                            </h2>
-                            <div id="Activitycourse2-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Activitycourse2-headingTwo" data-bs-parent="#Activitycourse2">   
-                              <div class="accordion-body">
-                                <li><strong><em>微博 空投小企鹅 图文教程：</em></strong><a href="https://weibo.com/ttarticle/p/show?id=2309404997083047526503"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                                <li>更多教程敬请期待...</li>
-                              </div>
-                            </div>
-                          </div>
-                          
-                        </div>
-
-                          </div>
-                        
-                        
-                        <div className='col-md-6 col-ms-12'>
-                          <h4 id="-">活动时间表</h4>
-                          <ul>
-                          <li><strong><em>改名活动 持续时间：</em></strong>2024年2月</li>
-                          </ul>
-                          <h4 id="-">活动相关链接</h4>
-                          <ul>
-                          <li><strong><em>改名活动 官方活动链接：</em></strong><a href="https://twitter.com/BitmapTech/status/1753396016597152172"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                      
-                          </ul>
-                        </div>
-
-                        </div>
-                      </div>
-                    </div>
-                    <div className="accordion-item">
-                      <h2 className="accordion-header" id="Activity4-headingThree">
-                        <button className="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#Activity4-collapseThree" aria-expanded="true" aria-controls="Activity4-collapseThree">
-                        4. MerlinSwap  
-                        </button>
-                      </h2>
-                      <div id="Activity4-collapseThree" className="accordion-collapse collapse show"  aria-labelledby="Activity4-headingThree">
-                      <div className="accordion-body row ">
-
-                        <div className='col-md-6 col-ms-12'>
-                        <h4 id="-">活动简介</h4>
-                        <ul>
-                        <li>在MerlinSwap上进行转账、交易、提供流动性等活动，瓜分<span className='h5 strong  text-primary'>1680万MERL</span></li>
-                        <li>占 Merlin Chain 治理代币 $MERL 的 0.8%的活动</li>
-                        <li>所有活动发布前，在MerlinSwap上进行的转账、交易、提供流动性等活动都会被记录</li>
-                        </ul>
-                        <h4 id="-">活动教程</h4>
-                        <div class="accordion accordion-flush" id="Activitycourse4">
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="Activitycourse4-headingOne">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse4-collapseOne" aria-expanded="false" aria-controls="Activitycourse4-collapseOne">
-                                视频教程
-                              </button>
-                            </h2>
-                            <div id="Activitycourse4-collapseOne" class="accordion-collapse collapse" aria-labelledby="Activitycourse4-headingOne" data-bs-parent="#Activitycourse4">
-                              <div class="accordion-body">
-                              <li><strong><em>油管 超超web3 视频教程 (30:00处开始）：</em></strong><a href="https://youtu.be/skE3w22B8-w?si=CM8aJ9iQVV-SF8DD&t=1800"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                                <li>更多教程敬请期待...</li>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="accordion-item">
-                            <h2 class="accordion-header" id="Activitycourse4-headingTwo">
-                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#Activitycourse4-collapseTwo" aria-expanded="false" aria-controls="Activitycourse4-collapseTwo">
-                                图文教程
-                              </button>
-                            </h2>
-                            <div id="Activitycourse4-collapseTwo" class="accordion-collapse collapse" aria-labelledby="Activitycourse4-headingTwo" data-bs-parent="#Activitycourse4">   
-                              <div class="accordion-body">
-                              <li><strong><em>微博 空投小企鹅 图文教程：</em></strong><a href="https://weibo.com/ttarticle/p/show?id=2309405005000404500510"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                                <li>更多教程敬请期待...</li>
-                              </div>
-                            </div>
-                          </div>
-                          
-                        </div>
-                        </div>
-                        <div className='col-md-6 col-ms-12'>
-                          <h4 id="-">活动时间表</h4>
-                          <ul>
-                          <li><strong><em>活动持续时间：</em></strong>敬请期待</li>
-                          </ul>
-                          <h4 id="-">活动相关链接</h4>
-                          <ul>
-                          <li><strong><em>活动简易公告：</em></strong><a href="https://twitter.com/BitmapTech/status/1760955139505160565"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
-                          <li><strong><em>MerlinSwap 官方活动细则：</em></strong><a href="#"  target="_blank" rel="noopener noreferrer">敬请期待</a></li>
-                          </ul>
-                        </div>
-
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                {MerlinActivity()}
               <div>
 
               </div>
