@@ -618,6 +618,8 @@ const HomePage = () => {
           'activity_info': [
             '连接钱包，绑定账号获得积分',
             '给Merlin Staker直接进行空投',
+            '注意本活动索要推特权限较大，及时取消授权',
+            '取消授权方法“更多--设置和隐私--安全性和账号访问权限--已连接的应用”',
           ],
           'activity_reward': '平台代币STAR',
           'activity_course': {
