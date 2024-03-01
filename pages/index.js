@@ -673,7 +673,7 @@ const HomePage = () => {
                 <h4>活动简介</h4>
                 <ul>
                 {activity.activity_info.map((info) => (
-                    <li>{info}</li> // 假设info是一个对象，有key和text属性
+                    <li key={`activity_info${index}`}>{info}</li> // 假设info是一个对象，有key和text属性
                 ))}
                 </ul>
                 <h4>活动教程</h4>
@@ -687,9 +687,9 @@ const HomePage = () => {
                     <div id={`Activitycourse${index}-collapseOne`} class="accordion-collapse collapse" aria-labelledby={`Activitycourse${index}-headingOne`} data-bs-parent={`#Activitycourse${index}`}>
                       <div class="accordion-body">
                       {activity.activity_course && activity.activity_course.videos && activity.activity_course.videos.length > 0 && activity.activity_course.videos.map((data) => (
-                          <li><strong><em>{data.description} : </em></strong><a href={data.link}  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                          <li key={`Activitycourse${index}`}><strong><em>{data.description} : </em></strong><a href={data.link}  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                       ))}                
-                      <li>更多教程敬请期待...</li>
+                      <li key={`Activitycourse${index}`}>更多教程敬请期待...</li>
                       </div>
                     </div>
                   </div>
@@ -714,13 +714,13 @@ const HomePage = () => {
                 <h4 id={`activity-time-${index}`}>活动时间表</h4>
                 <ul>
                   {activity.activity_date.map((info) => (
-                    <li><strong><em>{info.description}</em></strong>{info.date}</li>
+                    <li key={`activity_date${index}`}><strong><em>{info.description}</em></strong>{info.date}</li>
                   ))}
                 </ul>
                 {/* Activity Dates and Links */}
                 <h4 id={`activity-link-${index}`}>活动相关链接</h4>
                 {activity.activity_link.map((info) => (
-                    <li><strong><em>{info.description}</em></strong><a href={info.link}  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                    <li key={`activity_link${index}`}><strong><em>{info.description}</em></strong><a href={info.link}  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                   ))}
                 {/* Map through dates and links here */}
               </div>
