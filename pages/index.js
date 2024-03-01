@@ -702,9 +702,9 @@ const HomePage = () => {
                     <div id={`Activitycourse${index}-collapseTwo`} class="accordion-collapse collapse" aria-labelledby={`Activitycourse${index}-headingTwo`} data-bs-parent={`#Activitycourse${index}`}>
                       <div class="accordion-body">
                       {activity.activity_course && activity.activity_course.image_text && activity.activity_course.image_text.length > 0 && activity.activity_course.image_text.map((data) => (
-                          <li><strong><em>{data.description} : </em></strong><a href={data.link}  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                          <li key={`Activitycourse${index}`}><strong><em>{data.description} : </em></strong><a href={data.link}  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                       ))}                           
-                      <li>更多教程敬请期待...</li>
+                      <li key={`Activitycourse${index}`}>更多教程敬请期待...</li>
                       </div>
                     </div>
                   </div>
