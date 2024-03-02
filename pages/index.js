@@ -96,7 +96,7 @@ const HomePage = () => {
   const [specifiedDate1,setspecifiedDate1] = useState('2024-04-01'); // 指定日期
   const [differencedate, setdifferencedate] = useState(null);
   const [control,setcontrol]=useState(null);
-   
+  const [isToggled, setIsToggled] = useState(false);
 
   // Function to update the currency price and recalculate TVL
 
@@ -739,7 +739,9 @@ const HomePage = () => {
   
     );
       };
-
+  const handleToggle = () => {
+        setIsToggled(!isToggled);
+      };
   const caltable = () =>{
     const dataList  = [
       // stakednum, gettokennum, totalmarketcap,sell_price,apycal,netreward,netprofit_
@@ -767,21 +769,39 @@ const HomePage = () => {
       { 'stakednum': b, 'gettokennum': c, 'apycal':10},
       // ...更多条目...
     ];
+  // 添加开关状态
 
   // 将字典的每个项转换为 `calcother` 函数的参数，并调用函数
   const results = dataList.map(item => calcother(item));
+  // 处理开关变化
 
   // 根据 `totalmarketcap` 从小到大排序这些结果
   const sortedResults = results.sort((a, b) => a.totalmarketcap - b.totalmarketcap);
   // Return sorted results within a table structure
   return (
+    <table className="table table-sm">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col" className="form-check form-switch">
+              
+        <label className="form-check-label" for="SwitchCheck">{isToggled ? 'MERL流通市值/U'  : 'MERL总市值/U'}</label>
+        <input className="form-check-input " type="checkbox" role="switch" id="SwitchCheck" checked={isToggled} onChange={handleToggle}></input>
 
-      <tbody>
+        </th>
+        <th scope="col">代币售价/U</th>
+        <th scope="col">APY为</th>
+        <th scope="col">净利润</th>
+        <th scope="col">净利率</th>
+      </tr>
+    </thead>
+
+    <tbody>
         {sortedResults.map((data, index) => (
           <TableRow
             key={index} // 推荐为每个子元素添加 key 属性
             index={index + 1}
-            totalmarketcap={data.totalmarketcap}
+            totalmarketcap={isToggled ? data.totalmarketcap * 0.21  : data.totalmarketcap * 1}
             sell_price={data.sell_price}
             apycal={data.apycal}
             netreward={data.netreward}
@@ -789,6 +809,9 @@ const HomePage = () => {
           />
         ))}
       </tbody>
+
+  </table>
+
 
   );
     };
@@ -941,7 +964,7 @@ const HomePage = () => {
                         />
                         
                       </div>
-                      <span className=' col-12 text-muted '>(质押活动于02/08开始，至03/09持续30天，至03/24持续45天)</span>
+                      <span className=' col-12 text-muted '>(质押活动于02/08开始，至03/09持续30天)</span>
                         {differencedate !== null && (
                         <p className='col-12 table-info text-dark'>你总计可以质押<span className='h4 strong  text-primary'>{differencedate}</span>  天。</p>
                           )}
@@ -990,21 +1013,10 @@ const HomePage = () => {
                           </div>
 
                           <div className='row'>
-                          <table className="table table-sm">
-                            <thead>
-                              <tr>
-                                <th scope="col">#</th>
-                                <th scope="col">MERL总市值/U</th>
-                                <th scope="col">代币售价/U</th>
-                                <th scope="col">APY为</th>
-                                <th scope="col">净利润</th>
-                                <th scope="col">净利率</th>
-                              </tr>
-                            </thead>
+
 
                               {caltable()}
 
-                          </table>
                           
                           </div>
                           
