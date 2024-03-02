@@ -630,6 +630,10 @@ const HomePage = () => {
                 'description': '推特 0xfaskety 图文教程',
                 'link': 'https://x.com/0xfaskety/status/1763405816605102147?s=20'
               },
+              {
+                'description': '微博 空投小企鹅 图文教程',
+                'link': 'https://weibo.com/ttarticle/p/show?id=2309405007226531086505'
+              },
             ],
           },
           'activity_date': [
