@@ -662,6 +662,30 @@ const HomePage = () => {
     return (
   
       <div className="accordion" id="accordionPanelsStayOpenExample">
+<div className="accordion-item" key={-1}>
+          <h2 className="accordion-header" id={`heading${-1}`}>
+            <button className="accordion-button collapsed"  type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${-1}`} aria-expanded="false" aria-controls={`collapse${-1}`}>
+              <span className=''>{0}. 钱包安全相关</span> 
+            </button>
+          </h2>
+          <div id={`collapse${-1}`} className="accordion-collapse collapse" aria-labelledby={`heading${-1}`}>
+            <div className="accordion-body row">
+              {/* Activity Info */}
+              <div className='col-md-6 col-ms-12'>
+                <h4>钱包安全相关教程</h4>
+                <li key={`Activitycourse${-1}`}><strong><em>推特 比特里里 Merlin钱包基础安全知识 : </em></strong><a href="https://x.com/lilyanna_btc/status/1763600093075415306?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                <li key={`Activitycourse${-1}`}><strong><em>推特 0xfaskety Merlin钱包取消合约授权教程 : </em></strong><a href="https://x.com/0xfaskety/status/1764078620858101980?s=20"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+              </div>
+              <div className='col-md-6 col-ms-12'>
+                {/* Activity Dates and Links */}
+                <h4 id={`activity-link-${-1}`}>Merlin安全工具相关链接</h4>
+                <li key={`Activitycourse${-1}`}><strong><em>OKX网页钱包（用于取消合约授权） : </em></strong><a href="https://www.okx.com/cn/web3"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                {/* Map through dates and links here */}
+              </div>
+            </div>
+          </div>
+        </div>
+
         {activity_data.map((activity, index) => (
         <div className="accordion-item" key={index}>
           <h2 className="accordion-header" id={`heading${index}`}>
