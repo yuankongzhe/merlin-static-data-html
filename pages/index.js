@@ -1056,9 +1056,9 @@ const HomePage = () => {
                       <div className='row text-end'>
                         <img src="/pre.png" className='border border-primary rounded shadow-lg p-3 mb-5 bg-body rounded' alt="TVL预测曲线" style={{ maxWidth: '100%', height: 'auto' }}/>
                         <span className='text-muted'>由于BTC价格上涨以及ETHS的质押开启，相较原公式引入了修正项<br></br>
-                        截至02-28，目前场外MERL平均成交价为<br></br>
-                        2.22 USDT（来自<a href="https://app.whales.market/" target="_blank" rel="noopener noreferrer">whales</a>平台）<br></br>
-                        1.4 USDT（来自企鹅OTC群）
+                        截至03-03，目前场外MERL平均成交价为<br></br>
+                        2.59 USDT（来自<a href="https://app.whales.market/" target="_blank" rel="noopener noreferrer">whales</a>平台）<br></br>
+                        2.2 USDT（来自企鹅OTC群）
                         </span>
                       </div>
                       <div className='row'>                     
