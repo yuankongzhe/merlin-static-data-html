@@ -988,7 +988,7 @@ const HomePage = () => {
                         />
                         
                       </div>
-                      <span className=' col-12 text-muted '>(质押活动于02/08开始，至03/09持续30天)</span>
+                      <span className=' col-12 text-muted '>(质押活动于02/08开始)</span>
                         {differencedate !== null && (
                         <p className='col-12 table-info text-dark'>你总计可以质押<span className='h4 strong  text-primary'>{differencedate}</span>  天。</p>
                           )}
