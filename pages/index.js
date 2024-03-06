@@ -462,8 +462,8 @@ const HomePage = () => {
       <tbody>
         {addressList.map((data, index) => (
           <tr className={`table-${data.color}`} key={`table-address-${index}`}>
-            <td className='col-4'><span className='text-black'>{data.address_info}</span></td>
-            <td className='col-8'><a href={data.address_link} target="_blank" rel="noopener noreferrer">
+            <td className='col-md-4 col-ms-12 text-break'><span className='text-black'>{data.address_info}</span></td>
+            <td className='col-md-8 col-ms-12 text-break'><a href={data.address_link} target="_blank" rel="noopener noreferrer">
             {data.address_link}
             </a></td>
           </tr>
@@ -1070,8 +1070,8 @@ const HomePage = () => {
                 
               </div>
               </div>
-              <div className="tab-pane fade row" id="merlinAddress" role="tabpanel" aria-labelledby="merlinAddress-tab" tabIndex="0">
-                <div className="accordion col-12" id="accordionPanelsStayOpenExample">
+              <div className="tab-pane fade " id="merlinAddress" role="tabpanel" aria-labelledby="merlinAddress-tab" tabIndex="0">
+                <div className="accordion" id="accordionPanelsStayOpenExample">
                     <div className="accordion-item">
                       <h2 className="accordion-header" id="address-official-headingOne">
                         <button className="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#address-official-collapseOne" aria-expanded="true" aria-controls="address-official-collapseOne">
@@ -1113,16 +1113,16 @@ const HomePage = () => {
                         <table className="table table-sm table-hover text-center">
                         <tbody>
                           <tr className='table' key={`table-1`}>
-                                <td className='col-4'><span className='text-black'>whales </span></td>
-                                <td className='col-2'><span className='text-black'>链上场外交易平台</span></td>
-                                <td className='col-6'><a href='https://app.whales.market/' target="_blank" rel="noopener noreferrer">
+                                <td className='col-4 text-break'><span className='text-black'>whales </span></td>
+                                <td className='col-2 text-break'><span className='text-black'>链上场外交易平台</span></td>
+                                <td className='col-6 text-break'><a href='https://app.whales.market/' target="_blank" rel="noopener noreferrer">
                                 https://app.whales.market/
                                 </a></td>
                               </tr>
                               <tr className='table' key={`table-2`}>
-                                <td className='col-4'><span className='text-black'>微博：脱口秀小企鹅    推特:@Goupenguin 场外交易群</span></td>
-                                <td className='col-2'><span className='text-black'>场外交易QQ群</span></td>
-                                <td className='col-6'><span>QQ群号： 383301198 </span></td>
+                                <td className='col-4 text-break'><span className='text-black'>微博：脱口秀小企鹅    推特:@Goupenguin 场外交易群</span></td>
+                                <td className='col-2 text-break'><span className='text-black'>场外交易QQ群</span></td>
+                                <td className='col-6 text-break'><span>QQ群号： 383301198 </span></td>
                               </tr>
                         </tbody>
                             
