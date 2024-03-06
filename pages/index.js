@@ -941,8 +941,8 @@ const HomePage = () => {
               </div>
               <div className="tab-pane fade" id="personalrewardcal" role="tabpanel" aria-labelledby="personalrewardcal-tab" tabIndex="0">
               <div>
-                <div className='row'>
-                  <div className='col-md-6 col-ms-12' style={{ 'minWidth': "500px"  }}>
+                <div className='row' >
+                  <div className='col-md-6 col-ms-12' >
 
                     <div className="form-group row">
                           <div className='row'>
@@ -1052,7 +1052,7 @@ const HomePage = () => {
                       
                     </div>
                   </div>
-                  <div className='col-md-6 col-ms-12 d-flex align-items-center justify-content-center' style={{ 'minWidth': "300px"  }}>
+                  <div className='col-md-6 col-ms-12 d-flex align-items-center justify-content-center' >
                       <div className='row text-end'>
                         <img src="/pre.png" className='border border-primary rounded shadow-lg p-3 mb-5 bg-body rounded' alt="TVL预测曲线" style={{ maxWidth: '100%', height: 'auto' }}/>
                         <span className='text-muted'>由于BTC价格上涨以及ETHS的质押开启，相较原公式引入了修正项<br></br>
@@ -1070,8 +1070,8 @@ const HomePage = () => {
                 
               </div>
               </div>
-              <div className="tab-pane fade" id="merlinAddress" role="tabpanel" aria-labelledby="merlinAddress-tab" tabIndex="0">
-                <div className="accordion" id="accordionPanelsStayOpenExample">
+              <div className="tab-pane fade row" id="merlinAddress" role="tabpanel" aria-labelledby="merlinAddress-tab" tabIndex="0">
+                <div className="accordion col-12" id="accordionPanelsStayOpenExample">
                     <div className="accordion-item">
                       <h2 className="accordion-header" id="address-official-headingOne">
                         <button className="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#address-official-collapseOne" aria-expanded="true" aria-controls="address-official-collapseOne">
