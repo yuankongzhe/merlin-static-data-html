@@ -23038,5 +23038,46 @@
                 "price_in_usd": 10877708.741657
             }
         }
+    },
+    {
+        "savetime": "2024-03-08T12:00:05.919491",
+        "data": {
+            "BLUEBOX": {
+                "staked": 9324.0,
+                "totalSupply": 10000,
+                "price_btc": 0.8426604566667079,
+                "price_in_usd": 471417965.877623
+            },
+            "BITMAP": {
+                "staked": 248930.0,
+                "totalSupply": 830326,
+                "price_btc": 0.0053434823333336,
+                "price_in_usd": 79809183.434204
+            },
+            "MUSICBOX": {
+                "staked": 35488.0,
+                "totalSupply": 42069,
+                "price_btc": 0.03320113500000141,
+                "price_in_usd": 70694512.732803
+            },
+            "MINERAL": {
+                "staked": 34724.0,
+                "totalSupply": 40000,
+                "price_btc": 0.03230682833333477,
+                "price_in_usd": 67309338.422803
+            },
+            "DRAGONBALL": {
+                "staked": 65233.0,
+                "totalSupply": 100000,
+                "price_btc": 0.003308934666666922,
+                "price_in_usd": 12951104.106641
+            },
+            "BLUEWAND": {
+                "staked": 32747.0,
+                "totalSupply": 42000,
+                "price_btc": 0.005533522500000509,
+                "price_in_usd": 10872375.678451
+            }
+        }
     }
 ]
