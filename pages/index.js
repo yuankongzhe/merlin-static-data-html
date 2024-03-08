@@ -784,6 +784,8 @@ const HomePage = () => {
       // { 'stakednum': b, 'gettokennum': c, 'sell_price':0.5},
       // { 'stakednum': b, 'gettokennum': c, 'sell_price':1},
       { 'stakednum': b, 'gettokennum': c, 'sell_price':2},
+      { 'stakednum': b, 'gettokennum': c, 'sell_price':2.9},
+      { 'stakednum': b, 'gettokennum': c, 'sell_price':3.3},
       { 'stakednum': b, 'gettokennum': c, 'sell_price':5},
       { 'stakednum': b, 'gettokennum': c, 'sell_price':10},
       // { 'stakednum': b, 'gettokennum': c, 'apycal':0.5},
