@@ -654,7 +654,37 @@ const HomePage = () => {
             },
           ]
         },
-        
+        {
+          'activity_name': 'influpia',
+          'activity_info': [
+            'socialfi',
+            '03/11开始空投，具体细则等待更新',
+          ],
+          'activity_reward': '平台代币',
+          'activity_course': {
+            'videos': [
+            ],
+            'image_text': [
+            ],
+          },
+          'activity_date': [
+            {
+              'description': '活动持续时间：',
+              'date': '敬请期待'
+            },
+            
+          ],
+          'activity_link': [
+            {
+              'description': '活动官网：',
+              'link': 'https://influpia.com/',
+            },
+            {
+              'description': 'influpia官方推特',
+              'link': 'https://twitter.com/influpia',
+            },
+          ]
+        },
         // ...更多条目...
       ];
   
