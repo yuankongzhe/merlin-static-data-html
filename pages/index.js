@@ -658,7 +658,9 @@ const HomePage = () => {
           'activity_name': 'influpia',
           'activity_info': [
             'socialfi',
-            '03/11开始空投，具体细则等待更新',
+            '通过邀请码进入后，进行抽奖（邀请码可以在discord中获取）',
+            '可以通过邀请最多额外获得12次抽奖机会',
+            '如果在03/11 00:00 UTC+8前在Merlin Seal中质押超过 0.001 BTC，每天额外获得一次抽奖机会',
           ],
           'activity_reward': '平台代币',
           'activity_course': {
@@ -670,18 +672,26 @@ const HomePage = () => {
           'activity_date': [
             {
               'description': '活动持续时间：',
-              'date': '敬请期待'
+              'date': '03/11开始'
             },
             
           ],
           'activity_link': [
             {
               'description': '活动官网：',
-              'link': 'https://influpia.com/',
+              'link': 'https://www.influpia.com/airdrop',
             },
             {
               'description': 'influpia官方推特',
               'link': 'https://twitter.com/influpia',
+            },
+            {
+              'description': '官方discord',
+              'link': 'https://discord.gg/influpia',
+            },
+            {
+              'description': 'influpia官方活动细则',
+              'link': 'https://medium.com/@influpia/airdrop-is-now-live-88a7bd0b16fc',
             },
           ]
         },
