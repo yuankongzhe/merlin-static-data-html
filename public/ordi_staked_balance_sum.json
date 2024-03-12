@@ -34970,5 +34970,88 @@
                 "price_in_usd": 3887495.625596
             }
         }
+    },
+    {
+        "savetime": "2024-03-12T19:00:06.626525",
+        "data": {
+            "GOOSINALS": {
+                "staked": 3877.0,
+                "totalSupply": 9999,
+                "price_btc": 0.017959668569840666,
+                "price_in_usd": 5000104.092601
+            },
+            "NODEMONKES": {
+                "staked": 1048.0,
+                "totalSupply": 9984,
+                "price_btc": 0.5288124634452691,
+                "price_in_usd": 39796776.104005
+            },
+            "BITCOIN-FROGS": {
+                "staked": 1367.0,
+                "totalSupply": 10000,
+                "price_btc": 0.133200875226312,
+                "price_in_usd": 13075566.679952
+            },
+            "BITCOIN-PUPPETS": {
+                "staked": 355.0,
+                "totalSupply": 10001,
+                "price_btc": 0.16163701712857284,
+                "price_in_usd": 4120539.741001
+            },
+            "BITDISC-BLACK": {
+                "staked": 6596.0,
+                "totalSupply": 10000,
+                "price_btc": 0.04988796824955375,
+                "price_in_usd": 23629873.180003
+            },
+            "GENIIDATA-GENESIS-PASS": {
+                "staked": 148.0,
+                "totalSupply": 400,
+                "price_btc": 0.05188348697952932,
+                "price_in_usd": 551411.4736
+            },
+            "DOODINALS": {
+                "staked": 533.0,
+                "totalSupply": 744,
+                "price_btc": 0.2973322907673287,
+                "price_in_usd": 11380313.149401
+            },
+            "CC0": {
+                "staked": 651.0,
+                "totalSupply": 9946,
+                "price_btc": 0.003971082272663975,
+                "price_in_usd": 185641.385118
+            },
+            "FUZZY-FOX": {
+                "staked": 2852.0,
+                "totalSupply": 10027,
+                "price_btc": 0.003971082272663974,
+                "price_in_usd": 813286.068136
+            },
+            "QUANTUM-CATS": {
+                "staked": 92.0,
+                "totalSupply": 3331,
+                "price_btc": 0.29433901267232976,
+                "price_in_usd": 1944556.574
+            },
+            "RATS-FRIEND": {
+                "staked": 2767.0,
+                "totalSupply": 9982,
+                "price_btc": 0.00697433796128673,
+                "price_in_usd": 1385788.887303
+            },
+            "SHIDS": {
+                "staked": 979.0,
+                "totalSupply": 7776,
+                "price_btc": 0.002993278094972845,
+                "price_in_usd": 210433.4067
+            },
+            "XMONKES": {
+                "staked": 3755.0,
+                "totalSupply": 10000,
+                "price_btc": 0.014367734855869656,
+                "price_in_usd": 3874210.1352
+            }
+        }
     }
 ]
