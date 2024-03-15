@@ -448,7 +448,7 @@ const HomePage = () => {
     // stakednum, gettokennum, totalmarketcap,sell_price,apycal,netreward,netprofit_
     { 'address_info': 'Melin 官网', 'address_link': 'https://merlinchain.io/','color': '', },
     { 'address_info': 'Merlin Seal 质押官网', 'address_link': 'https://merlinchain.io/bridge/staking','color': '', },
-    
+    { 'address_info': 'Merlin 官方wiki', 'address_link': 'https://merlinchain.notion.site/Merlin-Chain-Wiki-8c634e006879462f85bec77f19cb98eb','color': '',},
     { 'address_info': 'Merlin 官方推特', 'address_link': 'https://twitter.com/MerlinLayer2','color': '',},
     { 'address_info': 'Merlin 主要创始人推特', 'address_link': 'https://twitter.com/BitmapTech','color': '', },
     { 'address_info': 'Merlin Seal 官方活动细则', 'address_link': 'https://medium.com/@merlinchaincrypto/merlins-seal-the-biggest-fair-launch-of-layer2-5614001b2582','color': '', },
