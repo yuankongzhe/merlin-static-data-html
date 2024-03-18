@@ -31074,5 +31074,64 @@
                 "price_in_usd": 7364683.845129
             }
         }
+    },
+    {
+        "savetime": "2024-03-18T19:00:07.905404",
+        "data": {
+            "BLUEBOX": {
+                "staked": 9516.0,
+                "totalSupply": 10000,
+                "price_btc": 0.5496300671654245,
+                "price_in_usd": 355256289.363566
+            },
+            "BITMAP": {
+                "staked": 259664.0,
+                "totalSupply": 830326,
+                "price_btc": 0.0029039365163554057,
+                "price_in_usd": 51217186.789226
+            },
+            "MUSICBOX": {
+                "staked": 36043.0,
+                "totalSupply": 42069,
+                "price_btc": 0.021028505808090646,
+                "price_in_usd": 51480908.925706
+            },
+            "MINERAL": {
+                "staked": 36058.0,
+                "totalSupply": 40000,
+                "price_btc": 0.0198038456841242,
+                "price_in_usd": 48502935.897903
+            },
+            "DRAGONBALL": {
+                "staked": 68248.0,
+                "totalSupply": 100000,
+                "price_btc": 0.0023892388027667833,
+                "price_in_usd": 11075576.667888
+            },
+            "BLUEWAND": {
+                "staked": 33750.0,
+                "totalSupply": 42000,
+                "price_btc": 0.003204343742185187,
+                "price_in_usd": 7345641.600015
+            },
+            "IQ50-CLUB": {
+                "staked": 45.0,
+                "totalSupply": 0,
+                "price_btc": 0.03755090322865597,
+                "price_in_usd": 114775.65
+            },
+            "ORDZ-GAMES-ARCADE": {
+                "staked": 322.0,
+                "totalSupply": 0,
+                "price_btc": 0.0005767818735738668,
+                "price_in_usd": 12614.915174
+            },
+            "CHIPCHIPGAME-BOX": {
+                "staked": 200.0,
+                "totalSupply": 0,
+                "price_btc": 0.0030040722582924785,
+                "price_in_usd": 40809.12
+            }
+        }
     }
 ]
