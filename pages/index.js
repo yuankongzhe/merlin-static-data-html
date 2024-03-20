@@ -621,7 +621,7 @@ const HomePage = () => {
             '注意本活动索要推特权限较大，及时取消授权',
             '取消授权方法“更多--设置和隐私--安全性和账号访问权限--已连接的应用”',
           ],
-          'activity_reward': '平台代币STAR / Mineral抽奖空投',
+          'activity_reward': '平台代币STAR / MerlinSwap IDO',
           'activity_course': {
             'videos': [
             ],
@@ -653,12 +653,12 @@ const HomePage = () => {
               'link': 'https://docs.merlinstarter.com/protocol/airdrop',
             },
             {
-              'description': 'Mineral抽奖空投活动官网：',
-              'link': 'https://airdrop.merlinstarter.com/mineral',
+              'description': 'MerlinSwap IDO活动官网：',
+              'link': 'https://airdrop.merlinstarter.com/merlinswap?code=lt83foygeuizgjtve38',
             },
             {
-              'description': 'Mineral抽奖空投活动简易细则：',
-              'link': 'https://medium.com/@MerlinStarter/merlin-starter-x-mineral-a-strategic-collaboration-unveiled-a451d1ccb566',
+              'description': 'MerlinSwap IDO活动简易细则：',
+              'link': 'https://medium.com/@MerlinStarter/merlinstarters-ido-debut-mp-launch-introduction-f123c7d9aeb8',
             },
           ]
         },
