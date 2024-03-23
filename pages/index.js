@@ -728,6 +728,7 @@ const HomePage = () => {
                 {/* Activity Dates and Links */}
                 <h4 id={`activity-link-${-1}`}>Merlin安全工具相关链接</h4>
                 <li key={`Activitycourse${-1}`}><strong><em>OKX网页钱包（用于取消合约授权） : </em></strong><a href="https://www.okx.com/cn/web3"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
+                <li key={`Activitycourse${-1}`}><strong><em>revoke cash （用于取消合约授权）: </em></strong><a href="https://revoke.cash/"  target="_blank" rel="noopener noreferrer">点击跳转</a></li>
                 {/* Map through dates and links here */}
               </div>
             </div>
