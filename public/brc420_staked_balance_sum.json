@@ -38868,5 +38868,70 @@
                 "price_in_usd": 569631.928428
             }
         }
+    },
+    {
+        "savetime": "2024-03-24T21:02:19.751867",
+        "data": {
+            "BLUEBOX": {
+                "staked": 9545.0,
+                "totalSupply": 10000,
+                "price_btc": 0.4854960241655215,
+                "price_in_usd": 303744067.307554
+            },
+            "BITMAP": {
+                "staked": 262777.0,
+                "totalSupply": 830326,
+                "price_btc": 0.002507727397549206,
+                "price_in_usd": 43193049.655437
+            },
+            "MUSICBOX": {
+                "staked": 36370.0,
+                "totalSupply": 42069,
+                "price_btc": 0.015547909864805105,
+                "price_in_usd": 37064787.020946
+            },
+            "MINERAL": {
+                "staked": 36530.0,
+                "totalSupply": 40000,
+                "price_btc": 0.007783985841992813,
+                "price_in_usd": 18637939.738053
+            },
+            "DRAGONBALL": {
+                "staked": 69130.0,
+                "totalSupply": 100000,
+                "price_btc": 0.0023071092057453243,
+                "price_in_usd": 10453961.651385
+            },
+            "BLUEWAND": {
+                "staked": 33929.0,
+                "totalSupply": 42000,
+                "price_btc": 0.0023442235712289095,
+                "price_in_usd": 5213342.79084
+            },
+            "IQ50-CLUB": {
+                "staked": 343.0,
+                "totalSupply": 500,
+                "price_btc": 0.03708326966399935,
+                "price_in_usd": 833716.377735
+            },
+            "ORDZ-GAMES-ARCADE": {
+                "staked": 2065.0,
+                "totalSupply": 21000,
+                "price_btc": 0.0003711436548378238,
+                "price_in_usd": 50235.21783
+            },
+            "BITMAP-TOWN-DLC": {
+                "staked": 1326.0,
+                "totalSupply": 10000,
+                "price_btc": 0.0006018545754126873,
+                "price_in_usd": 52309.58616
+            },
+            "CHIPCHIPGAME-BOX": {
+                "staked": 3522.0,
+                "totalSupply": 10000,
+                "price_btc": 0.0024846563054936443,
+                "price_in_usd": 573590.391908
+            }
+        }
     }
 ]
