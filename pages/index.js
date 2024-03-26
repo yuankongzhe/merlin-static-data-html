@@ -93,7 +93,7 @@ const HomePage = () => {
   const [d, setD] = useState(0); 
   const [e, setE] = useState(0); 
   const [selectedDate, setSelectedDate] = useState('');
-  const [specifiedDate1,setspecifiedDate1] = useState('2024-04-01'); // 指定日期
+  const [specifiedDate1,setspecifiedDate1] = useState('2024-04-21'); // 指定日期
   const [differencedate, setdifferencedate] = useState(null);
   const [control,setcontrol]=useState(null);
   const [isToggled, setIsToggled] = useState(false);
@@ -1033,7 +1033,7 @@ const HomePage = () => {
                         id="dateend"
                         value={specifiedDate1}
                         min={'2024-03-01'}
-                        max={'2024-04-01'}
+                        max={'2024-04-21'}
                         onChange={handlespecifiedDate1Change}
                         
                         />
